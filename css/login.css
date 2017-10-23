@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Jeju Gothic', serif;
+    background: #F9FAF9;
+}
+
+input{
+    border: 0;
+    outline: none;
+    overflow: hidden;
+    width: 255px;
+    margin: 3px 0 3px 0;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+    background-color: #F9FAF9;
+}
+
+article{
+    margin-top: 100px; 
+}
+
+/* login Document Css */
+
+.container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;    
+    background: #FFFFFF;
+}
+
+.container p{
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loginlogo{
+    margin-right: 100px;
+}
+
+.search{
+    border-radius: 3px;
+    border: 1px solid #DBDBDB;
+    margin-right: 100px;    
+}
+
+.copy{
+    margin-top: 10px;
+}
+
+.article{
+    margin: auto;
+    margin-bottom: 50px; 
+    width: 50%;
+    border: 1px solid #DBDBDB;
+    padding: 20px;
+}
+
+.mainimg{
+    width: 100%;
+    text-align: center;
+}
+
+.mainimg img{
+    width: 100%;
+    text-align: center;
+}
+
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footerlink{
+    padding: 0 10px;
+    cursor:pointer;
+}

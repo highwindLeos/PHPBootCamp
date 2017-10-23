@@ -1,0 +1,124 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    font-family: 'Jeju Gothic', serif;
+    background: #F9FAF9;
+}
+
+header{
+    width: 800px;
+    text-align: center;
+}
+
+h3{
+    color : #94A5BF;
+}
+
+p{
+    font-size: 0.8rem;
+    color: #94A5BF;
+}
+
+/* a tag link style */
+a:link {
+    color: #003962;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #003962;    
+    text-decoration: none;
+}
+
+a:hover {
+    color: #003962;    
+    text-decoration: none;
+}
+
+a:active {
+    color: #003962;    
+    text-decoration: none;
+}
+
+input{
+    border: 0;
+    outline: none;
+    overflow: hidden;
+    width: 255px;
+    margin: 3px 0 3px 0;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+    background-color: #F9FAF9;
+}
+
+.content{
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.item { 
+    flex-grow: 1;
+    text-align:center;
+}
+
+.item:nth-child(1) { 
+    text-align:center;
+}
+.item:nth-child(2) { 
+    text-align:center;
+}
+
+.logo{
+    border: 1px rgba(128, 128, 128, 0.2) solid;
+    margin-top: 15px;
+}
+
+.login{
+    border: 1px rgba(128, 128, 128, 0.2) solid;   
+    padding: 5px;    
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.auth{
+    border: 1px rgba(128, 128, 128, 0.2) solid;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.join{
+    margin-top: 15px;
+}
+
+.logintext{
+    color: #5BA4F3;
+}
+
+.apptext{
+    margin-bottom: 5px;
+}
+
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footerlink{
+    padding: 0 10px;
+    cursor:pointer;
+}
