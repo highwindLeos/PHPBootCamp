@@ -51,16 +51,25 @@
     </section>        
     <footer>
         <p>
-            <span class="footerlink" OnClick="location.href='#'">정보</span>
-            <span class="footerlink" OnClick="location.href='#'">지원</span>
-            <span class="footerlink" OnClick="location.href='#'">블로그홍보</span>
-            <span class="footerlink" OnClick="location.href='#'">센터</span>
-            <span class="footerlink" OnClick="location.href='#'">API</span>
-            <span class="footerlink" OnClick="location.href='#'">채용</span>
-            <span class="footerlink" OnClick="location.href='#'">정보개인정보처리방침</span>
-            <span class="footerlink" OnClick="location.href='#'">약관</span>
-            <span class="footerlink" OnClick="location.href='#'">디렉터리</span>
-            <span class="footerlink" OnClick="location.href='#'">언어</span>          
+        <?php
+        $link = ['INSTAGRAM 정보',
+                '지원',
+                '블로그',
+                '홍보 센터',
+                'API',
+                '채용',
+                '정보개인정보처리방침',
+                '약관',
+                '디렉터리',
+                '언어'];
+
+            for($i = 0; $i < 10; $i++)
+            {
+                echo '<span class="footerlink" OnClick="location.href="" ">'.$link[$i].'</span>';
+            }
+        ?>
+        </p>
+        <p>         
             <span> &#169; 2017 instargram</span>
         </p>
     </footer>
