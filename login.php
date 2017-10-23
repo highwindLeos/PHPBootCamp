@@ -28,13 +28,16 @@
 
         $iconarticle = ['img/icon/iconarticle01.png',
                         'img/icon/iconarticle02.png',
-                        'img/icon/iconarticle03.png'];
+                        'img/icon/iconarticle03.png',
+                        'img/icon/iconarticle04.png'];
 
         for($i = 1; $i < 4; $i++)
         {
             echo '<div class="article">';
             echo '<div><img src="'.$iconarticle[0].'"></div>';
-            echo '<div class="mainimg"><img src="img/icon/img0'.$i.'.png"></div>';
+            echo '<div class="mainimg">
+                    <img src="img/icon/img0'.$i.'.png">
+                  </div>';
             echo '<div>
                     <img src="'.$iconarticle[1].'">
                     <img src="'.$iconarticle[2].'">
@@ -44,9 +47,13 @@
                     <p>nbcnewsSwipe 문구 더 보기</p>
                     <p>댓글 #개 모두 보기</p>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-                    <p>10월 1일</p> 
+                    <p class="datetime">10월 1일</p> 
                 </div>';
-            echo '<p><input type="text" placeholder="댓글달기"></p>';  
+            echo '<hr>';
+            echo '<p>
+                    <input class="comment" type="text" placeholder="댓글달기">
+                    <a href=""><img class="submit" src="'.$iconarticle[3].'"></a>
+                  </p>';  
             echo '</div>';
         }
         ?>
