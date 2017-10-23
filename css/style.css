@@ -58,16 +58,22 @@ input{
 }
 
 .content{
-    display:flex;
-    flex-direction: row;
-    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center; 
     margin-top: 50px;
-    margin-left: 140px;
-    margin-right: 140px;
+    width: 100%;
+}
+
+#logo{
+    margin: 20px 0 20px 0;
 }
 
 .item { 
-    flex-grow: 1;
+    margin: 35px 25px;
     text-align:center;
 }
 
@@ -85,20 +91,21 @@ input{
 
 .login{
     border: 1px rgba(128, 128, 128, 0.2) solid;   
-    padding: 5px;    
-    margin-bottom: 10px;
+    padding: 20px;    
+    margin-bottom: 20px;
     background: #fff;
 }
 
 .auth{
     border: 1px rgba(128, 128, 128, 0.2) solid;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background: #fff;
 }
 
 .join{
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .logintext{

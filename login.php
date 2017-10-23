@@ -34,9 +34,10 @@
             echo '<div class="article">';
             echo '<div><img src="'.$iconarticle[0].'"></div>';
             echo '<div class="mainimg"><img src="img/icon/img0'.$i.'.png"></div>';
-            echo '<div><img src="'.$iconarticle[1].'">
-                        <img src="'.$iconarticle[2].'">
-                </div>';
+            echo '<div>
+                    <img src="'.$iconarticle[1].'">
+                    <img src="'.$iconarticle[2].'">
+                 </div>';
             echo '<div>
                     <p>좋아요 #개</p>
                     <p>nbcnewsSwipe 문구 더 보기</p>
