@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Camp instargram - Log in</title>
 
+    <link rel="icon" href="/PHPcamp/img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
     
