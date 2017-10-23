@@ -1,10 +1,5 @@
-<?php
-    $artcle = array('img/icon/iconarticle01.png', 
-                    'img/icon/iconarticle02.png', 
-                    'img/icon/iconarticle03.png');
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,68 +23,51 @@
         </div>
     </header>
     <article>
-        <div class="article">
-            <div><img src="<?= $artcle[0] ?>"></div>
-            <div class="mainimg"><img src="img/icon/img01.png"></div>
-            <div>
-                <img src="<?= $artcle[1] ?>">
-                <img src="<?= $artcle[2] ?>">
-            </div>
-            <div>
-                <p>좋아요 #개</p>
-                <p>nbcnewsSwipe 문구 더 보기</p>
-                <p>댓글 #개 모두 보기</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <p>10월 1일</p> 
-            </div>
-            <input type="text" placeholder="댓글달기">
-        </div>
-        <div class="article">
-            <div><img src="img/icon/iconarticle01.png"></div>
-            <div class="mainimg"><img src="img/icon/img02.png"></div>
-            <div>
-                <img src="img/icon/iconarticle02.png">
-                <img src="img/icon/iconarticle03.png">
-            </div>
-            <div>
-                <p>좋아요 #개</p>
-                <p>nbcnewsSwipe 문구 더 보기</p>
-                <p>댓글 #개 모두 보기</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <p>10월 20일</p> 
-            </div>
-            <input type="text" placeholder="댓글달기">
-        </div>
+        <?php
 
-        <div class="article">
-            <div><img src="img/icon/iconarticle01.png"></div>
-            <div class="mainimg"><img src="img/icon/img03.png"></div>
-            <div>
-                <img src="img/icon/iconarticle02.png">
-                <img src="img/icon/iconarticle03.png">
-            </div>
-            <div>
-                <p>좋아요 #개</p>
-                <p>nbcnewsSwipe 문구 더 보기</p>
-                <p>댓글 #개 모두 보기</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <p>10월 19일</p> 
-            </div>
-            <input type="text" placeholder="댓글달기">
-        </div>
+        $iconarticle = ['img/icon/iconarticle01.png',
+                        'img/icon/iconarticle02.png',
+                        'img/icon/iconarticle03.png'];
+
+        for($i = 1; $i < 4; $i++)
+        {
+            echo '<div class="article">';
+            echo '<div><img src="'.$iconarticle[0].'"></div>';
+            echo '<div class="mainimg"><img src="img/icon/img0'.$i.'.png"></div>';
+            echo '<div><img src="'.$iconarticle[1].'">
+                        <img src="'.$iconarticle[2].'">
+                </div>';
+            echo '<div>
+                    <p>좋아요 #개</p>
+                    <p>nbcnewsSwipe 문구 더 보기</p>
+                    <p>댓글 #개 모두 보기</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                    <p>10월 1일</p> 
+                </div>';
+            echo '<p><input type="text" placeholder="댓글달기"></p>';  
+            echo '</div>';
+        }
+        ?>
     </article>
     <footer>
         <p>
-            <span class="footerlink" OnClick="location.href='#'">INSTAGRAM 정보</span>
-            <span class="footerlink" OnClick="location.href='#'">지원</span>
-            <span class="footerlink" OnClick="location.href='#'">블로그</span>
-            <span class="footerlink" OnClick="location.href='#'">홍보 센터</span>
-            <span class="footerlink" OnClick="location.href='#'">API</span>
-            <span class="footerlink" OnClick="location.href='#'">채용</span>
-            <span class="footerlink" OnClick="location.href='#'">정보개인정보처리방침</span>
-            <span class="footerlink" OnClick="location.href='#'">약관</span>
-            <span class="footerlink" OnClick="location.href='#'">디렉터리</span>
-            <span class="footerlink" OnClick="location.href='#'">언어</span>          
+            <?php
+                $link = ['INSTAGRAM 정보',
+                        '지원',
+                        '블로그',
+                        '홍보 센터',
+                        'API',
+                        '채용',
+                        '정보개인정보처리방침',
+                        '약관',
+                        '디렉터리',
+                        '언어'];
+
+                for($i = 0; $i < 10; $i++)
+                {
+                    echo '<span class="footerlink" OnClick="location.href="" ">'.$link[$i].'</span>';
+                }
+            ?>
         </p>
         <p class="copy">
             <span> &#169; 2017 instargram</span>
