@@ -14,7 +14,7 @@
     <header>
         <div class="container">
             <p>
-                <a href="index.html"><img class="loginlogo" src="img/icon/logo.png"></a> 
+                <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
                 <input class="search" type="text" placeholder="검색">
                 <img src="img/icon/iconheader01.png">
                 <img src="img/icon/iconheader02.png">
