@@ -1,3 +1,8 @@
+<?php
+    $artcle = array('img/icon/iconarticle01.png', 
+                    'img/icon/iconarticle02.png', 
+                    'img/icon/iconarticle03.png');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,22 +29,17 @@
     </header>
     <article>
         <div class="article">
-            <div><img src="img/icon/iconarticle01.png"></div>
+            <div><img src="<?= $artcle[0] ?>"></div>
             <div class="mainimg"><img src="img/icon/img01.png"></div>
             <div>
-                <img src="img/icon/iconarticle02.png">
-                <img src="img/icon/iconarticle03.png">
+                <img src="<?= $artcle[1] ?>">
+                <img src="<?= $artcle[2] ?>">
             </div>
             <div>
                 <p>좋아요 #개</p>
                 <p>nbcnewsSwipe 문구 더 보기</p>
                 <p>댓글 #개 모두 보기</p>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Quam suscipit ratione cumque nostrum eum voluptatibus accusamus 
-                sint fugiat quaerat dolor. Voluptatem, sequi? Consequuntur doloribus excepturi 
-                iusto voluptatum reprehenderit deserunt culpa.
-                </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <p>10월 1일</p> 
             </div>
             <input type="text" placeholder="댓글달기">
@@ -55,16 +55,12 @@
                 <p>좋아요 #개</p>
                 <p>nbcnewsSwipe 문구 더 보기</p>
                 <p>댓글 #개 모두 보기</p>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores temporibus tempore earum excepturi. Consectetur, 
-                minus eveniet accusantium vero laborum corporis soluta fugiat 
-                quis dolore ipsum necessitatibus dolores, dignissimos nemo pariatur!
-                </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <p>10월 20일</p> 
             </div>
             <input type="text" placeholder="댓글달기">
         </div>
+
         <div class="article">
             <div><img src="img/icon/iconarticle01.png"></div>
             <div class="mainimg"><img src="img/icon/img03.png"></div>
@@ -76,13 +72,7 @@
                 <p>좋아요 #개</p>
                 <p>nbcnewsSwipe 문구 더 보기</p>
                 <p>댓글 #개 모두 보기</p>
-                <p>
-                Lorem ipsum dolor sit, 
-                amet consectetur adipisicing elit.
-                Possimus, reiciendis repellat rem unde cumque tenetur deleniti,
-                magnam quisquam iusto ipsam, in iste ea reprehenderit sapiente. 
-                Commodi officia perferendis veritatis unde.
-                </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 <p>10월 19일</p> 
             </div>
             <input type="text" placeholder="댓글달기">
