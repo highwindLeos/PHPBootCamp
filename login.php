@@ -1,4 +1,4 @@
-<?php #배열과 변수 설정
+<?php  #배열과 변수 설정
     $icon = ['img/icon/iconarticle01.png',
             'img/icon/iconarticle02.png',
             'img/icon/iconarticle03.png',
@@ -26,13 +26,13 @@
 
     $count = ' #개';
 ?>
-
 <?php # PDO 이용 DB접속 Code
-$dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26');
-$stmt = $dbh->prepare('SELECT * FROM article');
-$stmt->execute();
-$list = $stmt->fetchAll();
-if(!empty($_GET['id'])) {
+$dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
+$stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 변수에 저장한다.
+$stmt->execute(); #변수에 담긴 쿼리를 실행한다.
+$list = $stmt->fetchAll(); #모든 데이터를 가져와서 list 변수에 담는다.
+
+if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) true.
     $stmt = $dbh->prepare('SELECT * FROM article WHERE id = :id');
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $id = $_GET['id'];
@@ -52,7 +52,6 @@ if(!empty($_GET['id'])) {
     <link rel="icon" href="/PHPcamp/img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
-    
 </head>
 <body>
     <header>
