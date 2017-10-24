@@ -52,22 +52,20 @@
             </nav>
         </div>
     </header>
-    <article>
-        
-        <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
-
-         <div class="article">
-            <div>
+    <article>   
+    <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
+        <div class="article">
+            <div class="titleimg">
                 <img src="<?= $iconarticle[0] ?>">
             </div>
             <div class="mainimg">
                 <img src="img/icon/img0<?= $i ?>.png">
             </div>
-            <div>
+            <div class="imgbtn">
                 <img src="<?= $iconarticle[1] ?>">
                 <img src="<?= $iconarticle[2] ?>">
             </div>
-            <div>
+            <div class="articleparam">
                 <p class="like"><?= $article[0].$count ?> </p>
                 <p class="textmore"><?= $article[1] ?></p>
                 <p class="comment"><?= $article[2].$count ?><?= $all ?></p>
@@ -85,7 +83,7 @@
     <footer>
         <p>
             <?php for($i = 0; $i < 10; $i++) { #for 문 시작 ?>
-                <span class="footerlink" OnClick="location.href="" "><?= $link[$i] ?></span>
+                <span class="footerlink" OnClick="location.href="#" "><?= $link[$i] ?></span>
             <?php } #for 문 끝 ?>
         </p>
         <p class="copy">
