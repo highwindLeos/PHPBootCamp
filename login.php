@@ -7,8 +7,7 @@
     $article = ['좋아요',
                 '문구 더보기',
                 '댓글',
-                'Lorem, ipsum dolor sit amet consectetur adipisicing.',
-                '10월 1일'];
+                'Lorem, ipsum dolor sit amet consectetur adipisicing.'];
 
 
     $date = date('n월 j일');
@@ -24,9 +23,7 @@
             '디렉터리',
             '언어'];
 
-    $input = '<input class="comment" type="text" placeholder="댓글달기">';
-
-    $all = '<a href=""> 모두 보기</a>';
+    $all = '<a href="#"> 모두 보기</a>';
 
     $count = ' #개';
 ?>
@@ -77,7 +74,7 @@
             </div>
             <hr>
             <p>
-                <?= $input ?>
+                <input class="comment" type="text" placeholder="댓글달기"> 
                 <a href=""><img class="submit" src="<?= $iconarticle[3] ?>"></a>
             </p>
         </div>
