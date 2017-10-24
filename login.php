@@ -22,7 +22,7 @@
 
     $date = date('n월 j일');
 
-    $all = '<a href="#"> 모두 보기</a>';
+    $allview = '<a href="#"> 모두 보기</a>';
 
     $count = ' #개';
 ?>
@@ -67,7 +67,7 @@
             <div class="articleparam">
                 <p class="like"><?= $article[0].$count ?> </p>
                 <p class="textmore"><?= $article[1] ?></p>
-                <p class="comment"><?= $article[2].$count ?><?= $all ?></p>
+                <p class="comment"><?= $article[2].$count.$allview ?></p>
                 <p class="description"><?= $article[3] ?></p>
                 <p class="datetime"><?= $date ?></p> 
             </div>
