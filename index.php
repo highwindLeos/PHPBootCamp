@@ -21,7 +21,7 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form action="login.html">
+                <form action="/PDO/process.php?mode=insert" method="POST">
                     <p>
                         <input type="text" name="id" placeholder="휴대폰 번호 및 이메일">
                     </p>
@@ -33,9 +33,9 @@
                     </p>
                     <p>
                         <input type="password" name="password" placeholder="비밀번호">
-                    </p>                    
+                    </p>
+                    <input type="image" value="가입" class="join" src="img/join.png">                    
                 </form>
-                <a href="#"><img class="join" src="img/join.png"></a>
                 <p>가입하면 Instagram의 약관 및 개인정보처리방침에 동의하게 됩니다.</p>
             </div>
             <div class="auth">

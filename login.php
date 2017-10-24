@@ -26,6 +26,21 @@
 
     $count = ' #개';
 ?>
+
+<?php # PDO 이용 DB접속 Code
+$dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26');
+$stmt = $dbh->prepare('SELECT * FROM topic');
+$stmt->execute();
+$list = $stmt->fetchAll();
+if(!empty($_GET['id'])) {
+    $stmt = $dbh->prepare('SELECT * FROM topic WHERE id = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $id = $_GET['id'];
+    $stmt->execute();
+    $topic = $stmt->fetch();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -52,7 +67,7 @@
         </div>
     </header>
     <article>   
-    <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
+        <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
         <div class="article">
             <div class="titleimg">
                 <img src="<?= $iconarticle[0] ?>">
