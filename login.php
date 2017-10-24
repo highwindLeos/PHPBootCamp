@@ -20,12 +20,30 @@
              '디렉터리',
              '언어'];
 
+    $link = ['INSTAGRAM 정보',
+            '지원',
+            '블로그',
+            '홍보 센터',
+            'API',
+            '채용',
+            '개인정보처리방침',
+            '약관',
+            '디렉터리',
+            '언어'];
+
     $date = date('n월 j일');
 
     $allview = ' 모두 보기';
 
     $count = ' #개';
 ?>
+<<<<<<< HEAD
+
+=======
+<?php
+
+?>
+>>>>>>> 4059cd6f51481a65612f74317a8833f94f9da76c
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
 $stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 변수에 저장한다.
@@ -72,7 +90,7 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
                 <img src="<?= $icon[0] ?>">
             </div>
             <div class="mainimg">
-                <img src="img/icon/img0<?= $i ?>.png">
+                <img src="img/image/img<?= $i ?>.png">
             </div>
             <div class="imgbtn">
                 <img src="<?= $icon[1] ?>">
@@ -92,12 +110,12 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
             </p>
         </div>
         <?php } #for 문 끝 ?>
-    </article>
+    </article>  
     <footer>
         <p>
-            <?php for($i = 0; $i < 10; $i++) { #for 문 시작 ?>
-                <span class="footerlink" OnClick="location.href="#" "><?= $footerlink[$i] ?></span>
-            <?php } #for 문 끝 ?>
+            <?php for($i = 0; $i < 10; $i++){ ?>
+                    <span class="footerlink" OnClick="location.href="" ">'.$link[$i].'</span>';
+            <?php } ?>
         </p>
         <p class="copy">
             <span> &#169; 2017 instargram</span>
