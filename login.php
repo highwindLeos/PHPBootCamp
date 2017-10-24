@@ -1,8 +1,8 @@
 <?php #배열과 변수 설정
     $icon = ['img/icon/iconarticle01.png',
-                    'img/icon/iconarticle02.png',
-                    'img/icon/iconarticle03.png',
-                    'img/icon/iconarticle04.png'];
+            'img/icon/iconarticle02.png',
+            'img/icon/iconarticle03.png',
+            'img/icon/iconarticle04.png'];
 
     $article = ['좋아요',
                 '문구 더보기',
