@@ -14,13 +14,13 @@
 <body>
     <header>
         <div class="container">
-            <p>
+            <nav>
                 <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
                 <input class="search" type="text" placeholder="검색">
                 <img src="img/icon/iconheader01.png">
                 <img src="img/icon/iconheader02.png">
                 <img src="img/icon/iconheader03.png">
-            </p>
+            </nav>
         </div>
     </header>
     <article>
@@ -30,6 +30,17 @@
                         'img/icon/iconarticle02.png',
                         'img/icon/iconarticle03.png',
                         'img/icon/iconarticle04.png'];
+
+        $article = ['좋아요',
+                    '문구 더보기',
+                    '댓글',
+                    'Lorem, ipsum dolor sit amet consectetur adipisicing.',
+                    '10월 1일'];
+
+        $input = '<input class="comment" type="text" placeholder="댓글달기">';
+
+        $hr = '<hr>';
+
 
         for($i = 1; $i < 4; $i++)
         {
@@ -43,15 +54,15 @@
                     <img src="'.$iconarticle[2].'">
                  </div>';
             echo '<div>
-                    <p>좋아요 #개</p>
-                    <p>nbcnewsSwipe 문구 더 보기</p>
-                    <p>댓글 #개 모두 보기</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-                    <p class="datetime">10월 1일</p> 
+                    <p>'.$article[0].' #개</p>
+                    <p>'.$article[1].'</p>
+                    <p>'.$article[2].' #개 <a href="">모두 보기</a></p>
+                    <p>'.$article[3].'</p>
+                    <p class="datetime">'.$article[4].'</p> 
                 </div>';
-            echo '<hr>';
+            echo $hr;
             echo '<p>
-                    <input class="comment" type="text" placeholder="댓글달기">
+                    '.$input.'
                     <a href=""><img class="submit" src="'.$iconarticle[3].'"></a>
                   </p>';  
             echo '</div>';
@@ -67,7 +78,7 @@
                         '홍보 센터',
                         'API',
                         '채용',
-                        '정보개인정보처리방침',
+                        '개인정보처리방침',
                         '약관',
                         '디렉터리',
                         '언어'];
