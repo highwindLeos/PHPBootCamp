@@ -25,7 +25,6 @@
     </header>
     <article>
         <?php
-
         $iconarticle = ['img/icon/iconarticle01.png',
                         'img/icon/iconarticle02.png',
                         'img/icon/iconarticle03.png',
@@ -39,8 +38,9 @@
 
         $input = '<input class="comment" type="text" placeholder="댓글달기">';
 
-        $hr = '<hr>';
+        $all = '<a href="">모두 보기</a>';
 
+        $hr = '<hr>';
 
         for($i = 1; $i < 4; $i++)
         {
@@ -54,10 +54,10 @@
                     <img src="'.$iconarticle[2].'">
                  </div>';
             echo '<div>
-                    <p>'.$article[0].' #개</p>
-                    <p>'.$article[1].'</p>
-                    <p>'.$article[2].' #개 <a href="">모두 보기</a></p>
-                    <p>'.$article[3].'</p>
+                    <p class="like">'.$article[0].' #개</p>
+                    <p class="textmore">'.$article[1].'</p>
+                    <p class="comment">'.$article[2].' #개 '.$all.'</p>
+                    <p class="description">'.$article[3].'</p>
                     <p class="datetime">'.$article[4].'</p> 
                 </div>';
             echo $hr;
