@@ -9,19 +9,18 @@
                 '댓글',
                 'Lorem, ipsum dolor sit amet consectetur adipisicing.'];
 
+    $link = ['INSTAGRAM 정보',
+             '지원',
+             '블로그',
+             '홍보 센터',
+             'API',
+             '채용',
+             '개인정보처리방침',
+             '약관',
+             '디렉터리',
+             '언어'];
 
     $date = date('n월 j일');
-
-    $link = ['INSTAGRAM 정보',
-            '지원',
-            '블로그',
-            '홍보 센터',
-            'API',
-            '채용',
-            '개인정보처리방침',
-            '약관',
-            '디렉터리',
-            '언어'];
 
     $all = '<a href="#"> 모두 보기</a>';
 
