@@ -26,6 +26,9 @@
 
     $count = ' #개';
 ?>
+<?php
+
+?>
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
 $stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 변수에 저장한다.
@@ -72,7 +75,7 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
                 <img src="<?= $icon[0] ?>">
             </div>
             <div class="mainimg">
-                <img src="img/icon/img0<?= $i ?>.png">
+                <img src="img/image/img<?= $i ?>.png">
             </div>
             <div class="imgbtn">
                 <img src="<?= $icon[1] ?>">
