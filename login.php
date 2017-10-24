@@ -22,7 +22,7 @@
 
     $date = date('n월 j일');
 
-    $allview = '<a href="#"> 모두 보기</a>';
+    $allview = ' 모두 보기';
 
     $count = ' #개';
 ?>
@@ -81,7 +81,7 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
             <div class="articleparam">
                 <p class="like"><?= $article[0].$count ?></p>
                 <p class="textmore"><?= $article[1] ?></p>
-                <p class="comment"><?= $article[2].$count.$allview ?></p>
+                <p class="comment"><?= $article[2].$count.'<a href="">'.$allview.'</a>' ?></p>
                 <p class="description"><?= $article[3] ?></p>
                 <p class="datetime"><?= $date ?></p> 
             </div>
