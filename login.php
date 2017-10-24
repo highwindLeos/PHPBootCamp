@@ -10,6 +10,9 @@
                 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
                 '10월 1일'];
 
+
+    $date = date('n월 j일');
+
     $link = ['INSTAGRAM 정보',
             '지원',
             '블로그',
@@ -70,7 +73,7 @@
                 <p class="textmore"><?= $article[1] ?></p>
                 <p class="comment"><?= $article[2].$count ?><?= $all ?></p>
                 <p class="description"><?= $article[3] ?></p>
-                <p class="datetime"><?= $article[4] ?></p> 
+                <p class="datetime"><?= $date ?></p> 
             </div>
             <hr>
             <p>
