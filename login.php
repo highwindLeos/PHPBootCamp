@@ -24,7 +24,7 @@
         </div>
     </header>
     <article>
-        <?php
+        <?php #배열과 변수 설정
         $iconarticle = ['img/icon/iconarticle01.png',
                         'img/icon/iconarticle02.png',
                         'img/icon/iconarticle03.png',
@@ -41,33 +41,34 @@
         $all = '<a href="">모두 보기</a>';
 
         $hr = '<hr>';
-
-        for($i = 1; $i < 4; $i++)
-        {
-            echo '<div class="article">';
-            echo '<div><img src="'.$iconarticle[0].'"></div>';
-            echo '<div class="mainimg">
-                    <img src="img/icon/img0'.$i.'.png">
-                  </div>';
-            echo '<div>
-                    <img src="'.$iconarticle[1].'">
-                    <img src="'.$iconarticle[2].'">
-                 </div>';
-            echo '<div>
-                    <p class="like">'.$article[0].' #개</p>
-                    <p class="textmore">'.$article[1].'</p>
-                    <p class="comment">'.$article[2].' #개 '.$all.'</p>
-                    <p class="description">'.$article[3].'</p>
-                    <p class="datetime">'.$article[4].'</p> 
-                </div>';
-            echo $hr;
-            echo '<p>
-                    '.$input.'
-                    <a href=""><img class="submit" src="'.$iconarticle[3].'"></a>
-                  </p>';  
-            echo '</div>';
-        }
         ?>
+        <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
+
+         <div class="article">
+            <div>
+                <img src="<?= $iconarticle[0] ?>">
+            </div>
+            <div class="mainimg">
+                <img src="img/icon/img0<?= $i ?>.png">
+            </div>
+            <div>
+                <img src="<?= $iconarticle[1] ?>">
+                <img src="<?= $iconarticle[2] ?>">
+            </div>
+            <div>
+                <p class="like"><?= $article[0] ?> #개</p>
+                <p class="textmore"><?= $article[1] ?></p>
+                <p class="comment"><?= $article[2] ?> #개 <?= $all ?></p>
+                <p class="description"><?= $article[3] ?></p>
+                <p class="datetime"><?= $article[4] ?></p> 
+            </div>
+            <?= $hr ?>
+            <p>
+                <?= $input ?>
+                <a href=""><img class="submit" src="<?= $iconarticle[3] ?>"></a>
+            </p>
+        </div>
+        <?php } #for 문 끝 ?>
     </article>
     <footer>
         <p>
@@ -82,12 +83,10 @@
                         '약관',
                         '디렉터리',
                         '언어'];
-
-                for($i = 0; $i < 10; $i++)
-                {
-                    echo '<span class="footerlink" OnClick="location.href="" ">'.$link[$i].'</span>';
-                }
             ?>
+            <?php for($i = 0; $i < 10; $i++) { #for 문 시작 ?>
+                <span class="footerlink" OnClick="location.href="" "><?= $link[$i] ?></span>
+            <?php } #for 문 끝 ?>
         </p>
         <p class="copy">
             <span> &#169; 2017 instargram</span>
