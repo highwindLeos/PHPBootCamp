@@ -104,6 +104,7 @@ input{
 }
 
 .join{
+    padding: 0px;
     margin-top: 15px;
     margin-bottom: 15px;
 }

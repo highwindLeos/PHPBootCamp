@@ -34,7 +34,7 @@
                     <p>
                         <input type="password" name="password" placeholder="비밀번호">
                     </p>
-                    <input type="image" value="가입" class="join" src="img/join.png">                    
+                    <input class="join" type="image" value="가입" src="img/join.png">                    
                 </form>
                 <p>가입하면 Instagram의 약관 및 개인정보처리방침에 동의하게 됩니다.</p>
             </div>
