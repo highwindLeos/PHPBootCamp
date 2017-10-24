@@ -29,11 +29,11 @@
 
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26');
-$stmt = $dbh->prepare('SELECT * FROM topic');
+$stmt = $dbh->prepare('SELECT * FROM article');
 $stmt->execute();
 $list = $stmt->fetchAll();
 if(!empty($_GET['id'])) {
-    $stmt = $dbh->prepare('SELECT * FROM topic WHERE id = :id');
+    $stmt = $dbh->prepare('SELECT * FROM article WHERE id = :id');
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $id = $_GET['id'];
     $stmt->execute();
@@ -80,7 +80,7 @@ if(!empty($_GET['id'])) {
                 <img src="<?= $iconarticle[2] ?>">
             </div>
             <div class="articleparam">
-                <p class="like"><?= $article[0].$count ?> </p>
+                <p class="like"><?= $article[0].$count ?></p>
                 <p class="textmore"><?= $article[1] ?></p>
                 <p class="comment"><?= $article[2].$count.$allview ?></p>
                 <p class="description"><?= $article[3] ?></p>
