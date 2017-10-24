@@ -37,7 +37,7 @@ if(!empty($_GET['id'])) {
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $id = $_GET['id'];
     $stmt->execute();
-    $topic = $stmt->fetch();
+    $article = $stmt->fetch();
 }
 ?>
 
