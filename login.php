@@ -1,5 +1,5 @@
 <?php #배열과 변수 설정
-    $iconarticle = ['img/icon/iconarticle01.png',
+    $icon = ['img/icon/iconarticle01.png',
                     'img/icon/iconarticle02.png',
                     'img/icon/iconarticle03.png',
                     'img/icon/iconarticle04.png'];
@@ -9,7 +9,7 @@
                 '댓글',
                 'Lorem, ipsum dolor sit amet consectetur adipisicing.'];
 
-    $link = ['INSTAGRAM 정보',
+    $footerlink = ['INSTAGRAM 정보',
              '지원',
              '블로그',
              '홍보 센터',
@@ -70,14 +70,14 @@ if(!empty($_GET['id'])) {
         <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
         <div class="article">
             <div class="titleimg">
-                <img src="<?= $iconarticle[0] ?>">
+                <img src="<?= $icon[0] ?>">
             </div>
             <div class="mainimg">
                 <img src="img/icon/img0<?= $i ?>.png">
             </div>
             <div class="imgbtn">
-                <img src="<?= $iconarticle[1] ?>">
-                <img src="<?= $iconarticle[2] ?>">
+                <img src="<?= $icon[1] ?>">
+                <img src="<?= $icon[2] ?>">
             </div>
             <div class="articleparam">
                 <p class="like"><?= $article[0].$count ?></p>
@@ -89,7 +89,7 @@ if(!empty($_GET['id'])) {
             <hr>
             <p>
                 <input class="comment" type="text" placeholder="댓글달기"> 
-                <a href=""><img class="submit" src="<?= $iconarticle[3] ?>"></a>
+                <a href=""><img class="submit" src="<?= $icon[3] ?>"></a>
             </p>
         </div>
         <?php } #for 문 끝 ?>
@@ -97,7 +97,7 @@ if(!empty($_GET['id'])) {
     <footer>
         <p>
             <?php for($i = 0; $i < 10; $i++) { #for 문 시작 ?>
-                <span class="footerlink" OnClick="location.href="#" "><?= $link[$i] ?></span>
+                <span class="footerlink" OnClick="location.href="#" "><?= $footerlink[$i] ?></span>
             <?php } #for 문 끝 ?>
         </p>
         <p class="copy">
