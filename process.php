@@ -21,7 +21,6 @@ switch($_GET['mode']){
         ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
         
         $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
-        
 
         if(password_verify($password, $hashpass)) #입력 패스워드와 암호화 패스워드가 동일한지 확인.
         {

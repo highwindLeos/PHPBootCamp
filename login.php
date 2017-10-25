@@ -36,7 +36,7 @@ while($file = readdir($result)) { # readdir함수를 이용해서 디렉토리�
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="navbar">
                 <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
                 <input class="search" type="text" placeholder="검색">
                 <?php for($i = 1; $i < 4; $i++){ ?>
