@@ -1,32 +1,3 @@
-<!--  #배열과 변수 설정
-    $icon = ['img/icon/iconarticle01.png',
-            'img/icon/iconarticle02.png',
-            'img/icon/iconarticle03.png',
-            'img/icon/iconarticle04.png'];
-
-    $article = ['좋아요',
-                '문구 더보기',
-                '댓글',
-                'Lorem, ipsum dolor sit amet consectetur adipisicing.'];
-
-    $footerlink = ['INSTAGRAM 정보',
-             '지원',
-             '블로그',
-             '홍보 센터',
-             'API',
-             '채용',
-             '개인정보처리방침',
-             '약관',
-             '디렉터리',
-             '언어'];
-
-    $date = date('n월 j일');
-
-    $allview = ' 모두 보기';
-
-    $count = ' #';
--->
-
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
 $stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 stmt변수에 저장한다.
@@ -63,7 +34,7 @@ $list = $stmt->fetchAll(); #모든 데이터를 가져와서 list 변수에 담�
 
         <div class="article">
             <div class="titleimg">
-                <img src="<?= $list[0][icon] ?>">
+                <img src="<?= $list[0][icon] #다차원 배열값 출력하기 $변수명[배열인자][배열인자]?>">
             </div>
             <div class="mainimg">
                 <img src="img/image/img<?= $i ?>.png">
