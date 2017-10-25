@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- 생성 시간: 17-10-24 04:23
+-- 생성 시간: 17-10-24 22:33
 -- 서버 버전: 5.7.19
 -- PHP 버전: 7.0.23
 
@@ -32,37 +32,49 @@ CREATE TABLE `article` (
   `id` int(11) NOT NULL,
   `icon` varchar(150) DEFAULT NULL,
   `article` text,
-  `footerlink` varchar(50) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `allview` varchar(30) DEFAULT NULL,
-  `count` int(200) DEFAULT NULL
+  `count` int(200) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 테이블의 덤프 데이터 `article`
 --
 
-INSERT INTO `article` (`id`, `icon`, `article`, `footerlink`, `date`, `allview`, `count`) VALUES
-(1, 'img/icon/iconarticle01.png', NULL, NULL, NULL, NULL, NULL),
-(2, 'img/icon/iconarticle02.png', NULL, NULL, '2017-10-24 11:09:29', NULL, NULL),
-(3, 'img/icon/iconarticle03.png', NULL, NULL, '2017-10-24 11:09:29', NULL, NULL),
-(4, 'img/icon/iconarticle04.png', NULL, NULL, '2017-10-24 11:10:18', NULL, NULL),
-(5, NULL, '좋아요', NULL, '2017-10-24 11:10:18', NULL, NULL),
-(6, NULL, '문구 더보기', NULL, '2017-10-24 11:11:31', NULL, NULL),
-(7, NULL, '댓글', NULL, '2017-10-24 11:11:31', NULL, NULL),
-(8, NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing.', NULL, '2017-10-24 11:12:26', NULL, NULL),
-(9, NULL, NULL, 'INSTAGRAM 정보', '2017-10-24 11:12:26', NULL, NULL),
-(10, NULL, NULL, '지원', '2017-10-24 11:14:44', NULL, NULL),
-(11, NULL, NULL, '블로그', '2017-10-24 11:15:13', NULL, NULL),
-(12, NULL, NULL, '홍보 센터', '2017-10-24 11:14:44', NULL, NULL),
-(13, NULL, NULL, 'API', '2017-10-24 11:14:44', NULL, NULL),
-(14, NULL, NULL, '채용', '2017-10-24 11:14:44', NULL, NULL),
-(15, NULL, NULL, '개인정보처리방침', '2017-10-24 11:14:44', NULL, NULL),
-(16, NULL, NULL, '약관', '2017-10-24 11:14:44', NULL, NULL),
-(17, NULL, NULL, '디렉토리', '2017-10-24 11:14:44', NULL, NULL),
-(18, NULL, NULL, '언어', '2017-10-24 11:14:44', NULL, NULL),
-(19, NULL, NULL, NULL, '2017-10-24 11:16:49', '<a href=\"#\"> 모두 보기</a>', NULL),
-(20, NULL, NULL, NULL, '2017-10-24 11:20:09', NULL, 50);
+INSERT INTO `article` (`id`, `icon`, `article`, `allview`, `count`, `date`) VALUES
+(1, 'img/icon/iconarticle01.png', NULL, NULL, NULL, '2017-10-25 03:55:59'),
+(2, 'img/icon/iconarticle02.png', NULL, NULL, NULL, '2017-10-25 03:55:59'),
+(3, 'img/icon/iconarticle03.png', NULL, NULL, NULL, '2017-10-25 03:55:59'),
+(4, 'img/icon/iconarticle04.png', NULL, NULL, NULL, '2017-10-25 03:55:59'),
+(5, NULL, '좋아요', NULL, NULL, '2017-10-25 03:55:59'),
+(6, NULL, '문구 더보기', NULL, NULL, '2017-10-25 03:55:59'),
+(7, NULL, '댓글', NULL, NULL, '2017-10-25 03:55:59'),
+(8, NULL, 'Lorem, ipsum dolor sit amet consectetur adipisicing.', NULL, NULL, '2017-10-25 03:55:59'),
+(9, NULL, NULL, ' 모두보기', NULL, '2017-10-25 04:59:44'),
+(10, NULL, NULL, NULL, 50, '2017-10-25 04:59:44'),
+(11, NULL, NULL, NULL, 25, '2017-10-25 04:59:44');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `register`
+--
+
+CREATE TABLE `register` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `register`
+--
+
+INSERT INTO `register` (`id`, `email`, `name`, `author`, `password`) VALUES
+(1, 'highwind26@gmail.com', 'leos', 'days', 'highwind1234'),
+(2, 'stonker@hanmail.net', '라라벨', 'laravel', 'lalacroft1234');
 
 -- --------------------------------------------------------
 
@@ -78,6 +90,16 @@ CREATE TABLE `topic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- 테이블의 덤프 데이터 `topic`
+--
+
+INSERT INTO `topic` (`id`, `title`, `description`, `created`) VALUES
+(1, 'html', 'html is...', '2017-10-23 12:08:55'),
+(2, 'cascading style sheet', 'css is...', '2017-10-23 12:13:00'),
+(4, 'hellow world', '안녕하세요 hi\r\n', '2017-10-23 12:40:45'),
+(5, 'pdo', 'pdo is...', '2017-10-24 16:34:55');
+
+--
 -- 덤프된 테이블의 인덱스
 --
 
@@ -85,6 +107,12 @@ CREATE TABLE `topic` (
 -- 테이블의 인덱스 `article`
 --
 ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 테이블의 인덱스 `register`
+--
+ALTER TABLE `register`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -98,16 +126,16 @@ ALTER TABLE `topic`
 --
 
 --
--- 테이블의 AUTO_INCREMENT `article`
+-- 테이블의 AUTO_INCREMENT `register`
 --
-ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+ALTER TABLE `register`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 테이블의 AUTO_INCREMENT `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

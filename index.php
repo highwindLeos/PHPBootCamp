@@ -23,7 +23,7 @@
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form action="./process.php?mode=insert" method="POST">
                     <p>
-                        <input type="text" name="email" placeholder="휴대폰 번호 및 이메일">
+                        <input type="text" name="email" placeholder="이메일">
                     </p>
                     <p>
                         <input type="text" name="name" placeholder="성명">

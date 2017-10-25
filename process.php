@@ -8,6 +8,13 @@ switch($_GET['mode']){
         $stmt->bindParam(':name',$name);
         $stmt->bindParam(':author',$author);
         $stmt->bindParam(':password',$password);
+
+        $options = [
+            'cost' => 11,
+            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+        ];
+        
+        password_hash( $password, PASSWORD_BCRYPT, $options);
  
         $email = $_POST['email'];
         $name = $_POST['name'];
