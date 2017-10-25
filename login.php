@@ -1,4 +1,4 @@
-<?php  #배열과 변수 설정
+<!--  #배열과 변수 설정
     $icon = ['img/icon/iconarticle01.png',
             'img/icon/iconarticle02.png',
             'img/icon/iconarticle03.png',
@@ -25,10 +25,8 @@
     $allview = ' 모두 보기';
 
     $count = ' #개';
-?>
-<?php
+-->
 
-?>
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
 $stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 변수에 저장한다.
@@ -70,6 +68,7 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
     </header>
     <article>   
         <?php for($i = 1; $i < 4; $i++){ #for 문 시작 ?>
+
         <div class="article">
             <div class="titleimg">
                 <img src="<?= $icon[0] ?>">
@@ -94,6 +93,7 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
                 <a href=""><img class="submit" src="<?= $icon[3] ?>"></a>
             </p>
         </div>
+        
         <?php } #for 문 끝 ?>
     </article>  
     <footer>
