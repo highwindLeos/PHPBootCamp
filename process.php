@@ -3,28 +3,35 @@ $dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26', ar
 switch($_GET['mode']){
 
     case 'insert':
-        $stmt = $dbh->prepare("INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)");
+        $stmt = $dbh->prepare("INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)");            
         $stmt->bindParam(':email',$email);
         $stmt->bindParam(':name',$name);
         $stmt->bindParam(':author',$author);
         $stmt->bindParam(':password',$password);
 
-        $options = [
-            'cost' => 11,
-            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-        ];
-        
-        $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호와 코드
-
         $email = $_POST['email'];
         $name = $_POST['name'];
         $author = $_POST['author'];
         $password = $_POST['password'];
+
+        $options = [
+            'cost' => 11,
+            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+        ]; #솔트 (추가문자열 암호화 옵션 3번째 인자값)
         
-        $stmt->execute(); #쿼리 실행
+        $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호와 코드
+
+        if(password_verify($password, $hashpass)) #입력 패스워드와 암호화 패스워드가 동일한지 확인.
+        {
+            $stmt->execute(); #true 쿼리 실행
+        } 
+        else
+        {
+            echo "쿼리가 실패하였습니다."; #false
+        }
 
         print_r($hashpass);
-        # header("Location: login.php"); 
+        # header("Location: login.php"); #리다이렉션 페이지 이동
         break;
 
     case 'delete':
