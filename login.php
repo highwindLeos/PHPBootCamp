@@ -76,9 +76,16 @@ while($file = readdir($result)) { # readdir함수를 이용해서 디렉토리�
     </article>  
     <footer>
         <p>
-            <?php for($i = 0; $i < 10; $i++){ #for 문 시작?>
-                    <span class="footerlink" OnClick="location.href="" "><?= $list[$i][footerlink] ?></span>
-            <?php } #for 문 끝 ?>
+            <span class="footerlink" OnClick="location.href="#"">INSTARGRAM정보</span>
+            <span class="footerlink" OnClick="location.href="#"">지원</span>
+            <span class="footerlink" OnClick="location.href="#"">블로그</span>
+            <span class="footerlink" OnClick="location.href="#"">홍보 센터</span>
+            <span class="footerlink" OnClick="location.href="#"">API</span>
+            <span class="footerlink" OnClick="location.href="#"">채용</span>
+            <span class="footerlink" OnClick="location.href="#"">개인정보처리방침</span>
+            <span class="footerlink" OnClick="location.href="#"">약관</span>
+            <span class="footerlink" OnClick="location.href="#"">디렉터리</span>
+            <span class="footerlink" OnClick="location.href="#"">언어</span>
             <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
         </p>
         <p class="copy">
