@@ -24,22 +24,14 @@
 
     $allview = ' 모두 보기';
 
-    $count = ' #개';
+    $count = ' #';
 -->
 
 <?php # PDO 이용 DB접속 Code
 $dbh = new PDO('mysql:host=localhost; dbname=anicoboard', 'root', 'stonker26'); #DB 접속을 위한 인자를 설정해서 PDO 객체에 담는다.
-$stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 변수에 저장한다.
+$stmt = $dbh->prepare('SELECT * FROM article'); #생성한 객체에 쿼리를 설정해서 stmt변수에 저장한다.
 $stmt->execute(); #변수에 담긴 쿼리를 실행한다.
 $list = $stmt->fetchAll(); #모든 데이터를 가져와서 list 변수에 담는다.
-
-if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) true.
-    $stmt = $dbh->prepare('SELECT * FROM article WHERE id = :id');
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $id = $_GET['id'];
-    $stmt->execute();
-    $article = $stmt->fetch();
-}
 ?>
 
 <!DOCTYPE html>
@@ -71,21 +63,21 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
 
         <div class="article">
             <div class="titleimg">
-                <img src="<?= $icon[0] ?>">
+                <img src="<?= $list[0][icon] ?>">
             </div>
             <div class="mainimg">
                 <img src="img/image/img<?= $i ?>.png">
             </div>
             <div class="imgbtn">
-                <img src="<?= $icon[1] ?>">
-                <img src="<?= $icon[2] ?>">
+                <img src="<?= $list[1][icon] ?>">
+                <img src="<?= $list[2][icon] ?>">
             </div>
             <div class="articleparam">
-                <p class="like"><?= $article[0].$count ?></p>
-                <p class="textmore"><?= $article[1] ?></p>
-                <p class="comment"><?= $article[2].$count.'<a href="">'.$allview.'</a>' ?></p>
-                <p class="description"><?= $article[3] ?></p>
-                <p class="datetime"><?= $date ?></p> 
+                <p class="like"><?= $list[4][article].$list[11][count].'개' ?></p>
+                <p class="textmore"><?= $list[5][article] ?></p>
+                <p class="comment"><?= $list[6][article].$list[12][count].'개'.'<a href="">'.$list[10][allview].'</a>' ?></p>
+                <p class="description"><?= $list[7][article] ?></p>
+                <p class="datetime"><?= $list[0][date] ?></p> 
             </div>
             <hr>
             <p>
@@ -93,17 +85,20 @@ if(!empty($_GET['id'])) { #아이디 값이 있다면 (비어있지 않다면) t
                 <a href=""><img class="submit" src="<?= $icon[3] ?>"></a>
             </p>
         </div>
-        
+
         <?php } #for 문 끝 ?>
     </article>  
     <footer>
         <p>
             <?php for($i = 0; $i < 10; $i++){ #for 문 시작?>
-                    <span class="footerlink" OnClick="location.href="" "><?= $footerlink[$i] ?></span>
+                    <span class="footerlink" OnClick="location.href="" "><?= $list[$i][footerlink] ?></span>
             <?php } #for 문 끝 ?>
         </p>
         <p class="copy">
             <span> &#169; 2017 instargram</span>
+        </p>
+        <p style="color:black;">
+        <!-- print_r($list); list 변수 내용 찍기-->
         </p>
     </footer>
 </body>
