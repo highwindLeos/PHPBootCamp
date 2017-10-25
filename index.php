@@ -21,15 +21,15 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form action="/PDO/process.php?mode=insert" method="POST">
+                <form action="./process.php?mode=insert" method="POST">
                     <p>
-                        <input type="text" name="id" placeholder="휴대폰 번호 및 이메일">
+                        <input type="text" name="email" placeholder="휴대폰 번호 및 이메일">
                     </p>
                     <p>
                         <input type="text" name="name" placeholder="성명">
                     </p>
                     <p>
-                        <input type="text" name="user" placeholder="사용자 이름">
+                        <input type="text" name="author" placeholder="사용자 이름">
                     </p>
                     <p>
                         <input type="password" name="password" placeholder="비밀번호">
@@ -52,24 +52,18 @@
     </section>        
     <footer>
         <p>
-        <?php
-        $link = ['INSTAGRAM 정보',
-                '지원',
-                '블로그',
-                '홍보 센터',
-                'API',
-                '채용',
-                '정보개인정보처리방침',
-                '약관',
-                '디렉터리',
-                '언어'];
-
-            for($i = 0; $i < 10; $i++)
-            {
-                echo '<span class="footerlink" OnClick="location.href="" ">'.$link[$i].'</span>';
-            }
-        ?>
-        <span> &#169; 2017 instargram</span>
+        <span class="footerlink" OnClick="location.href="#"">INSTARGRAM정보</span>
+            <span class="footerlink" OnClick="location.href="#"">지원</span>
+            <span class="footerlink" OnClick="location.href="#"">블로그</span>
+            <span class="footerlink" OnClick="location.href="#"">홍보 센터</span>
+            <span class="footerlink" OnClick="location.href="#"">API</span>
+            <span class="footerlink" OnClick="location.href="#"">채용</span>
+            <span class="footerlink" OnClick="location.href="#"">개인정보처리방침</span>
+            <span class="footerlink" OnClick="location.href="#"">약관</span>
+            <span class="footerlink" OnClick="location.href="#"">디렉터리</span>
+            <span class="footerlink" OnClick="location.href="#"">언어</span>
+            <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
+            <span> &#169; 2017 instargram</span>
         </p>
                 
             
