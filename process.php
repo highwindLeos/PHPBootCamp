@@ -7,7 +7,8 @@ switch($_GET['mode']){
         $stmt->bindParam(':email',$email);
         $stmt->bindParam(':name',$name);
         $stmt->bindParam(':author',$author);
-        $stmt->bindParam(':password',$password);
+        $stmt->bindParam(':password',$hashpass);
+
 
         $email = $_POST['email'];
         $name = $_POST['name'];
@@ -17,9 +18,10 @@ switch($_GET['mode']){
         $options = [
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-        ]; #솔트 (추가문자열 암호화 옵션 3번째 인자값)
+        ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
         
-        $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호와 코드
+        $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
+        
 
         if(password_verify($password, $hashpass)) #입력 패스워드와 암호화 패스워드가 동일한지 확인.
         {
@@ -29,9 +31,8 @@ switch($_GET['mode']){
         {
             echo "쿼리가 실패하였습니다."; #false
         }
-
-        print_r($hashpass);
-        # header("Location: login.php"); #리다이렉션 페이지 이동
+                
+        header("Location: login.php"); #리다이렉션 페이지 이동
         break;
 
     case 'delete':
