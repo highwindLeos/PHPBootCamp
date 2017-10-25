@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- 생성 시간: 17-10-24 22:33
+-- 생성 시간: 17-10-25 01:18
 -- 서버 버전: 5.7.19
 -- PHP 버전: 7.0.23
 
@@ -74,7 +74,11 @@ CREATE TABLE `register` (
 
 INSERT INTO `register` (`id`, `email`, `name`, `author`, `password`) VALUES
 (1, 'highwind26@gmail.com', 'leos', 'days', 'highwind1234'),
-(2, 'stonker@hanmail.net', '라라벨', 'laravel', 'lalacroft1234');
+(2, 'stonker@hanmail.net', '라라벨', 'laravel', 'lalacroft1234'),
+(3, 'highwind26@naver.com', '이동훈', 'ordong', 'ordong 1234'),
+(4, 'highwind26@naver.com', '이동훈', 'ordong', 'ordong 1234'),
+(5, 'highwind26@naver.com', '이동훈', 'ordong', 'ordong 1234'),
+(6, 'highwind26@naver.com', '이동훈', 'ordong', 'ordong 1234');
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,7 @@ ALTER TABLE `topic`
 -- 테이블의 AUTO_INCREMENT `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 테이블의 AUTO_INCREMENT `topic`
