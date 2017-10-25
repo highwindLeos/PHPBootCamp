@@ -14,14 +14,17 @@ switch($_GET['mode']){
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ];
         
-        password_hash( $password, PASSWORD_BCRYPT, $options);
- 
+        $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호와 코드
+
         $email = $_POST['email'];
         $name = $_POST['name'];
         $author = $_POST['author'];
         $password = $_POST['password'];
-        $stmt->execute();
-        header("Location: login.php"); 
+        
+        $stmt->execute(); #쿼리 실행
+
+        print_r($hashpass);
+        # header("Location: login.php"); 
         break;
 
     case 'delete':
