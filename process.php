@@ -21,15 +21,8 @@ switch($_GET['mode']){
         ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
         
         $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
-
-        if(password_verify($password, $hashpass)) #입력 패스워드와 암호화 패스워드가 동일한지 확인.
-        {
-            $stmt->execute(); #true 쿼리 실행
-        } 
-        else
-        {
-            echo "쿼리가 실패하였습니다."; #false
-        }
+        
+        $stmt->execute(); #true 쿼리 실행
                 
         header("Location: login.php"); #리다이렉션 페이지 이동
         break;
