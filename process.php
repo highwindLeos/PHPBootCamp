@@ -8,8 +8,7 @@ switch($_GET['mode']){
         $stmt->bindParam(':name',$name);
         $stmt->bindParam(':author',$author);
         $stmt->bindParam(':password',$hashpass);
-
-
+        
         $email = $_POST['email'];
         $name = $_POST['name'];
         $author = $_POST['author'];
