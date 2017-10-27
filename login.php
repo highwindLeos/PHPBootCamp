@@ -64,7 +64,7 @@ while($file = readdir($result)) { # readdir함수를 이용해서 디렉토리�
                 <p class="comment"><?= htmlspecialchars($list[6][article].$list[10][count].'개')
                                        .'<a href="">'.htmlspecialchars($list[8][allview]).'</a>' ?></p>
                 <p class="description"><?= htmlspecialchars($list[7][article]) ?></p>
-                <p class="datetime"><?= htmlspecialchars($list[0][date]) ?></p> 
+                <p class="datetime"><?= htmlspecialchars($list[$i][date]) ?></p> 
             </div>
             <hr>
             <p>

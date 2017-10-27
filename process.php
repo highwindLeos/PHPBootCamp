@@ -43,7 +43,7 @@ switch($_GET['mode']){
                         ); #다국어 문자 필터링
 
 
-        $stmt->execute(); #true 쿼리 실행
+        $stmt->execute(); # 쿼리 실행
                 
         header("Location: login.php"); #리다이렉션 페이지 이동
         break;
