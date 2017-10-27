@@ -4,15 +4,28 @@ switch($_GET['mode']){
 
     case 'insert':
         $stmt = $dbh->prepare("INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)");            
-        $stmt->bindParam(':email',$email);
-        $stmt->bindParam(':name',$name);
-        $stmt->bindParam(':author',$author);
-        $stmt->bindParam(':password',$hashpass);
+        $stmt->bindParam(':email',$emailVal);
+        $stmt->bindParam(':name',$nameSefe);
+        $stmt->bindParam(':author',$authorSefe);
+        $stmt->bindParam(':password',$hashpassSefe);
         
-        $email = htmlspecialchars($_POST['email']);
-        $name = htmlspecialchars($_POST['name']);
-        $author = htmlspecialchars($_POST['author']);
-        $password = htmlspecialchars($_POST['password']);
+        $email = $_POST['email'];
+        $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
+        $emailVal = filter_var($emailSefe, FILTER_VALIDATE_EMAIL); # 이메일 입력 데이터 검증
+
+        $name = $_POST['name'];
+        $nameSefe = filter_var($name, 
+                    FILTER_SANITIZE_STRING,
+                    FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
+                    ); #다국어 문자 필터링
+
+        $author = $_POST['author'];
+        $authorSefe = filter_var($author, 
+                      FILTER_SANITIZE_STRING,
+                      FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
+                      ); #다국어 문자 필터링
+
+        $password = $_POST['password'];
 
         $options = [
             'cost' => 11,
@@ -20,7 +33,13 @@ switch($_GET['mode']){
         ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
         
         $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
-        
+
+        $hashpassSefe = filter_var($hashpass, 
+                        FILTER_SANITIZE_STRING,
+                        FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
+                        ); #다국어 문자 필터링
+
+
         $stmt->execute(); #true 쿼리 실행
                 
         header("Location: login.php"); #리다이렉션 페이지 이동
