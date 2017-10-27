@@ -9,10 +9,10 @@ switch($_GET['mode']){
         $stmt->bindParam(':author',$author);
         $stmt->bindParam(':password',$hashpass);
         
-        $email = $_POST['email'];
-        $name = $_POST['name'];
-        $author = $_POST['author'];
-        $password = $_POST['password'];
+        $email = htmlspecialchars($_POST['email']);
+        $name = htmlspecialchars($_POST['name']);
+        $author = htmlspecialchars($_POST['author']);
+        $password = htmlspecialchars($_POST['password']);
 
         $options = [
             'cost' => 11,
