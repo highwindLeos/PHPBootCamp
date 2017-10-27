@@ -11,7 +11,10 @@ switch($_GET['mode']){
         
         $email = $_POST['email'];
         $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
-        $emailVal = filter_var($emailSefe, FILTER_VALIDATE_EMAIL); # 이메일 입력 데이터 검증
+        
+        if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
+            $emailVal = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
+        } 
 
         $name = $_POST['name'];
         $nameSefe = filter_var($name, 
