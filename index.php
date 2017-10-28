@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <section class="content">
         <div class="item">
             <img src="img/slide.png">
@@ -52,22 +51,20 @@
     </section>        
     <footer>
         <p>
-        <span class="footerlink" OnClick="location.href="#"">INSTARGRAM정보</span>
-            <span class="footerlink" OnClick="location.href="#"">지원</span>
-            <span class="footerlink" OnClick="location.href="#"">블로그</span>
-            <span class="footerlink" OnClick="location.href="#"">홍보 센터</span>
-            <span class="footerlink" OnClick="location.href="#"">API</span>
-            <span class="footerlink" OnClick="location.href="#"">채용</span>
-            <span class="footerlink" OnClick="location.href="#"">개인정보처리방침</span>
-            <span class="footerlink" OnClick="location.href="#"">약관</span>
-            <span class="footerlink" OnClick="location.href="#"">디렉터리</span>
-            <span class="footerlink" OnClick="location.href="#"">언어</span>
+            <span class="footerlink"><a href="#">INSTARGRAM정보</a></span>
+            <span class="footerlink"><a href="#">지원</a></span>
+            <span class="footerlink"><a href="#">블로그</a></span>
+            <span class="footerlink"><a href="#">홍보</a> </span>
+            <span class="footerlink"><a href="#">센터</a></span>
+            <span class="footerlink"><a href="#">API</a></span>
+            <span class="footerlink"><a href="#">채용</a></span>
+            <span class="footerlink"><a href="#">개인정보처리방침</a></span>
+            <span class="footerlink"><a href="#">약관</a></span>
+            <span class="footerlink"><a href="#">디렉터리</a></span>
+            <span class="footerlink"><a href="#">언어</a></span>
             <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
             <span> &#169; 2017 instargram</span>
         </p>
-                
-            
-        
     </footer>
 </body>
 </html>
