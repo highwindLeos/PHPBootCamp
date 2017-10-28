@@ -58,22 +58,23 @@ input{
 }
 
 .content{
-    display: -webkit-flex;
     display: flex;
     -webkit-justify-content: center;
     justify-content: center;
-    -webkit-align-items: center;
-    align-items: center; 
-    margin-top: 50px;
     width: 100%;
+    margin-top: 50px;
+    
 }
 
 #logo{
     margin: 20px 0 20px 0;
 }
 
-.item { 
-    margin: 35px 25px;
+.item {
+    width: 25%;
+    justify-content: center;
+    align-items: center; 
+    margin: 35px 20px;
     text-align:center;
 }
 
@@ -117,6 +118,18 @@ input{
     margin-bottom: 5px;
 }
 
+/* responsive layout */
+@media ( max-width: 1220px ) {
+    .content {
+      width: auto;
+      display: flex;
+      flex-direction: column; /* flex 요소 세로 */
+    }
+    .item {
+      float: none;
+      width: auto;
+    }
+  }
 
 footer {
     bottom: 0;
