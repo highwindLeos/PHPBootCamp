@@ -62,7 +62,7 @@ input{
     -webkit-justify-content: center;
     justify-content: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 25px;
     
 }
 
@@ -119,15 +119,17 @@ input{
 }
 
 /* responsive layout */
-@media ( max-width: 1220px ) {
+@media ( max-width: 1340px ) {
     .content {
       width: auto;
       display: flex;
-      flex-direction: column; /* flex 요소 세로 */
+      justify-content: center; 
+      flex-direction: column;/* flex 요소 세로 */
     }
     .item {
       float: none;
       width: auto;
+      margin: 25px 18%;
     }
   }
 
