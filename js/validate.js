@@ -2,13 +2,23 @@ function checkForm() {
     
     var Email = document.fmField.userEmail;
     // 이메일 입력 유무 체크
-    if(Email.value == '' || !(Email.value.length >= 3 && Email.value.length <= 12)) {
+    if(Email.value == '') {
         window.alert("이메일을 입력하시오");
         document.fmField.userEmail.focus();
         document.getElementById('userEmail').select();
         return false; // 입력이 안되어 있다면 submint 이벤트를 중지
     }
     
+    var x = document.forms["fmField"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+        window.alert("이메일 형식에 맞게 입력하시오");
+        document.fmField.userEmail.focus();
+        document.getElementById('userEmail').select();
+        return false; // 입력이 안되어 있다면 submint 이벤트를 중지
+    }
+        
     var Name = document.getElementById('userName');
     // 이름 입력 유무 체크
     if(document.fmField.userName.value == ''){
