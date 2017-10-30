@@ -1,7 +1,5 @@
 <?php
     if($_POST){
-        # 비어있지 않아야한다.
-        # 6자 이상이어야하는 항목이 존재한다.
         # 변수설정
         $errors = array();
         $check_email  = preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $_POST['email']); 
