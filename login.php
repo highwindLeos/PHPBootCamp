@@ -93,8 +93,6 @@ while($file = readdir($result)) { # readdir함수를 이용해서 디렉토리�
         <p class="copy">
             <span> &#169; 2017 instargram</span>
         </p>
-        <p style="color:black;">
-        </p>
     </footer>
 </body>
 </html>

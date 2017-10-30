@@ -14,7 +14,10 @@ switch($_GET['mode']){
         
         if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
             $emailVal = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
-        } 
+        } else {
+            $emailErr = "이메일 형식이 아닙니다."; 
+            header("Location: index.php"); #리다이렉션 페이지 이동
+        }
 
         $name = $_POST['name'];
         $nameSefe = filter_var($name, 

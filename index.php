@@ -20,18 +20,19 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form action="./process.php?mode=insert" method="POST">
+                <form id="fmField" name="fmField" 
+                    action="./process.php?mode=insert" method="POST" onsubmit="return checkForm();">
                     <p>
-                        <input type="text" name="email" placeholder="이메일">
+                        <input type="text" id="userEmail" name="email" placeholder="이메일">
                     </p>
                     <p>
-                        <input type="text" name="name" placeholder="성명">
+                        <input type="text" id="userName" name="name" placeholder="성명">
                     </p>
                     <p>
-                        <input type="text" name="author" placeholder="사용자 이름">
+                        <input type="text" id="userAuthor" name="author" placeholder="사용자 이름">
                     </p>
                     <p>
-                        <input type="password" name="password" placeholder="비밀번호">
+                        <input type="password" id="userPassword" name="password" placeholder="비밀번호">
                     </p>
                     <input class="join" type="image" value="가입" src="img/join.png">                    
                 </form>
@@ -67,4 +68,5 @@
         </p>
     </footer>
 </body>
+<script src="js/validate.js" type="text/javascript"></script>
 </html>
