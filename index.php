@@ -21,7 +21,7 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form method="POST"> <!-- action="./process.php?mode=insert" -->
+                <form method="POST" name="formjoin"> <!-- action="./process.php?mode=insert" -->
                     <p>
                         <input type="text" id="email" name="email" 
                         value="<?php if(isset($errors['email'])) echo $_POST['email']; ?>" placeholder="이메일">
