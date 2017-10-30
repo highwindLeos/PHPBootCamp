@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <h3><?= date('Y-m-d H:i:s').' (24시간)</br>'?></h3>
-
-    <h3><?= date("Y-m-d h:i:sa").' (12시간)'?></h3>
-
-    <script> 
-        window.setTimeout('window.location.reload()',1000); //1초마다 새로고침   
-    </script>
+    <h1>현제 시간은 <?php
+    echo date('Y-n-j H:m:s');
+    ?> 입니다.</h1>
 </body>
 </html>
+
