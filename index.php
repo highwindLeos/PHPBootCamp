@@ -1,3 +1,4 @@
+<?php include_once "validate.php"; ?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -20,20 +21,31 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form id="fmField" name="fmField" 
-                    action="./process.php?mode=insert" method="POST" onsubmit="return checkForm();">
+                <form method="POST"> <!-- action="./process.php?mode=insert" -->
                     <p>
-                        <input type="text" id="userEmail" name="email" placeholder="이메일">
+                        <input type="text" id="email" name="email" 
+                        value="<?php if(isset($errors['email'])) echo $_POST['email']; ?>" placeholder="이메일">
                     </p>
+                    <p><?php if(isset($errors['email1'])) echo $errors['email1']; ?></p>
+                    <p><?php if(isset($errors['email2'])) echo $errors['email2']; ?></p>
                     <p>
-                        <input type="text" id="userName" name="name" placeholder="성명">
+                        <input type="text" id="name" name="name" 
+                        value="<?php if(isset($errors['name'])) echo $_POST['name']; ?>"  placeholder="성명">
                     </p>
+                    <p><?php if(isset($errors['name1'])) echo $errors['name1']; ?></p>
+                    <p><?php if(isset($errors['name2'])) echo $errors['name2']; ?></p>
                     <p>
-                        <input type="text" id="userAuthor" name="author" placeholder="사용자 이름">
+                        <input type="text" id="author" name="author" 
+                        value="<?php if(isset($errors['author'])) echo $_POST['author']; ?>"  placeholder="사용자 이름">
                     </p>
+                    <p><?php if(isset($errors['author1'])) echo $errors['author1']; ?></p>
+                    <p><?php if(isset($errors['author2'])) echo $errors['author2']; ?></p>
                     <p>
-                        <input type="password" id="userPassword" name="password" placeholder="비밀번호">
+                        <input type="password" id="password" name="password" 
+                        value="<?php if(isset($errors['password'])) echo $_POST['password']; ?>"  placeholder="비밀번호">
                     </p>
+                    <p><?php if(isset($errors['password1'])) echo $errors['password1']; ?></p>
+                    <p><?php if(isset($errors['password2'])) echo $errors['password2']; ?></p>
                     <input class="join" type="image" value="가입" src="img/join.png">                    
                 </form>
                 <p>가입하면 Instagram의 약관 및 개인정보처리방침에 동의하게 됩니다.</p>
@@ -68,5 +80,5 @@
         </p>
     </footer>
 </body>
-<script src="js/validate.js" type="text/javascript"></script>
+<!-- <script src="js/validate.js" type="text/javascript"></script> -->
 </html>
