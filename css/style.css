@@ -118,6 +118,11 @@ input{
     margin-bottom: 5px;
 }
 
+.validate{
+    color: brown;
+    font-size: 9px;
+}
+
 /* responsive layout */
 @media ( max-width: 1340px ) {
     .content {

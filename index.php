@@ -27,23 +27,23 @@
                     <p>
                         <input type="text" id="email" name="email" placeholder="이메일">
                     </p>
-                    <p><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; ?></p>
-                    <p><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; ?></p>
                     <p>
                         <input type="text" id="name" name="name" placeholder="성명">
                     </p>
-                    <p><?php if(isset($_SESSION['name1'])) echo $_SESSION['name1']; ?></p>
-                    <p><?php if(isset($_SESSION['name2'])) echo $_SESSION['name2']; ?></p>                    
+                    <p class="validate"><?php if(isset($_SESSION['name1'])) echo $_SESSION['name1']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['name2'])) echo $_SESSION['name2']; ?></p>                    
                     <p>
                         <input type="text" id="author" name="author" placeholder="사용자 이름">
                     </p>
-                    <p><?php if(isset($_SESSION['author1'])) echo $_SESSION['author1']; ?></p>
-                    <p><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['author1'])) echo $_SESSION['author1']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2']; ?></p>
                     <p>
                         <input type="password" id="password" name="password" placeholder="비밀번호">
                     </p>
-                    <p><?php if(isset($_SESSION['password1'])) echo $_SESSION['password1']; ?></p>
-                    <p><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['password1'])) echo $_SESSION['password1']; ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2']; ?></p>
                     <input class="join" type="image" value="가입" src="img/join.png">                    
                 </form>
                 <p>가입하면 Instagram의 약관 및 개인정보처리방침에 동의하게 됩니다.</p>
