@@ -14,18 +14,12 @@ switch($_GET['mode']){
         if($_POST){
             # 변수설정
             $errors = array();
-            $check_email = preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $_POST['email']); 
-            #이메일 형식 정규표현식
 
             # 검증 코드
             # 이메일
             if(empty($_POST['email']))
             {
                 $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
-            }
-            if($check_email == false) #이메일 값이 형식에 맞지 않을 경우
-            {
-                $_SESSION['email2'] = $errors['email2'] = "* 잘못된 이메일 형식입니다.";
             }
             # 이름
             if(empty($_POST['name']))
