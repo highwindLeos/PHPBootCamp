@@ -1,3 +1,6 @@
 <?php foreach ($List as $row): ?>
-    <?= $row['field1'] ?> - <?= $row['field1'] ?>
+    <ul>
+        <li><?= $row.'</br>' ?></li>
+        <li><?= $row[2] ?> - <?= $row[1] ?></li>
+    </ul>
 <?php endforeach ?>
