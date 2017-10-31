@@ -1,6 +1,5 @@
 <?php
     session_start();
-    var_dump($_SESSION['email2']);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
