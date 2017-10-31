@@ -86,6 +86,7 @@ switch($_GET['mode']){
 
         if(count($errors) == 0){ #에러값이 없다면 true
             $stmt->execute(); # 쿼리 실행
+            $_SESSION = array(); #세션 데이터 초기화.
             header("Location: login.php"); #리다이렉션 페이지 이동
         } else { 
             header("Location: index.php"); #리다이렉션 페이지 이동
