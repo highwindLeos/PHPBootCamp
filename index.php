@@ -1,6 +1,6 @@
-<?php include_once "validate.php"; 
-      session_start();
-    var_dump($_SESSION); 
+<?php
+    session_start();
+    var_dump($_SESSION['email2']);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -26,26 +26,22 @@
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form method="POST" name="formjoin" action="./process.php?mode=insert">
                     <p>
-                        <input type="text" id="email" name="email" 
-                        value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email']; ?>" placeholder="이메일">
+                        <input type="text" id="email" name="email" placeholder="이메일">
                     </p>
                     <p><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; ?></p>
                     <p><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; ?></p>
                     <p>
-                        <input type="text" id="name" name="name" 
-                        value="<?php if(isset($_SESSION['name'])) echo $_SESSION['name']; ?>"  placeholder="성명">
+                        <input type="text" id="name" name="name" placeholder="성명">
                     </p>
                     <p><?php if(isset($_SESSION['name1'])) echo $_SESSION['name1']; ?></p>
                     <p><?php if(isset($_SESSION['name2'])) echo $_SESSION['name2']; ?></p>                    
                     <p>
-                        <input type="text" id="author" name="author" 
-                        value="<?php if(isset($_SESSION['author'])) echo $_SESSION['author']; ?>"  placeholder="사용자 이름">
+                        <input type="text" id="author" name="author" placeholder="사용자 이름">
                     </p>
                     <p><?php if(isset($_SESSION['author1'])) echo $_SESSION['author1']; ?></p>
                     <p><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2']; ?></p>
                     <p>
-                        <input type="password" id="password" name="password" 
-                        value="<?php if(isset($_SESSION['password'])) echo $_SESSION['password']; ?>"  placeholder="비밀번호">
+                        <input type="password" id="password" name="password" placeholder="비밀번호">
                     </p>
                     <p><?php if(isset($_SESSION['password1'])) echo $_SESSION['password1']; ?></p>
                     <p><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2']; ?></p>

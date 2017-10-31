@@ -1,5 +1,4 @@
 <?php
-session_save_path('./session');
 session_start();
 $dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 switch($_GET['mode']){
@@ -56,7 +55,7 @@ switch($_GET['mode']){
         if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
             $emailVal = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
         } else{
-            $_SESSION['email1'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
+            $_SESSION['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
         }
 
         $name = $_POST['name'];
