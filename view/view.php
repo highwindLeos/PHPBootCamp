@@ -22,35 +22,31 @@
             </nav>
         </div>
     </header>
-    <article>   
-        <?php for($i = 0; $i < $file_count; $i++){ #for 문 시작 (img/image 폴더의 이미지 개수만큼 증가) ?>
+    <article>
+        <?php foreach($list as $item){ ?>
         <div class="article">
             <div class="titleimg">
-                <img src="<?= htmlspecialchars($list[0][icon]) ?>"> <!-- 다차원 배열값 출력하기 $변수명[배열인자][배열인자] --> 
+                <img src="<?= htmlspecialchars($item[userIcon]) ?>">
             </div>
             <div class="mainimg">
-                <img src="img/image/img<?= $i ?>.png">
+                <img src="<?= htmlspecialchars($item[image]) ?>">
             </div>
             <div class="imgbtn">
-                <img src="<?= htmlspecialchars($list[1][icon]) ?>">
-                <img src="<?= htmlspecialchars($list[2][icon]) ?>">
+                <img src="<?= htmlspecialchars($item[goodIcon]) ?>">
+                <img src="<?= htmlspecialchars($item[commentIcon]) ?>">
             </div>
             <div class="articleparam">
-                <p class="like"><?= htmlspecialchars($list[4][article].$list[9][count].'개') ?></p>
-                <p class="textmore"><?= htmlspecialchars($list[5][article]) ?></p>
-                <p class="comment"><?= htmlspecialchars($list[6][article].$list[10][count].'개')
-                                       .'<a href="">'.htmlspecialchars($list[8][allview]).'</a>' ?></p>
-                <p class="description"><?= htmlspecialchars($list[7][article]) ?></p>
-                <p class="datetime"><?= htmlspecialchars($list[$i][date]) ?></p> 
+                <p class="like"><?= htmlspecialchars($item[viewCount].'개') ?></p>
+                <p class="comment"><?= htmlspecialchars($item[userId].$item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?></p>
+                <p class="datetime"><?= htmlspecialchars($item[date]) ?></p> 
             </div>
             <hr>
             <p>
                 <input class="comment" type="text" placeholder="댓글달기"> 
-                <a href=""><img class="submit" src="<?= htmlspecialchars($list[3][icon]) ?>"></a>
+                <a href=""><img class="submit" src="<?= htmlspecialchars($item[commentSubmit]) ?>"></a>
             </p>
         </div>
-
-        <?php } #for 문 끝 ?>
+        <?php } ?>
     </article>  
     <footer>
         <p>
@@ -65,7 +61,6 @@
             <span class="footerlink"><a href="#">약관</a></span>
             <span class="footerlink"><a href="#">디렉터리</a></span>
             <span class="footerlink"><a href="#">언어</a></span>
-            <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
         </p>
         <p class="copy">
             <span> &#169; 2017 instargram</span>

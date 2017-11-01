@@ -1,6 +1,12 @@
-<?php foreach ($List as $row): ?>
+<?php foreach ($list as $item): ?>
     <ul>
-        <li><?= $row.'</br>' ?></li>
-        <li><?= $row[2] ?> - <?= $row[1] ?></li>
+        <li><?= $item[0] ?></li>
+        <li><?= $item[1] ?></li>
+        <li><?= $item[2] ?></li>
+        <li><?= $item[3] ?></li>
+        <li><?= $item[4] ?></li>
+        <li><?= $item[5] ?></li>
+        <li><?= $item[6] ?></li>
+        <hr>
     </ul>
 <?php endforeach ?>
