@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Camp instargram - Log in</title>
 
-    <link rel="icon" href="/PHPcamp/img/favicon.ico"/>
+    <link rel="icon" href="PHPcamp/img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -37,7 +37,9 @@
             </div>
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item[viewCount].'개') ?></p>
-                <p class="comment"><?= htmlspecialchars($item[userId].$item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?></p>
+                <p class="comment"><span class="userid"><?= htmlspecialchars($item[userId]).' '?></span>
+                                   <?= htmlspecialchars($item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?>
+                </p>
                 <p class="datetime"><?= htmlspecialchars($item[date]) ?></p> 
             </div>
             <hr>
