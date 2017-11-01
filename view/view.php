@@ -37,14 +37,15 @@
             </div>
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item[viewCount].'개') ?></p>
-                <p class="comment"><span class="userid"><?= htmlspecialchars($item[userId]).' '?></span>
-                                   <?= htmlspecialchars($item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?>
+                <p class="comment">
+                    <span class="userid"><?= htmlspecialchars($item[userId]).' '?></span>
+                    <?= htmlspecialchars($item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?>
                 </p>
                 <p class="datetime"><?= htmlspecialchars($item[date]) ?></p> 
             </div>
             <hr>
             <p>
-                <input class="comment" type="text" placeholder="댓글달기"> 
+                <input class="comment" type="text" placeholder="댓글달기" /> 
                 <a href=""><img class="submit" src="<?= htmlspecialchars($item[commentSubmit]) ?>"></a>
             </p>
         </div>
