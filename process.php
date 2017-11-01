@@ -71,14 +71,11 @@ switch($_GET['mode']){
                       ); #다국어 문자 필터링
 
         $password = $_POST['password'];
-
         $options = [
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
-        
         $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
-
         $hashpassSefe = filter_var($hashpass, 
                         FILTER_SANITIZE_STRING,
                         FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
