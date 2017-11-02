@@ -1,7 +1,6 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=anicoboard; charset=utf8';
-$dId = 'root';
-$dPass = 'stonker26';
+
+require 'config/config.php';
 
 $db = new PDO($dsn, $dId, $dPass);
 

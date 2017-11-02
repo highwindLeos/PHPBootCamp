@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-$dsn = 'mysql:host=localhost;dbname=anicoboard';
-$dId = 'root';
-$dPass = 'stonker26';
+require 'config/config.php';
 
 $dbh = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
