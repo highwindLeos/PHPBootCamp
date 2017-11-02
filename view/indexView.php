@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Camp instargram</title>
 
-    <link rel="icon" href="./img/favicon.ico"/>
+    <link rel="icon" href="img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

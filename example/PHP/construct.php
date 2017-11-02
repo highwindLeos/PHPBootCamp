@@ -16,3 +16,5 @@ $file = new MyFileObject('data.txt');
 
 var_dump($file->isFile());
 var_dump($file->filename);
+
+?>

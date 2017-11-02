@@ -1,10 +1,18 @@
 <?php
 session_start();
-$dbh = new PDO('mysql:host=localhost;dbname=anicoboard', 'root', 'stonker26', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+$dsn = 'mysql:host=localhost;dbname=anicoboard';
+$dId = 'root';
+$dPass = 'stonker26';
+
+$dbh = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+$insertSql = 'INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)';
+
 switch($_GET['mode']){
 
     case 'insert':
-        $stmt = $dbh->prepare("INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)");            
+        $stmt = $dbh->prepare($insertSql);            
         $stmt->bindParam(':email',$emailVal);
         $stmt->bindParam(':name',$nameSefe);
         $stmt->bindParam(':author',$authorSefe);
