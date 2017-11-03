@@ -59,11 +59,9 @@ input{
 
 .content{
     display: flex;
-    -webkit-justify-content: center;
     justify-content: center;
     width: 100%;
     margin-top: 25px;
-    
 }
 
 #logo{
@@ -73,9 +71,9 @@ input{
 .item {
     width: 25%;
     justify-content: center;
-    align-items: center; 
-    margin: 35px 20px;
+    align-items: center;
     text-align:center;
+    margin: 35px 50px;
 }
 
 .item:nth-child(1) { 
@@ -86,20 +84,20 @@ input{
 }
 
 .logo{
-    border: 1px rgba(128, 128, 128, 0.2) solid;
+    border: 1px #cccccc solid;
     margin-top: 15px;
 }
 
 .login{
     align-content: center;
-    border: 1px rgba(128, 128, 128, 0.2) solid;   
+    border: 1px #cccccc solid;   
     padding: 20px;    
     margin-bottom: 20px;
     background: #fff;
 }
 
 .auth{
-    border: 1px rgba(128, 128, 128, 0.2) solid;
+    border: 1px #cccccc solid;
     padding: 15px;
     margin-bottom: 20px;
     background: #fff;
@@ -122,16 +120,15 @@ input{
 .validate{
     align-content: center;
     border-radius: 10px;
-    margin: 3px 10%;
+    margin: 5px 0px;
     text-align: center;
-    width: 70%;
-    background: linear-gradient(135deg, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
-    color: white;
-    font-size: 9px;
+    width: 100%;
+    color: #cccccc;
+    font-size: 11px;
 }
 
 /* responsive layout */
-@media ( max-width: 1340px ) {
+@media ( max-width: 1240px ) {
     .content {
       width: auto;
       display: flex;
