@@ -47,12 +47,13 @@ a:active {
 }
 
 input{
-    border: 0;
+    border: 1px #003962 dotted;
+    border-radius: 20px;
     outline: none;
     overflow: hidden;
     width: 255px;
-    margin: 3px 0 3px 0;
-    padding: 9px 0 7px 8px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
     text-overflow: ellipsis;
     background-color: #F9FAF9;
 }
@@ -69,7 +70,7 @@ input{
 }
 
 .item {
-    width: 25%;
+    width: 28%;
     justify-content: center;
     align-items: center;
     text-align:center;
@@ -109,10 +110,6 @@ input{
     margin-bottom: 15px;
 }
 
-.logintext{
-    color: #5BA4F3;
-}
-
 .apptext{
     margin-bottom: 5px;
 }
@@ -123,8 +120,8 @@ input{
     margin: 5px 0px;
     text-align: center;
     width: 100%;
-    color: #cccccc;
-    font-size: 11px;
+    color: #A1B0C7;
+    font-size: 12px;
 }
 
 /* responsive layout */
@@ -133,7 +130,7 @@ input{
       width: auto;
       display: flex;
       justify-content: center; 
-      flex-direction: column;/* flex 요소 세로 */
+      flex-direction: column; /* flex 요소 세로 */
     }
     .item {
       float: none;
@@ -152,5 +149,5 @@ footer {
 
 .footerlink{
     padding: 0 10px;
-    cursor:pointer;
+    cursor : pointer;
 }
