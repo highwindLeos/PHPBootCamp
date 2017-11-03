@@ -11,5 +11,10 @@ class loginModel
     public function getAlls() {
        return  $this->db->query('SELECT * FROM article');
     }
+    
+    public function Insert() {
+       return  $this->db->query('INSERT INTO register (email, name, author, password) VALUES 
+                                (:email, :name, :author, :password)');
+    }
 }
 ?>
