@@ -91,6 +91,7 @@ input{
 }
 
 .login{
+    align-content: center;
     border: 1px rgba(128, 128, 128, 0.2) solid;   
     padding: 20px;    
     margin-bottom: 20px;
@@ -119,7 +120,13 @@ input{
 }
 
 .validate{
-    color: brown;
+    align-content: center;
+    border-radius: 10px;
+    margin: 3px 10%;
+    text-align: center;
+    width: 70%;
+    background: linear-gradient(135deg, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    color: white;
     font-size: 9px;
 }
 

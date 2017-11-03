@@ -16,7 +16,7 @@
         </div>
         <div class="item">
             <div class="login">
-                <a href="#"><img id="logo" src="img/logo.png"></a>
+                <a href="index.php"><img id="logo" src="img/logo.png"></a>
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="logo" src="img/login.png"></a>
                 <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
