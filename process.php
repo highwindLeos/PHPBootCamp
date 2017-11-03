@@ -2,7 +2,6 @@
 session_start();
 
 require 'config/config.php';
-
 $dbh = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
 $insertSql = 'INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)';
