@@ -89,6 +89,10 @@ hr{
     text-align: center;
 }
 
+.imgbtn img{
+    margin: 0 2px;
+}
+
 .datetime{
     color: #999; 
     font-size: 12px;

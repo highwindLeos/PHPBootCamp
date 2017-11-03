@@ -54,7 +54,7 @@ switch($_GET['mode']){
             }
         }        
         
-        $email = $_POST['email'];
+        $email = trim($_POST['email']);
         $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
         
         if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
@@ -63,19 +63,19 @@ switch($_GET['mode']){
             $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
         }
 
-        $name = $_POST['name'];
+        $name = trim($_POST['name']);
         $nameSefe = filter_var($name, 
                     FILTER_SANITIZE_STRING,
                     FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
                     ); #다국어 문자 필터링
 
-        $author = $_POST['author'];
+        $author = trim($_POST['author']);
         $authorSefe = filter_var($author, 
                       FILTER_SANITIZE_STRING,
                       FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
                       ); #다국어 문자 필터링
 
-        $password = $_POST['password'];
+        $password = trim($_POST['password']);
         $options = [
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
