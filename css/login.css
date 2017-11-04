@@ -41,6 +41,7 @@ hr{
 
 .container {
     position: fixed;
+    z-index: 9999;
     top: 0;
     width: 100%;
     height: 55px;
@@ -112,6 +113,7 @@ hr{
     float: right;
     top: 10px;
     right: 20px;
+    z-index: auto;
 }
 
 footer {

@@ -89,6 +89,14 @@ input{
     margin-top: 15px;
 }
 
+.facebooklogin{
+    margin: 15px 0;
+}
+
+.linebar{
+    margin-bottom: 10px;
+}
+
 .login{
     align-content: center;
     border: 1px #cccccc solid;   

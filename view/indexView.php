@@ -18,8 +18,8 @@
             <div class="login">
                 <a href="index.php"><img id="logo" src="img/logo.png"></a>
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
-                <a href="#"><img class="logo" src="img/login.png"></a>
-                <p><img src="img/line.png"> 또는 <img src="img/line.png"></p>
+                <a href="#"><img class="facebooklogin" src="img/login.png"></a>
+                <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form method="POST" name="formjoin" action="./process.php?mode=insert">
                     <p>
                         <input type="text" id="email" name="email" placeholder="이메일">
@@ -30,26 +30,26 @@
                         <input type="text" id="name" name="name" placeholder="성명">
                     </p>
                     <p class="validate"><?php if(isset($_SESSION['name1'])) echo $_SESSION['name1']; 
-                        unset($_SESSION['name1'])?></p>
+                        unset($_SESSION['name1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['name2'])) echo $_SESSION['name2']; 
-                        unset($_SESSION['name2'])?></p>                    
+                        unset($_SESSION['name2']) ?></p>                    
                     <p>
                         <input type="text" id="author" name="author" placeholder="사용자 이름">
                     </p>
                     <p class="validate"><?php if(isset($_SESSION['author1'])) echo $_SESSION['author1'];
-                        unset($_SESSION['author1'])?></p>
+                        unset($_SESSION['author1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2'];
-                        unset($_SESSION['author2'])?></p>
+                        unset($_SESSION['author2']) ?></p>
                     <p>
                         <input type="password" id="password" name="password" placeholder="비밀번호">
                     </p>
                     <p class="validate"><?php if(isset($_SESSION['password1'])) echo $_SESSION['password1'];
-                        unset($_SESSION['password1'])?></p>
+                        unset($_SESSION['password1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2'];
-                        unset($_SESSION['password2'])?></p>
+                        unset($_SESSION['password2']) ?></p>
                     <input class="join" type="image" value="가입" src="img/join.png">                    
                 </form>
-                <p>가입하면 Instagram의 약관 및 개인정보처리방침에 동의하게 됩니다.</p>
+                <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
             </div>
             <div class="auth">
                 <p>계정이 있으신가요? <a href="login.php" class="logintext">로그인.</a></p>
