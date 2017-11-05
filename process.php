@@ -2,14 +2,18 @@
 session_start();
 
 require 'config/config.php';
-$dbh = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+$db = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+include 'model/loginModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
+$Model = new loginModel($db);# 인스턴스를 만듭니다.
+$list = $Model->Insert();
 
 $insertSql = 'INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)';
 
 switch($_GET['mode']){
 
     case 'insert':
-        $stmt = $dbh->prepare($insertSql);            
+        $stmt = $db->prepare($insertSql);            
         $stmt->bindParam(':email',$emailVal);
         $stmt->bindParam(':name',$nameSefe);
         $stmt->bindParam(':author',$authorSefe);
@@ -17,7 +21,7 @@ switch($_GET['mode']){
         
         if($_POST){
             # 변수설정
-            $errors = array();
+            $errors = array(); #에러 메세지를 담을 배열을 생성
 
             # 검증 코드
             # 이메일
@@ -91,7 +95,7 @@ switch($_GET['mode']){
             $_SESSION = array(); #세션 데이터 초기화.
             header("Location: login.php"); #리다이렉션 페이지 이동
         } else { 
-            header("Location: index.php"); #리다이렉션 페이지 이동
+            header("Location: index.php"); #false 리다이렉션 페이지 이동
         }
         break;
 

@@ -18,9 +18,11 @@
             <nav class="navbar">
                 <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
                 <input class="search" type="text" placeholder="검색" />
-                <img src="img/icon/iconheader01.png">
-                <img src="img/icon/iconheader02.png">
-                <img src="img/icon/iconheader03.png">
+                <div class="navbaricon">
+                    <img src="img/icon/iconheader01.png">
+                    <img src="img/icon/iconheader02.png">
+                    <img src="img/icon/iconheader03.png">
+                </div>
             </nav>
         </div>
     </header>

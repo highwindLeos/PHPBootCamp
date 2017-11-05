@@ -51,13 +51,15 @@ hr{
     background: #FFFFFF;
 }
 
-.navbar img{
-    margin: 0px 5px;
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .navbar .loginlogo{
-    margin-right: 100px;
-    margin-top: 10px;
     height: 25px;
     width: 145px; 
 }
@@ -65,7 +67,13 @@ hr{
 .search{
     border-radius: 3px;
     border: 1px solid #DBDBDB;
+    margin-left: 100px;    
     margin-right: 100px;    
+}
+
+
+.navbar img{
+    margin: 0px 5px;
 }
 
 .copy{
