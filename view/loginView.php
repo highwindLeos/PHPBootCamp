@@ -28,27 +28,27 @@
         <?php foreach($list as $item){ ?>
         <div class="article">
             <div class="titleimg">
-                <img src="<?= htmlspecialchars($item[userIcon]) ?>">
+                <img src="<?= htmlspecialchars($item[1]); ?>">
             </div>
             <div class="mainimg">
-                <img src="<?= htmlspecialchars($item[image]) ?>">
+                <img src="<?= htmlspecialchars($item[2]); ?>">
             </div>
             <div class="imgbtn">
-                <img src="<?= htmlspecialchars($item[goodIcon]) ?>">
-                <img src="<?= htmlspecialchars($item[commentIcon]) ?>">
+                <img src="<?= htmlspecialchars($item[3]); ?>">
+                <img src="<?= htmlspecialchars($item[4]); ?>">
             </div>
             <div class="articleparam">
-                <p class="like"><?= htmlspecialchars($item[viewCount].'개') ?></p>
+                <p class="like"><?= htmlspecialchars($item[5].'개'); ?></p>
                 <p class="comment">
-                    <span class="userid"><?= htmlspecialchars($item[userId]).' '?></span>
-                    <?= htmlspecialchars($item[comment]).'<a href="#">'.htmlspecialchars($item[more]).'</a>' ?>
+                    <span class="userid"><?= htmlspecialchars($item[6]).' ';?></span>
+                    <?= htmlspecialchars($item[7]).'<a href="#">'.htmlspecialchars($item[8]).'</a>'; ?>
                 </p>
-                <p class="datetime"><?= htmlspecialchars($item[date]) ?></p> 
+                <p class="datetime"><?= htmlspecialchars($item[9]); ?></p> 
             </div>
             <hr>
             <p>
                 <input class="comment" type="text" placeholder="댓글달기" /> 
-                <a href=""><img class="submit" src="<?= htmlspecialchars($item[commentSubmit]) ?>"></a>
+                <a href=""><img class="submit" src="<?= htmlspecialchars($item[10]); ?>"></a>
             </p>
         </div>
         <?php } ?>
