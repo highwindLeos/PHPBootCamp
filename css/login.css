@@ -80,6 +80,12 @@ hr{
     padding: 20px;
 }
 
+.titleimg img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
 .mainimg{
     width: 100%;
     text-align: center;

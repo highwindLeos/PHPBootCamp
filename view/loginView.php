@@ -40,7 +40,7 @@
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item[5].'개'); ?></p>
                 <p class="comment">
-                    <span class="userid"><?= htmlspecialchars($item[6]).' ';?></span>
+                    <span class="userid"><?= htmlspecialchars($item[6]).' '; ?></span>
                     <?= htmlspecialchars($item[7]).'<a href="#">'.htmlspecialchars($item[8]).'</a>'; ?>
                 </p>
                 <p class="datetime"><?= htmlspecialchars($item[9]); ?></p> 
