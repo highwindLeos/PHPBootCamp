@@ -70,7 +70,7 @@
             <span class="footerlink"><a href="#">언어</a></span>
         </p>
         <p class="copy">
-            <span> &#169; 2017 instargram</span>
+            <span> &#169; 2017 Instargram</span>
         </p>
     </footer>
 </body>

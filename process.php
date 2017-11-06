@@ -58,7 +58,7 @@ switch($_GET['mode']){
             }
         }        
         
-        $email = trim($_POST['email']);
+        $email = trim($_POST['email']); #trim() 여백을 삭제하는 메소드.
         $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
         
         if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
