@@ -47,7 +47,7 @@
                         unset($_SESSION['password1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2'];
                         unset($_SESSION['password2']) ?></p>
-                    <input class="join" type="image" value="가입" src="img/join.png">                    
+                    <input class="join" type="image" value="가입" src="img/join.png">
                 </form>
                 <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
             </div>

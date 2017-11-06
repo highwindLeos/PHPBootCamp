@@ -27,7 +27,6 @@
         </div>
     </header>
     <article>
-        <?php foreach($list as $item){ ?>
         <div class="article">
             <div class="titleimg">
                 <img src="<?= htmlspecialchars($item[1]); ?>">
@@ -53,7 +52,6 @@
                 <a href=""><img class="submit" src="<?= htmlspecialchars($item[10]); ?>"></a>
             </p>
         </div>
-        <?php } ?>
     </article>  
     <footer>
         <p>

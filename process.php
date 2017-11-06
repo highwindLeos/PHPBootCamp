@@ -4,10 +4,6 @@ session_start();
 require 'config/config.php';
 $db = new PDO($dsn, $dId, $dPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
-include 'model/loginModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
-$Model = new loginModel($db);# 인스턴스를 만듭니다.
-$list = $Model->Insert();
-
 $insertSql = 'INSERT INTO register (email, name, author, password) VALUES (:email, :name, :author, :password)';
 
 switch($_GET['mode']){
