@@ -13,9 +13,22 @@ class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function getPictures($article_id) {
-        $stmt = $this->db->prepare('SELECT * FROM pictuers WHERE id = :id');
-        $stmt->bindParam(':id', $article_id, PDO::PARAM_INT);
+    public function getUsers() {
+        $stmt = $this->db->prepare('SELECT * FROM users');
+        $stmt->execute(); 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    public function getPictures($id) {
+        $stmt = $this->db->prepare('SELECT * FROM pictures WHERE id = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute(); 
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    public function getUserIcons($id) {
+        $stmt = $this->db->prepare('SELECT * FROM users WHERE id = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
