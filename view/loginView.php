@@ -27,12 +27,13 @@
         </div>
     </header>
     <article>
+       <?php foreach($articles as $item){  ?>
         <div class="article">
             <div class="titleimg">
                 <img src="<?= htmlspecialchars($item[1]); ?>">
             </div>
             <div class="mainimg">
-                <img src="<?= htmlspecialchars($item[2]); ?>">
+                <img src="<?= htmlspecialchars($pictures[$i]['src']); ?>">
             </div>
             <div class="imgbtn">
                 <img src="<?= htmlspecialchars($item[3]); ?>">
@@ -41,7 +42,7 @@
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item[5].'개'); ?></p>
                 <p class="comment">
-                    <span class="userid"><?= htmlspecialchars($item[6]).' '; ?></span>
+                    <span class="userid"><?= htmlspecialchars($item['article']).' '; ?></span>
                     <?= htmlspecialchars($item[7]).'<a href="#">'.htmlspecialchars($item[8]).'</a>'; ?>
                 </p>
                 <p class="datetime"><?= htmlspecialchars($item[9]); ?></p> 
@@ -52,6 +53,7 @@
                 <a href=""><img class="submit" src="<?= htmlspecialchars($item[10]); ?>"></a>
             </p>
         </div>
+        <?php } ?>
     </article>  
     <footer>
         <p>
