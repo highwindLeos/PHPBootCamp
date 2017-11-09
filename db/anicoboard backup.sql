@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `articles`;
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `article` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL,
   `users_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_articles_users_idx` (`users_id`),
   CONSTRAINT `fk_articles_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipisicing elit',1),(2,'Aut saepe sint perferendis libero quos distinctio ',2),(3,'dignissimos perspiciatis. Veniam, hic, sint! Rem odio quae delectus et',1),(4,'fuga aliquid cum eaque laudantium quibusdam, iste natus, veritatis ratione',2),(5,'suscipit repellat perferendis cupiditate eos.',1);
+INSERT INTO `articles` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipisicing elit','2017-11-08',1),(2,'Aut saepe sint perferendis libero quos distinctio ','2017-11-09',2),(3,'dignissimos perspiciatis. Veniam, hic, sint! Rem odio quae delectus et','2017-11-07',1),(4,'fuga aliquid cum eaque laudantium quibusdam, iste natus, veritatis ratione','2017-11-10',2),(5,'suscipit repellat perferendis cupiditate eos.','2017-11-06',1),(6,' laudantium quibusdam, iste natus, veritatis ratione','2017-11-11',3);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +86,7 @@ CREATE TABLE `likes` (
   KEY `fk_likes_articles1_idx` (`articles_id`),
   CONSTRAINT `fk_likes_articles1` FOREIGN KEY (`articles_id`) REFERENCES `articles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_likes_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +95,7 @@ CREATE TABLE `likes` (
 
 LOCK TABLES `likes` WRITE;
 /*!40000 ALTER TABLE `likes` DISABLE KEYS */;
+INSERT INTO `likes` VALUES (1,10,1,1),(2,20,2,2),(3,30,1,3),(4,40,2,4),(5,50,1,5),(6,100,3,6);
 /*!40000 ALTER TABLE `likes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +113,7 @@ CREATE TABLE `pictures` (
   PRIMARY KEY (`id`),
   KEY `fk_pictuers_articles1_idx` (`articles_id`),
   CONSTRAINT `fk_pictuers_articles1` FOREIGN KEY (`articles_id`) REFERENCES `articles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +122,7 @@ CREATE TABLE `pictures` (
 
 LOCK TABLES `pictures` WRITE;
 /*!40000 ALTER TABLE `pictures` DISABLE KEYS */;
-INSERT INTO `pictures` VALUES (1,'img/image/img0.png',1),(2,'img/image/img1.png',2),(3,'img/image/img2.png',3),(4,'img/image/img3.png',4),(5,'img/image/img4.png',5);
+INSERT INTO `pictures` VALUES (1,'img/image/img0.png',1),(2,'img/image/img1.png',2),(3,'img/image/img2.png',3),(4,'img/image/img3.png',4),(5,'img/image/img4.png',5),(6,'img/image/img5.png',6);
 /*!40000 ALTER TABLE `pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +141,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `usericon` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +150,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'highwind26@gmail.com','이승훈','daysdays','$2y$11$Jcit1gxdns6zaKCnU7nUDe7Abmgb6oZgFpZB6dW7BPMN6tNTutpDu','img/icon/user/usericon00.png'),(2,'leos@gmail.com','이기린','highwind26','$2y$11$FGmzJMnJDntsL16TjhjeT.6o/79SWVgowh71RW.FC/8dazeEU6Lda','img/icon/user/usericon01.png');
+INSERT INTO `users` VALUES (1,'highwind26@gmail.com','이승훈','daysdays','$2y$11$Jcit1gxdns6zaKCnU7nUDe7Abmgb6oZgFpZB6dW7BPMN6tNTutpDu','img/icon/user/usericon00.png'),(2,'leos@gmail.com','이기린','highwind26','$2y$11$FGmzJMnJDntsL16TjhjeT.6o/79SWVgowh71RW.FC/8dazeEU6Lda','img/icon/user/usericon01.png'),(3,'highwind26@nate.com','이가을','Leechar','$2y$11$1brTtz4cdVEp5E7pHhIfLuTqm1w96N6NFSIQqe3sIcfFdRUi0a0re','img/icon/user/usericon02.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -161,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 18:58:38
+-- Dump completed on 2017-11-09 23:19:09

@@ -13,50 +13,11 @@ class UserModel
     {
         $insertSql = 'INSERT INTO users (email, name, author, password) VALUES (:email, :name, :author, :password)';
         
-        $stmt = $db->prepare($insertSql);            
+        $stmt = $this->db->prepare($insertSql);            
         $stmt->bindParam(':email',$emailVal);
         $stmt->bindParam(':name',$nameSefe);
         $stmt->bindParam(':author',$authorSefe);
         $stmt->bindParam(':password',$hashpassSefe);
-        
-        if($_POST){
-            # 변수설정
-            $errors = array(); #에러 메세지를 담을 배열을 생성
-
-            # 검증 코드
-            # 이메일
-            if(empty($_POST['email']))
-            {
-                $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
-            }
-            # 이름
-            if(empty($_POST['name']))
-            {
-                $_SESSION['name1'] = $errors['name1'] = "* 이름은 빈칸일 수 없습니다.";
-            }
-            if(strlen($_POST['name']) < 4)
-            {
-                $_SESSION['name2'] = $errors['name2'] = "* 이름은 2자 이상이어야합니다.";
-            }
-            # 별명
-            if(empty($_POST['author']))
-            {
-                $_SESSION['author1'] = $errors['author1'] = "* 별명은 빈칸일 수 없습니다.";
-            }
-            if(strlen($_POST['author']) < 3)
-            {
-                $_SESSION['author2'] = $errors['author2'] = "* 별명은 3자 이상이어야합니다.";
-            }
-            # 암호
-            if(empty($_POST['password']))
-            {
-                $_SESSION['password1'] = $errors['password1'] = "* 암호는 빈칸일 수 없습니다.";
-            }
-            if(strlen($_POST['password']) < 6)
-            {
-                $_SESSION['password2'] = $errors['password2'] = "* 암호는 6자 이상이어야합니다.";
-            }
-        }        
         
         $email = trim($_POST['email']); #trim() 여백을 삭제하는 메소드.
         $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
