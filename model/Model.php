@@ -33,9 +33,9 @@ class Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function getLikeCnt($id) {
-        $stmt = $this->db->prepare('SELECT * FROM likes WHERE articles_id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    public function getLikeCnt($articles_id) {
+        $stmt = $this->db->prepare('SELECT * FROM likes WHERE articles_id = :articles_id');
+        $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute(); 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

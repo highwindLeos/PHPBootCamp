@@ -27,11 +27,7 @@
         </div>
     </header>
     <article>
-       <?php foreach($articles as $item){  
-        echo '<pre style="margin-top:150px">';
-        print_r($item);
-        echo '</pre">';
-        ?>
+       <?php foreach($articles as $item){ ?>
         <div class="article">
             <div class="titleimg">
                 <img src="<?= htmlspecialchars($item['usericon']['usericon']); ?>">
@@ -40,13 +36,13 @@
                 <img src="<?= htmlspecialchars($item['src']['src']); ?>">
             </div>
             <div class="imgbtn">
-                <img src="img/icon/iconarticle01.png">
-                <img src="img/icon/iconarticle02.png">
+                <a href="#"><img src="img/icon/iconarticle01.png"></a>
+                <a href="#"><img src="img/icon/iconarticle02.png"></a>
             </div>
             <div class="articleparam">
-                <p class="like"><?= htmlspecialchars($item[5].'개'); ?></p>
+                <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
                 <p class="comment">
-                    <span class="userid"><?= htmlspecialchars($item[6]).' '; ?></span>
+                    <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
                     <?= htmlspecialchars($item['article']).'<a href="#">'.htmlspecialchars($item[8]).'</a>'; ?>
                 </p>
                 <p class="datetime"><?= htmlspecialchars($item[9]); ?></p> 
