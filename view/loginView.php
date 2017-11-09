@@ -27,7 +27,11 @@
         </div>
     </header>
     <article>
-       <?php foreach($articles as $item){  #print_r($item);?>
+       <?php foreach($articles as $item){  
+        echo '<pre style="margin-top:150px">';
+        print_r($item);
+        echo '</pre">';
+        ?>
         <div class="article">
             <div class="titleimg">
                 <img src="<?= htmlspecialchars($item['usericon']['usericon']); ?>">
@@ -36,8 +40,8 @@
                 <img src="<?= htmlspecialchars($item['src']['src']); ?>">
             </div>
             <div class="imgbtn">
-                <img src="<?= htmlspecialchars($item[3]); ?>">
-                <img src="<?= htmlspecialchars($item[4]); ?>">
+                <img src="img/icon/iconarticle01.png">
+                <img src="img/icon/iconarticle02.png">
             </div>
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item[5].'개'); ?></p>

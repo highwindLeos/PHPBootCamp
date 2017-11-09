@@ -14,14 +14,15 @@ for($i=0; $i < count($articles); $i++) { # $articles 의 수를 가져온다.(�
     $usericon = $model->getUserIcons($articles[$i]['id']);
     $articles[$i]['usericon'] = $usericon;
     
-    #메인 사진 : 데이터 베이스 에 article내용의 Id를 참고로 pictures table에 src 컬럼을 가지고온다.
+    #메인 사진 : 데이터 베이스에 article내용의 Id를 참고로 pictures table에 src 컬럼을 가지고온다.
     $pictures = $model->getPictures($articles[$i]['id']);
     $articles[$i]['src'] = $pictures;
-       
+    
+    #좋아요 갯수 : 데이터 베이스에 articles 내용의 Id를 참고로 
+    $likes = $model->getLikeCnt($articles[$i]['id']);
+    $articles[$i]['like'] = $likes;
 }
-echo '<pre style="margin-top: 100px;">';
-    print_r($articles);
-echo '</pre>';
+
 include 'view/loginView.php'; # 뷰를 가져온다.
 
 ?>
