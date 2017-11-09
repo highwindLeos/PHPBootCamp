@@ -22,12 +22,8 @@ for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.
     #좋아요 갯수 : 데이터 베이스에 articles 내용의 Id를 참고로 likes table에 like 컬럼을 가지고온다.
     $likes = $model->getLikeCnt($articles[$i]['id']);
     $articles[$i]['like'] = $likes;
-    
-    #사용자 아이콘 : 데이터 베이스에 user내용의 Id를 참고로 usericon 컬럼을 가져온다.
-    $usericon = $model->getUserIcons($articles[$i]['users_id']);
-    $articles[$i]['usericon'] = $usericon;
-}
 
+}
 
 include 'view/loginView.php'; # 뷰를 가져온다.
 

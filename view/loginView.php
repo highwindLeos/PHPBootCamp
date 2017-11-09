@@ -41,16 +41,17 @@
             </div>
             <div class="articleparam">
                 <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
+                <p class="articles"><?= htmlspecialchars($item['article']); ?></p>
                 <p class="comment">
                     <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
-                    <?= htmlspecialchars($item['article']).'<a href="#">'.htmlspecialchars($item[8]).'</a>'; ?>
+                    <?= htmlspecialchars($item['article']).' <a href="#">모든 글 보기</a>'; #article 은 comment로 바꿔야 함 ?>
                 </p>
-                <p class="datetime"><?= htmlspecialchars($item[9]); ?></p> 
+                <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
             </div>
             <hr>
             <p>
                 <input class="comment" type="text" placeholder="댓글달기" /> 
-                <a href=""><img class="submit" src="<?= htmlspecialchars($item[10]); ?>"></a>
+                <a href=""><img class="submit" src="img/icon/iconarticle03.png"></a>
             </p>
         </div>
         <?php } ?>
