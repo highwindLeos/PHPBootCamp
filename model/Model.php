@@ -33,6 +33,13 @@ class Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
+    public function getComments($id) {
+        $stmt = $this->db->prepare('SELECT * FROM comments WHERE id = :user_id');
+        $stmt->bindParam(':user_id', $id, PDO::PARAM_INT);
+        $stmt->execute(); 
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
     public function getLikeCnt($articles_id) {
         $stmt = $this->db->prepare('SELECT * FROM likes WHERE articles_id = :articles_id');
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);

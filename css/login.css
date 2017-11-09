@@ -115,20 +115,21 @@ hr{
 }
 
 .comment{
-    width: 90%;
+    width: 93%;
+    margin: 0px;
+    padding: 0px 5px;
 }
 
 .userid{
     color: #003962; 
 }
-.submit{
+
+.commentbtn{
+    margin: 0;
+    position: relative;
+    top: 2px;
     width: 25px;
     height: 25px;
-    position: relative;
-    float: right;
-    top: 10px;
-    right: 20px;
-    z-index: auto;
 }
 
 footer {

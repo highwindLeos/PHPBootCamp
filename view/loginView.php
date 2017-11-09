@@ -44,17 +44,18 @@
                 <p class="articles"><?= htmlspecialchars($item['article']); ?></p>
                 <p class="comment">
                     <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
-                    <?= htmlspecialchars($item['article']).' <a href="#">모든 글 보기</a>'; #article 은 comment로 바꿔야 함 ?>
+                    <?= htmlspecialchars($item['comments']['comment']).' <a href="#">모든 글 보기</a>'; #comments는 여러개가 달려야 함 ?>
                 </p>
                 <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
             </div>
             <hr>
-            <p>
+            <form>
                 <input class="comment" type="text" placeholder="댓글달기" /> 
-                <a href=""><img class="submit" src="img/icon/iconarticle03.png"></a>
-            </p>
+                <button class="commentbtn" type="submit" formmethod="POST" formaction="#">
+                <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
+            </form>
         </div>
-        <?php } ?>
+        <?php  } ?>
     </article>  
     <footer>
         <p>
@@ -71,7 +72,7 @@
             <span class="footerlink"><a href="#">언어</a></span>
         </p>
         <p class="copy">
-            <span> &#169; 2017 Instargram</span>
+            <span> &#169; 2017 Instargram.</span>
         </p>
     </footer>
 </body>
