@@ -25,6 +25,13 @@ p{
     color: #94A5BF;
 }
 
+button{
+    background: #fff;
+    margin: 15px 0;
+    border: 0;
+    padding: 0;
+}
+
 /* a tag link style */
 a:link {
     color: #003962;

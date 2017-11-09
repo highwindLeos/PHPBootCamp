@@ -20,7 +20,7 @@
                 <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
                 <a href="#"><img class="facebooklogin" src="img/login.png"></a>
                 <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
-                <form method="POST" name="formjoin" action="./process.php?mode=insert">
+                <form>
                     <p>
                         <input type="text" id="email" name="email" placeholder="이메일">
                     </p>
@@ -47,7 +47,8 @@
                         unset($_SESSION['password1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2'];
                         unset($_SESSION['password2']) ?></p>
-                    <input class="join" type="image" value="가입" src="img/join.png">
+                    <button type="submit" formmethod="POST" formaction="process.php">
+                    <img src="img/join.png"/></button>
                 </form>
                 <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
             </div>
