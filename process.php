@@ -2,41 +2,30 @@
 session_start();
 require 'model/UserModel.php';
 require 'config/config.php';
-$db = new PDO($dsn, $dId, $dPass);
 
-$usermodel = new UserModel($db);      
+    try {
+            $db = new PDO($dsn, $dId, $dPass);
+        }
+        catch(PDOException $e) 
+        {
+            echo $e->getMessage();
+        }
+
+    $usermodel = new UserModel($db);
         
     #필터링
-    $email = trim($_POST['email']); #trim() 여백을 삭제하는 메소드.
-    $emailSefe = filter_var($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
-    if (filter_var($emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
-        $emailVal = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
+    $emailSefe = filter_var_array($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
+    if (filter_var_array($email, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
+        $emailVar = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
     } else {
         $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
     }
 
-    $name = trim($_POST['name']);
-    $nameSefe = filter_var($name, 
-                FILTER_SANITIZE_STRING,
-                FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
-                ); #다국어 문자 필터링
+    $nameSefe = filter_var_array($name, FILTER_SANITIZE_STRING);
 
-    $author = trim($_POST['author']);
-    $authorSefe = filter_var($author, 
-                  FILTER_SANITIZE_STRING,
-                  FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
-                  ); #다국어 문자 필터링
+    $authorSefe = filter_var_array($author, FILTER_SANITIZE_STRING);
 
-    $password = trim($_POST['password']);
-    $options = [
-        'cost' => 11,
-        'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-    ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
-    $hashpass = password_hash($password, PASSWORD_BCRYPT, $options); #암호화 코드
-    $hashpassSefe = filter_var($hashpass, 
-                    FILTER_SANITIZE_STRING,
-                    FILTER_FLAG_STRIP_LOW¦FILTER_FLAG_ENCODE_HIGH
-                    ); #다국어 문자 필터링
+    $hashpassSefe = filter_var_array($hashpass, FILTER_SANITIZE_STRING);
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정

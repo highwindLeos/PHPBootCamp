@@ -1,7 +1,14 @@
 <?php
 
 require 'config/config.php';
-$db = new PDO($dsn, $dId, $dPass);
+
+try {
+        $db = new PDO($dsn, $dId, $dPass);
+    }
+    catch(PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
 
 include 'model/Model.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
 $model = new Model($db);# 인스턴스를 만듭니다.
