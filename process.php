@@ -14,19 +14,32 @@ require 'config/config.php';
     $usermodel = new UserModel($db);
         
     #필터링
+<<<<<<< HEAD
     $emailSefe = filter_input(INPUT_POST, $email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
     if (filter_input(INPUT_POST, $emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
+=======
+    $email = filter_input(INPUT_POST, 'email', FILTER_DEFAULT); # 이메일 입력 데이터 필터링
+    if (filter_input(INPUT_POST, $email, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
+>>>>>>> dc83c5e9d8bf5f98a34522ad608a3c9b40e4ad49
         $emailVar = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
     } else {
         $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
     }
 
+<<<<<<< HEAD
     $nameSefe = filter_input(INPUT_POST, $name, FILTER_SANITIZE_STRING);
 
     $authorSefe = filter_input(INPUT_POST, $author, FILTER_SANITIZE_STRING);
 
     $hashpassSefe = filter_input(INPUT_POST, $hashpass, FILTER_SANITIZE_STRING);
 
+=======
+    $name =  filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
+
+    $author = filter_input(INPUT_POST, 'author', FILTER_DEFAULT);
+
+    $hashpass = filter_input(INPUT_POST, 'hashpass', FILTER_DEFAULT);
+>>>>>>> dc83c5e9d8bf5f98a34522ad608a3c9b40e4ad49
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
@@ -38,6 +51,8 @@ require 'config/config.php';
         {
             $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
         }
+        
+        
         # 이름
         if(empty($_POST['name']))
         {
