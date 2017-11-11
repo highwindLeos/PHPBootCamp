@@ -14,18 +14,19 @@ require 'config/config.php';
     $usermodel = new UserModel($db);
         
     #필터링
-    $emailSefe = filter_var_array($email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
-    if (filter_var_array($email, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
+    $emailSefe = filter_input(INPUT_POST, $email, FILTER_SANITIZE_EMAIL); # 이메일 입력 데이터 필터링
+    if (filter_input(INPUT_POST, $emailSefe, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
         $emailVar = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
     } else {
         $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
     }
 
-    $nameSefe = filter_var_array($name, FILTER_SANITIZE_STRING);
+    $nameSefe = filter_input(INPUT_POST, $name, FILTER_SANITIZE_STRING);
 
-    $authorSefe = filter_var_array($author, FILTER_SANITIZE_STRING);
+    $authorSefe = filter_input(INPUT_POST, $author, FILTER_SANITIZE_STRING);
 
-    $hashpassSefe = filter_var_array($hashpass, FILTER_SANITIZE_STRING);
+    $hashpassSefe = filter_input(INPUT_POST, $hashpass, FILTER_SANITIZE_STRING);
+
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정

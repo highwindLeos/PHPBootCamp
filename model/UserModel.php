@@ -13,11 +13,11 @@ class UserModel
     {
         $insertSql = 'INSERT INTO users (email, name, author, password) VALUES (:email, :name, :author, :password)';
         
-        $stmt = $this->db->prepare($insertSql);            
-        $stmt->bindParam(':email',$emailVar);
-        $stmt->bindParam(':name',$nameSefe);
-        $stmt->bindParam(':author',$authorSefe);
-        $stmt->bindParam(':password',$hashpassSefe);
+        $stmt = $this->db->prepare($insertSql);
+        $stmt->bindParam(':email', $emailVar);
+        $stmt->bindParam(':name', $nameSefe);
+        $stmt->bindParam(':author', $authorSefe);
+        $stmt->bindParam(':password', $hashpassSefe);
         
         
         $email = trim($_POST['email']); #trim() 여백을 삭제하는 메소드.
