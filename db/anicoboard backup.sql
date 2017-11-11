@@ -142,7 +142,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `usericon` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +151,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'highwind26@gmail.com','이승훈','daysdays','$2y$11$Jcit1gxdns6zaKCnU7nUDe7Abmgb6oZgFpZB6dW7BPMN6tNTutpDu','img/icon/user/usericon00.png'),(2,'leos@gmail.com','이기린','highwind26','$2y$11$FGmzJMnJDntsL16TjhjeT.6o/79SWVgowh71RW.FC/8dazeEU6Lda','img/icon/user/usericon01.png'),(3,'highwind26@nate.com','이가을','Leechar','$2y$11$1brTtz4cdVEp5E7pHhIfLuTqm1w96N6NFSIQqe3sIcfFdRUi0a0re','img/icon/user/usericon02.png'),(4,'highwind26@nate.com','이만화','daysmays','$2y$11$A7jqJsxhrMufd1.ONfAzGes7/4uzSDSnv5ErFXt5WWQrbxtv81o7C','img/icon/user/usericon03.png');
+INSERT INTO `users` VALUES (1,'highwind26@gmail.com','이승훈','daysdays','$2y$11$Jcit1gxdns6zaKCnU7nUDe7Abmgb6oZgFpZB6dW7BPMN6tNTutpDu','img/icon/user/usericon00.png'),(2,'leos@gmail.com','이기린','highwind26','$2y$11$FGmzJMnJDntsL16TjhjeT.6o/79SWVgowh71RW.FC/8dazeEU6Lda','img/icon/user/usericon01.png'),(3,'highwind26@nate.com','이가을','Leechar','$2y$11$1brTtz4cdVEp5E7pHhIfLuTqm1w96N6NFSIQqe3sIcfFdRUi0a0re','img/icon/user/usericon02.png'),(4,'highwind26@nate.com','이만화','daysmays','$2y$11$A7jqJsxhrMufd1.ONfAzGes7/4uzSDSnv5ErFXt5WWQrbxtv81o7C','img/icon/user/usericon03.png'),(5,'leosdays@gmail.com','이가을','이데이즈','$2y$11$9/x7WldW3YbIQJYc5HvscuoidHgeYW2haegUkrD1ozT7VjC/jWwF6','img/icon/user/usericon04.png'),(6,'leosdays@gmail.com','이데이','이가을즈','$2y$11$m05lFic15L5uVUY1peHnYOjwZh1zGTgzDKlSDVOpvkGEIAtSlrkKy','img/icon/user/usericon05.png'),(7,'leos@naver.com','이기자','이데이즈','$2y$11$soUIwg81R9NqkTTLN/.WqOuntYGfpeEFaw3qCBHjNeIKRxdQYbhE2','img/icon/user/usericon06.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-10  2:37:32
+-- Dump completed on 2017-11-11 17:50:41
