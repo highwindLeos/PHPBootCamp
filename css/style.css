@@ -103,7 +103,19 @@ a:active {
 }
 
 .facebooklogin{
-    margin: 15px 0;
+    display: inline-flex; /* 안쪽에서만 플럭스를 적용 */
+    position: relative;
+    height: 16px;
+    width: 16px;
+    margin: 0px 8px;
+    background-image:url(../img/icon/facebook.png);
+    background-repeat: no-repeat;
+}
+
+.facebook{
+    color:#385185;
+    font-size: 12px;
+    text-align: center;
 }
 
 .linebar{

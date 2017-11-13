@@ -21,9 +21,6 @@ $_SESSION = isset($_SESSION) ? $_SESSION : array(); # 삼항연산자. 조건 ? 
         <div class="item">
             <div class="login">
                 <a href="index.php"><img id="logo" src="img/logo.png"></a>
-                <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
-                <a href="#"><img class="facebooklogin" src="img/login.png"></a>
-                <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form class="form">
                     <p>
                         <input type="text" id="email" name="email" placeholder="이메일" />
@@ -40,13 +37,16 @@ $_SESSION = isset($_SESSION) ? $_SESSION : array(); # 삼항연산자. 조건 ? 
                     </p>
                     <button type="submit" formmethod="POST" formaction="loginProcess.php">
                     <img src="img/login2.png"/></button>
-                        
-                    
                 </form>
-                <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
+                <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
+                <button>
+                    <span class="facebooklogin"></span>
+                    <span class="facebook">Facebook으로 로그인</span>
+                </button>
+                <p><a href="#">비밀번호를 잊으셨나요?</a></p>
             </div>
             <div class="auth">
-                <p>계정이 있으신가요? <a href="login.php" class="logintext">로그인.</a></p>
+                <p>계정이 없으신가요? <a href="index.php" class="logintext">가입하기.</a></p>
             </div>
             <div class="app">
                 <p class="apptext">앱을 다운로드 하세요.</p>
