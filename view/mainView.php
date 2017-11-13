@@ -16,13 +16,13 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
+                <a href="main.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
                 <input class="search" type="text" placeholder="검색" />
                 <div class="navbaricon">
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">
                     <img src="img/icon/iconheader03.png">
-                    <a href="logoutProcess.php"><p class="logout">로그아웃</p></a>
+                    <a href="logoutProcess.php"><span class="logout">로그아웃</span></a>
                 </div>
             </nav>
         </div>

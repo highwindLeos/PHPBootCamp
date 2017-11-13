@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-$errorMessage = isset($_SESSION) ? $_SESSION : ''; # 삼항연산자. ? 참 : 거짓.
+$_SESSION = isset($_SESSION) ? $_SESSION : array(); # 삼항연산자. 조건 ? 참 : 거짓.
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -26,20 +26,22 @@ $errorMessage = isset($_SESSION) ? $_SESSION : ''; # 삼항연산자. ? 참 : �
                 <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form class="form">
                     <p>
-                        <input type="text" id="email" name="email" placeholder="이메일">
+                        <input type="text" id="email" name="email" placeholder="이메일" />
                         <p class="validate"><?php if(isset($_SESSION['login1'])) echo $_SESSION['login1'];
                         unset($_SESSION['login1']) ?></p>
+                        <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2'];
+                        unset($_SESSION['login2']) ?></p>
                     </p>
-                        <input type="password" id="password" name="password" placeholder="비밀번호">
+                        <input type="password" id="password" name="password" placeholder="비밀번호" />
                         <p class="validate"><?php if(isset($_SESSION['login3'])) echo $_SESSION['login3'];
                         unset($_SESSION['login3']) ?></p>
+                        <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4'];
+                        unset($_SESSION['login4']) ?></p>
                     </p>
                     <button type="submit" formmethod="POST" formaction="loginProcess.php">
                     <img src="img/login2.png"/></button>
-                    <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2'];
-                        unset($_SESSION['login2']) ?></p>    
-                    <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4'];
-                        unset($_SESSION['login4']) ?></p>
+                        
+                    
                 </form>
                 <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
             </div>

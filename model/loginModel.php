@@ -11,7 +11,8 @@ class loginModel
         $stmt = $this->db->prepare('SELECT * FROM users WHERE email = :email');
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
         $stmt->execute(); 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
 }
