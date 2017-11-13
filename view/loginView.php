@@ -5,60 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Camp instargram</title>
-    
-    <!--  favicon insert  -->
+
     <link rel="icon" href="img/favicon.ico"/>
-    <!--  Css stylesheet  -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
-                <input class="search" type="text" placeholder="검색" />
-                <div class="navbaricon">
-                    <img src="img/icon/iconheader01.png">
-                    <img src="img/icon/iconheader02.png">
-                    <img src="img/icon/iconheader03.png">
-                </div>
-            </nav>
+    <section class="content">
+        <div class="item">
+            <img src="img/slide.png">
         </div>
-    </header>
-    <article>
-       <?php foreach($articles as $item){ ?>
-        <div class="article">
-            <div class="titleimg inner-article">
-                <img src="<?= htmlspecialchars($item['usericon']['usericon']); ?>">
-            </div>
-            <div class="mainimg">
-                <img src="<?= htmlspecialchars($item['src']['src']); ?>">
-            </div>
-            <div class="inner-article">
-                <div class="imgbtn">
-                    <a href="#"><img src="img/icon/iconarticle01.png"></a>
-                    <a href="#"><img src="img/icon/iconarticle02.png"></a>
-                </div>
-                <div class="articleparam">
-                    <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
-                    <p class="articles"><?= htmlspecialchars($item['article']); ?></p>
-                    <p class="comment">
-                        <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
-                        <?= htmlspecialchars($item['comments']['comment']).' <a href="#">모든 글 보기</a>'; #comments는 여러개가 달려야 함 ?>
+        <div class="item">
+            <div class="login">
+                <a href="index.php"><img id="logo" src="img/logo.png"></a>
+                <h3>친구들의 사진과 동영상을 보려면 가입하세요.</h3>
+                <a href="#"><img class="facebooklogin" src="img/login.png"></a>
+                <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
+                <form class="form">
+                    <p>
+                        <input type="text" id="email" name="email" placeholder="이메일">
+                        <p class="validate"><?php if(isset($_SESSION['login1'])) echo $_SESSION['login1'];
+                        unset($_SESSION['login1']) ?></p>
                     </p>
-                    <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
+                        <input type="password" id="password" name="password" placeholder="비밀번호">
+                        <p class="validate"><?php if(isset($_SESSION['login3'])) echo $_SESSION['login3'];
+                        unset($_SESSION['login3']) ?></p>
+                    </p>
+                    <button type="submit" formmethod="POST" formaction="loginProcess.php">
+                    <img src="img/login2.png"/></button>
+                    <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2'];
+                        unset($_SESSION['login2']) ?></p>    
+                    <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4'];
+                        unset($_SESSION['login4']) ?></p>
+                </form>
+                <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>
+            </div>
+            <div class="auth">
+                <p>계정이 있으신가요? <a href="login.php" class="logintext">로그인.</a></p>
+            </div>
+            <div class="app">
+                <p class="apptext">앱을 다운로드 하세요.</p>
+                <div class="row">
+                    <a href="#"><img src="img/iphone.png"></a>
+                    <a href="#"><img src="img/googlestore.png"></a>
                 </div>
             </div>
-            <hr>
-            <form class="inner-article">
-                <input class="comment" type="text" placeholder="댓글달기" /> 
-                <button class="commentbtn" type="submit" formmethod="POST" formaction="#">
-                <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
-            </form>
         </div>
-        <?php  } ?>
-    </article>  
+    </section>        
     <footer>
         <p>
             <span class="footerlink"><a href="#">INSTARGRAM정보</a></span>
@@ -72,9 +64,8 @@
             <span class="footerlink"><a href="#">약관</a></span>
             <span class="footerlink"><a href="#">디렉터리</a></span>
             <span class="footerlink"><a href="#">언어</a></span>
-        </p>
-        <p class="copy">
-            <span> &#169; 2017 Instargram.</span>
+            <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
+            <span> &#169; 2017 instargram</span>
         </p>
     </footer>
 </body>

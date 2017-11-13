@@ -25,11 +25,27 @@ p{
     color: #94A5BF;
 }
 
+input{
+    border: 1px #003962 dotted;
+    border-radius: 20px;
+    outline: none;
+    overflow: hidden;
+    width: 255px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    text-overflow: ellipsis;
+    background-color: #F9FAF9;
+}
+
 button{
     background: #fff;
     margin: 15px 0;
     border: 0;
     padding: 0;
+}
+
+button img{
+    width:100%;
 }
 
 /* a tag link style */
@@ -53,17 +69,7 @@ a:active {
     text-decoration: none;
 }
 
-input{
-    border: 1px #003962 dotted;
-    border-radius: 20px;
-    outline: none;
-    overflow: hidden;
-    width: 255px;
-    margin: 5px 0 5px 0;
-    padding: 10px;
-    text-overflow: ellipsis;
-    background-color: #F9FAF9;
-}
+
 
 .content{
     display: flex;
@@ -102,6 +108,10 @@ input{
 
 .linebar{
     margin-bottom: 10px;
+}
+
+.form{
+    margin: 15px 0;
 }
 
 .login{
