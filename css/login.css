@@ -59,6 +59,11 @@ hr{
     margin-top: 10px;
 }
 
+.navbar .logout{
+    border: 1px dotted #DBDBDB;
+    border-radius: 5px;
+}
+
 .navbar .loginlogo{
     height: 25px;
     width: 145px; 

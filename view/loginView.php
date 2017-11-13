@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+$errorMessage = isset($_SESSION) ? $_SESSION : ''; # 삼항연산자. ? 참 : 거짓.
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

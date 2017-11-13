@@ -22,6 +22,7 @@
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">
                     <img src="img/icon/iconheader03.png">
+                    <a href="logoutProcess.php"><p class="logout">로그아웃</p></a>
                 </div>
             </nav>
         </div>

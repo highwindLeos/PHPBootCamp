@@ -27,7 +27,7 @@ require 'config/config.php';
         {
             $_SESSION['login1'] = $errors['login1'] = "* 이메일은 빈칸일 수 없습니다.";
         }
-        if($email != $users[0]['email']){
+        if($email != $users[0]['email']){ #이메일 입력값의 값이 데이터베이스의 이메일과 같지 않다면
             $_SESSION['login2'] = $errors['login2'] = "* 이메일을 확인해주세요.";
         }
        
@@ -36,8 +36,7 @@ require 'config/config.php';
         {
             $_SESSION['login3'] = $errors['login3'] = "* 암호는 빈칸일 수 없습니다.";
         }
-        if($hashpass != $users[0]['password'])
-        {
+        if($hashpass != $users[0]['password']){ #패스워드 입력값의 값이 데이터베이스의 패스워드와 같지 않다면
             $_SESSION['login4'] = $errors['login4'] = "* 암호를 확인해 주세요.";
         }
         
