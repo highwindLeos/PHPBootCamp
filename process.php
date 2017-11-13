@@ -26,7 +26,7 @@ require 'config/config.php';
 
     $author = filter_input(INPUT_POST, 'author', FILTER_DEFAULT);
 
-    $hashpass = filter_input(INPUT_POST, 'hashpass', FILTER_DEFAULT);
+    $hashpass = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
@@ -34,12 +34,12 @@ require 'config/config.php';
 
         # 검증 코드
         # 이메일
-        if(empty($_POST['email']))
+        if(empty($email))
         {
             $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
         }
         # 이름
-        if(empty($_POST['name']))
+        if(empty($name))
         {
             $_SESSION['name1'] = $errors['name1'] = "* 이름은 빈칸일 수 없습니다.";
         }
@@ -48,20 +48,20 @@ require 'config/config.php';
             $_SESSION['name2'] = $errors['name2'] = "* 이름은 2자 이상이어야합니다.";
         }
         # 별명
-        if(empty($_POST['author']))
+        if(empty($author))
         {
             $_SESSION['author1'] = $errors['author1'] = "* 별명은 빈칸일 수 없습니다.";
         }
-        if(strlen($_POST['author']) < 3)
+        if(strlen($author) < 3)
         {
             $_SESSION['author2'] = $errors['author2'] = "* 별명은 3자 이상이어야합니다.";
         }
         # 암호
-        if(empty($_POST['password']))
+        if(empty($hashpass))
         {
             $_SESSION['password1'] = $errors['password1'] = "* 암호는 빈칸일 수 없습니다.";
         }
-        if(strlen($_POST['password']) < 6 || strlen($_POST['password']) > 18 )
+        if(strlen($hashpass) < 6 || strlen($hashpass) > 18 )
         {
             $_SESSION['password2'] = $errors['password2'] = "* 암호는 6~18자 사이이어야합니다.";
         }

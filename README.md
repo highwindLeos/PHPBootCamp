@@ -1,5 +1,5 @@
 # PHPcamp
-PHPcamp in Study
+### PHPcamp in Study
 
 PHP Camp에서 독학 + 코치를 통해 배우고 있는 
 프로젝트입니다. Instargram 컨텐츠를 기본으로
@@ -9,7 +9,7 @@ http://phpbootcamp.bookcafe100.com/course/self-study
 
 # 기획 참고 자료 
 
-과제 목록 :
+### 과제 목록 :
 
 https://docs.google.com/document/d/112pxsLec9MvixoBsAq5RY46zF-a6bFROWWWqkMbNDQ0/edit
 
