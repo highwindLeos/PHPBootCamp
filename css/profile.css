@@ -5,13 +5,14 @@ button{
     border: 0;
     padding: 0;
     height: 0;
+    cursor : pointer;
     clear: both;
 }
 
 #article{
     margin: auto;
     margin-bottom: 50px; 
-    width: 50%;
+    width: 60%;
     padding: 20px 5px;
 }
 
@@ -23,14 +24,14 @@ button{
 .top-article .top{
     position: relative;
     display: inline-flex;
-    margin:150px 40px 10px 40px;
+    margin: 150px 40px 10px 40px;
     padding: 0px 20px;
 }
 
 .top p{
     position: absolute;
     color: black;
-    left: 160px;
+    left: 180px;
     top:40px;
 }
 .top span{
@@ -50,7 +51,9 @@ button{
 
 .mid-article{
     text-align: center;
-    margin: 0 0 20px 0px;
+    border-top: 1px solid #EFEFEF;
+    margin: 2px 0 20px 0px;
+    padding-top: 2px;
 }
 
 .mid-article p{
@@ -63,13 +66,14 @@ button{
 }
 
 .bottom-article{
-    display: grid;
-    justify-content:space-between;    
-    width: 100%;
-    grid-template-columns: repeat(3 , 150px);
-    grid-column-gap: 0.5em;
-    grid-row-gap: 0.5em;
-    background-color: #fff;
+    display : grid;
+    justify-content :space-around;    
+    width : 100%;
+    grid-template-columns : repeat(3 , 200px);
+    grid-column-gap : 1em;
+    grid-row-gap : 1em;
+    padding: 25px 0px;
+    background-color : #F9FAF9;
 }
 
 .bottom-article div img{

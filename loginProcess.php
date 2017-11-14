@@ -37,21 +37,19 @@ require 'config/config.php';
         {
             $_SESSION['login3'] = $errors['login3'] = "* 암호는 빈칸일 수 없습니다.";
         }
-        if($hashpass != $users['password']){ #패스워드 입력값의 값이 데이터베이스의 패스워드와 같지 않다면
+        if(!password_verify($hashpass, $users['password'])){ #패스워드 입력값의 값이 데이터베이스의 패스워드 해쉬값과 같지 않다면 True
             $_SESSION['login4'] = $errors['login4'] = "* 암호를 확인해주세요.";
         }
         
     }
 
-    if(password_verify($users['password'], $hashpass)){
+    if(password_verify($hashpass, $users['password'])){ 
         if(count($errors) == 0){ #에러값이 없다면 true
-        $_SESSION = array(); #세션 데이터 초기화.
-        header("Location: main.php"); #리다이렉션 페이지 이동
-        } else { 
-            header("Location: login.php"); #false 리다이렉션 페이지 이동
+            $_SESSION = array(); #세션 데이터 초기화.
+            header("Location: main.php"); #리다이렉션 페이지 이동
         }
     }else{
-        echo '패스워드 일치 하지 않습니다.';
+        header("Location: login.php"); #false 리다이렉션 페이지 이동
     }
 
     

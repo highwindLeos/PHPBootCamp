@@ -60,7 +60,9 @@ hr{
 }
 
 .navbar .logout{
-    border: 1px dotted #DBDBDB;
+    font-size: 10px;
+    padding: 5px 10px;
+    border: 2px dotted #DBDBDB;
     border-radius: 5px;
 }
 
