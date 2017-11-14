@@ -80,3 +80,49 @@ button{
     width: 220px;
     height: auto;
 }
+
+/* Modal CSS */
+
+.white_content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+
+.white_content:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.white_content > div {
+	position: absolute;
+	top: 30%;
+	left: 32%;
+	width: 45%;
+	height: 32.2%;
+	padding: 0;
+	border: 1px solid #8D8D8D;
+	background-color: #F9FAF9;
+	overflow: auto;	
+}
+
+.modalcontent{
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid #8D8D8D;
+}
+
+.modalcontent:hover{
+    cursor: pointer;
+    background-color: beige;
+}

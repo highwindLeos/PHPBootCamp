@@ -41,7 +41,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
                <a href="#"><img class="profile-img" src="img/profile/profile.jpg"></a>
                 <h2>highwind26</h2>
                 <button><img src="img/profile/profile2.png"></button>
-                <a href="#"><img class="setting" src="img/profile/profile3.png"></a>
+                <a href="#open"><img class="setting" src="img/profile/profile3.png"></a>
                 <p><span>게시물 0</span><span>팔로워 3</span><span>팔로우 6</span></p>
            </div>
         </div>
@@ -78,5 +78,15 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
             <span> &#169; 2017 Instargram.</span>
         </p>
     </footer>
+    <!-- Modal popup-->
+    <div class="white_content" id="open">
+        <div>
+            <p class="modalcontent">비밀번호 변경</p>
+            <p class="modalcontent">허가된 앱</p>
+            <p class="modalcontent">알 림</p>
+            <p class="modalcontent">로그 아웃</p>
+            <a href="#close"><p class="modalcontent">취소</p></a>
+        </div>
+    </div>
 </body>
 </html>
