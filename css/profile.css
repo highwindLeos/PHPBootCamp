@@ -83,7 +83,7 @@ button{
 
 /* Modal CSS */
 
-.white_content {
+.modal_content {
     position: fixed;
     top: 0;
     right: 0;
@@ -91,30 +91,36 @@ button{
     left: 0;
     background: rgba(0, 0, 0, 0.4);
     opacity:0;
-    -webkit-transition: opacity 100ms ease-in;
-    -moz-transition: opacity 100ms ease-in;
-    transition: opacity 100ms ease-in;
+    -webkit-transition: opacity 50ms ease-in;
+    -moz-transition: opacity 50ms ease-in;
+    transition: opacity 50ms ease-in;
     pointer-events: none;
 }
 
-.white_content:target {
+.modal_content:target{
     opacity:1;
     pointer-events: auto;
 }
 
-.white_content > div {
+.modal_content > div { /*  > 선택자 상위 태그의 직계 하위 tag 만 선택  */
 	position: absolute;
-	top: 30%;
-	left: 32%;
+	top: 40%;
+	left: 30%;
 	width: 45%;
-	height: 32.2%;
+	height: auto;
 	padding: 0;
 	border: 1px solid #8D8D8D;
 	background-color: #F9FAF9;
 	overflow: auto;	
 }
 
+.modal{
+    height: 100%;
+}
+
 .modalcontent{
+    position: relative;
+    height: auto;
     cursor: pointer;
     text-align: center;
     margin: 0;

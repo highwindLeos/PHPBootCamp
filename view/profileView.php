@@ -29,8 +29,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
                 <div class="navbaricon">
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">
-                    <img src="img/icon/iconheader03.png">
-                    <a href="logoutProcess.php"><span class="logout">로그아웃</span></a>
+                    <a href="profile.php"><img src="img/icon/iconheader03.png"></a>
                 </div>
             </nav>
         </div>
@@ -38,10 +37,10 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
     <article id="article">
         <div class="top-article">
            <div class="top">
-               <a href="#"><img class="profile-img" src="img/profile/profile.jpg"></a>
+               <a href="#open2"><img class="profile-img" src="img/profile/profile.jpg"></a>
                 <h2>highwind26</h2>
                 <button><img src="img/profile/profile2.png"></button>
-                <a href="#open"><img class="setting" src="img/profile/profile3.png"></a>
+                <a href="#open1"><img class="setting" src="img/profile/profile3.png"></a>
                 <p><span>게시물 0</span><span>팔로워 3</span><span>팔로우 6</span></p>
            </div>
         </div>
@@ -79,12 +78,19 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
         </p>
     </footer>
     <!-- Modal popup-->
-    <div class="white_content" id="open">
+    <div class="modal_content" id="open1">
         <div>
             <p class="modalcontent">비밀번호 변경</p>
             <p class="modalcontent">허가된 앱</p>
             <p class="modalcontent">알 림</p>
-            <p class="modalcontent">로그 아웃</p>
+            <a href="logoutProcess.php"><p class="modalcontent">로그 아웃</p></a>
+            <a href="#close"><p class="modalcontent">취소</p></a>
+        </div>
+    </div>
+    <div class="modal_content" id="open2">
+        <div class="modal">
+            <p class="modalcontent">현제 사진 삭제</p>
+            <p class="modalcontent">사진 업로드</p>
             <a href="#close"><p class="modalcontent">취소</p></a>
         </div>
     </div>

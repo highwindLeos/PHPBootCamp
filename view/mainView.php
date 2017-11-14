@@ -29,7 +29,6 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">
                     <a href="profile.php"><img src="img/icon/iconheader03.png"></a>
-                    <a href="logoutProcess.php"><span class="logout">로그아웃</span></a>
                 </div>
             </nav>
         </div>
