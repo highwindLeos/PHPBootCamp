@@ -1,6 +1,5 @@
 <?php 
 session_start(); 
-$_SESSION = isset($_SESSION) ? $_SESSION : array(); # 삼항연산자. 조건 ? 참 : 거짓.
 ?>
 <!DOCTYPE html>
 <html lang="ko">

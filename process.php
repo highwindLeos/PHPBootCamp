@@ -25,11 +25,15 @@ require 'config/config.php';
 
         # 검증 코드
         # 이메일
-        if(empty($email))
-        {
+        if(empty($email)){
             $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
+        } else {
+             $emailOverlapCheck = $usermodel->emailOverlapCheck($email);
+            
+            if ($emailOverlapCheck) { #이메일 중복 체크(입력한 값과 데이터베이스에서 조회한 값이 있다면.)
+            $_SESSION['email3'] = $errors['email3'] ="* 이미 존재하는 이메일입니다.";
+            }
         }
-        
         if(filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){ # 이메일 입력값 검증 
             $emailVar = $email; #true 이메일 주소이면 $emailVal 변수에 넣음
         } else {
@@ -37,8 +41,7 @@ require 'config/config.php';
         }
         
         # 이름
-        if(empty($name))
-        {
+        if(empty($name)){
             $_SESSION['name1'] = $errors['name1'] = "* 이름은 빈칸일 수 없습니다.";
         }
         if(strlen($_POST['name']) < 4)
@@ -47,18 +50,22 @@ require 'config/config.php';
         }
         
         # 별명
-        if(empty($author))
-        {
-            $_SESSION['author1'] = $errors['author1'] = "* 별명은 빈칸일 수 없습니다.";
+        if(empty($author)){
+            $_SESSION['author1'] = $errors['author1'] = "* 사용자 이름은 빈칸일 수 없습니다.";
+        } else {
+            
+        $authorOverlapCheck = $usermodel->authorOverlapCheck($author);
+            
+            if($authorOverlapCheck){ #사용자 이름 중복 체크(입력한 값과 데이터베이스에서 조회한 값이 있다면.)
+                $_SESSION['author3'] = $errors['author3'] = "*이미 존재하는 사용자 이름입니다.";
+            }
         }
-        if(strlen($author) < 3)
-        {
-            $_SESSION['author2'] = $errors['author2'] = "* 별명은 3자 이상이어야합니다.";
+        if(strlen($author) < 3){
+            $_SESSION['author2'] = $errors['author2'] = "* 사용자 이름은 3자 이상이어야합니다.";
         }
         
         # 암호
-        if(empty($hashpass))
-        {
+        if(empty($hashpass)){
             $_SESSION['password1'] = $errors['password1'] = "* 암호는 빈칸일 수 없습니다.";
         }
         if(strlen($hashpass) < 6 || strlen($hashpass) > 18 )
@@ -70,6 +77,7 @@ require 'config/config.php';
     if(count($errors) == 0){ #에러값이 없다면 true
         $usermodel->Register(); #모델 함수 호출.
         $_SESSION = array(); #세션 데이터 초기화.
+        $_SESSION['is_login'] = true;   
         header("Location: main.php"); #리다이렉션 페이지 이동
     } else { 
         header("Location: index.php"); #false 리다이렉션 페이지 이동

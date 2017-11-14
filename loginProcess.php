@@ -46,6 +46,7 @@ require 'config/config.php';
     if(password_verify($hashpass, $users['password'])){ 
         if(count($errors) == 0){ #에러값이 없다면 true
             $_SESSION = array(); #세션 데이터 초기화.
+            $_SESSION['is_login'] = true; #세션에 True 값을 넣음.
             header("Location: main.php"); #리다이렉션 페이지 이동
         }
     }else{

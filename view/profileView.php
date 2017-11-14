@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
+    header('Location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

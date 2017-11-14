@@ -31,4 +31,21 @@ class UserModel
         $stmt->execute(); # 쿼리 실행
     }
     
+    public function emailOverlapCheck($email)
+    {
+        $stmt = $this->db->prepare("SELECT email FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC));
+    }
+    public function authorOverlapCheck($author)
+    {
+        $stmt = $this->db->prepare("SELECT author FROM users WHERE author = :author");
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC));
+    }
+    
 }

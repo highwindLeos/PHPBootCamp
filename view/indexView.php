@@ -26,6 +26,7 @@
                     </p>
                     <p class="validate"><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; unset($_SESSION['email1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; unset($_SESSION['email2']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email3'])) echo $_SESSION['email3']; unset($_SESSION['email3']) ?></p>
                     <p>
                         <input type="text" id="name" name="name" placeholder="성명">
                     </p>
@@ -39,6 +40,8 @@
                     <p class="validate"><?php if(isset($_SESSION['author1'])) echo $_SESSION['author1'];
                         unset($_SESSION['author1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2'];
+                        unset($_SESSION['author2']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['author3'])) echo $_SESSION['author3'];
                         unset($_SESSION['author2']) ?></p>
                     <p>
                         <input type="password" id="password" name="password" placeholder="비밀번호">
