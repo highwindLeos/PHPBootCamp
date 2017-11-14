@@ -30,8 +30,8 @@ require 'config/config.php';
             $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
         }
         
-        if (filter_input(INPUT_POST, $email, FILTER_VALIDATE_EMAIL)) { # 이메일 입력값 검증 
-            $emailVar = $emailSefe; #true 이메일 주소이면 $emailVal 변수에 넣음
+        if(filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){ # 이메일 입력값 검증 
+            $emailVar = $email; #true 이메일 주소이면 $emailVal 변수에 넣음
         } else {
             $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
         }
