@@ -80,7 +80,6 @@
             <span class="footerlink"><a href="#">약관</a></span>
             <span class="footerlink"><a href="#">디렉터리</a></span>
             <span class="footerlink"><a href="#">언어</a></span>
-            <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
             <span> &#169; 2017 instargram</span>
         </p>
     </footer>
