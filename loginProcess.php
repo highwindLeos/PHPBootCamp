@@ -16,7 +16,7 @@ require 'config/config.php';
     $hashpass = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
 
     $loginmodel = new loginModel($db);
-    $users = $loginmodel->getUsersByEmail($email);
+    $users = $loginmodel->getUsersByEmail($email);  
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
@@ -43,16 +43,16 @@ require 'config/config.php';
         
     }
 
-    if(password_verify($hashpass, $users['password'])){ 
+    if(password_verify($hashpass, $users['password'])){ #입력 평문과 hash 값이 동일한 값인지 check 하는 함수.
         if(count($errors) == 0){ #에러값이 없다면 true
             $_SESSION = array(); #세션 데이터 초기화.
-            $_SESSION['is_login'] = true; #세션에 True 값을 넣음.
+            $_SESSION['is_login'] = true; #세션에 True 값을 입력.
+            $_SESSION['email'] = $email; #세션에 이메일 값을 입력
+
             header("Location: main.php"); #리다이렉션 페이지 이동
         }
     }else{
         header("Location: login.php"); #false 리다이렉션 페이지 이동
     }
-
-    
 
 ?>

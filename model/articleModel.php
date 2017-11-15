@@ -9,13 +9,15 @@ class articleModel
 
     public function getArticles() {
         $stmt = $this->db->prepare('SELECT * FROM articles');
-        $stmt->execute(); 
+        $stmt->execute();
+        
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function getUsers() {
         $stmt = $this->db->prepare('SELECT * FROM users');
-        $stmt->execute(); 
+        $stmt->execute();
+        
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
@@ -23,13 +25,15 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM pictures WHERE id = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
+        
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
     public function getUserIcons($id) {
         $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE id = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute(); 
+        $stmt->execute();
+        
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
@@ -37,6 +41,7 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM comments WHERE id = :user_id');
         $stmt->bindParam(':user_id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
+        
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
@@ -44,6 +49,7 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM likes WHERE articles_id = :articles_id');
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute(); 
+        
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

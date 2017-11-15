@@ -37,15 +37,16 @@ class UserModel
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
         $stmt->execute();
         
-        return !empty($stmt->fetch(PDO::FETCH_ASSOC));
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); #false
     }
+    
     public function authorOverlapCheck($author)
     {
         $stmt = $this->db->prepare("SELECT author FROM users WHERE author = :author");
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         
-        return !empty($stmt->fetch(PDO::FETCH_ASSOC));
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); #false
     }
     
 }

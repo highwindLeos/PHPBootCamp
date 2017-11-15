@@ -12,8 +12,7 @@ class loginModel
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
         $stmt->execute(); 
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row return.
     }
-    
 }
 ?>

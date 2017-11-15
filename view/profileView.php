@@ -37,26 +37,20 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
     <article id="article">
         <div class="top-article">
            <div class="top">
-               <a href="#open2"><img class="profile-img" src="img/profile/profile.jpg"></a>
-                <h2>highwind26</h2>
+               <a href="#open2"><img class="profile-img" src="<?= $list['usericon']; ?>"></a>
+                <h2><?= $list['author']; ?></h2>
                 <button><img src="img/profile/profile2.png"></button>
                 <a href="#open1"><img class="setting" src="img/profile/profile3.png"></a>
-                <p><span>게시물 0</span><span>팔로워 3</span><span>팔로우 6</span></p>
+                <p><span>게시물 <?= count($pitures); ?></span><span>팔로워 3</span><span>팔로우 6</span></p>
            </div>
         </div>
         <div class="mid-article">
            <p><span>게시물</span><span>저장됨</span></p>
         </div>
         <div class="bottom-article">
-            <div><img src="img/profile/img1.png"></div>
-            <div><img src="img/profile/img2.png"></div>
-            <div><img src="img/profile/img3.png"></div>
-            <div><img src="img/profile/img4.png"></div>
-            <div><img src="img/profile/img5.png"></div>
-            <div><img src="img/profile/img6.png"></div>
-            <div><img src="img/profile/img7.png"></div>
-            <div><img src="img/profile/img8.png"></div>
-            <div><img src="img/profile/img9.png"></div>
+            <?php foreach($pitures as $items){ ?>
+                <div><img src="<?= $items['src'] ?>"></div>
+            <?php } ?>
         </div>
     </article>  
     <footer>
@@ -77,22 +71,6 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
             <span> &#169; 2017 Instargram.</span>
         </p>
     </footer>
-    <!-- Modal popup-->
-    <div class="modal_content" id="open1">
-        <div>
-            <p class="modalcontent">비밀번호 변경</p>
-            <p class="modalcontent">허가된 앱</p>
-            <p class="modalcontent">알 림</p>
-            <a href="logoutProcess.php"><p class="modalcontent">로그 아웃</p></a>
-            <a href="#close"><p class="modalcontent">취소</p></a>
-        </div>
-    </div>
-    <div class="modal_content" id="open2">
-        <div class="modal">
-            <p class="modalcontent">현제 사진 삭제</p>
-            <p class="modalcontent">사진 업로드</p>
-            <a href="#close"><p class="modalcontent">취소</p></a>
-        </div>
-    </div>
+    <?php include 'profileViewModal.php'; ?>
 </body>
 </html>

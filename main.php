@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'config/config.php';
 
 try {
@@ -15,9 +15,11 @@ $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
 $articles = $articlemodel->getArticles(); # 리스트를 가져오는 model class에 함수getAlls() 를 호출해서 $articles 변수에 담습니다.
 $users = $articlemodel->getUsers(); # 리스트를 가져오는 model class에 함수getAlls() 를 호출해서 $articles 변수에 담습니다.
 
+$email = $_SESSION['email'];
+
 for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
     
-    #사용자 아이콘 + 사용자 별명: 데이터 베이스에 user내용의 users_id를 참고로 usericon + Author 컬럼을 가져온다.
+    #사용자 아이콘 + 사용자 별명: 데이터 베이스에 users내용의 users_id를 참고로 usericon + Author 컬럼을 가져온다.
     $usericons = $articlemodel->getUserIcons($articles[$i]['users_id']);
     $articles[$i]['usericon'] = $usericons;
     
