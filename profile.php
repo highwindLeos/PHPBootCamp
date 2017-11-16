@@ -13,7 +13,7 @@
     include 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
 
     $author = $_GET['author'];
-    $email = $_REQUEST['email'];
+    $email = $_SESSION['email'];
     
     if($_GET['author']){
         
@@ -21,7 +21,7 @@
     $list = $profilemodel->getUserIconByAuthor($author);
     $pitures = $profilemodel->getPictureByAuthor($author);
         
-    } else if($_REQUEST['email']){
+    } else if($_SESSION['email']){
         
     $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
     $list = $profilemodel->getUserIconByEmail($email);

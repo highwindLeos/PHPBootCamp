@@ -37,6 +37,7 @@ hr{
     margin: 1.5em 0 1em 0;
 }
 
+
 /* login Document Css */
 
 .container {
@@ -97,6 +98,7 @@ hr{
     padding: 20px 5px;
 }
 
+
 .titleimg img{
     width: 35px;
     height: 35px;
@@ -128,6 +130,10 @@ hr{
 
 .inner-article{
     margin: 0px 15px;
+}
+
+.article-write{
+    text-align: center;
 }
 
 .datetime{
