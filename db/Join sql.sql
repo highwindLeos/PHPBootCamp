@@ -1,0 +1,1 @@
+SELECT anicoboard.pictures.id AS Pid,anicoboard.users.id AS Uid,src,usericon FROM anicoboard.pictures LEFT JOIN anicoboard.users ON pictures.articles_id = users.id WHERE email = 'highwind26@gmail.com';

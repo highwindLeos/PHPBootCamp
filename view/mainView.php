@@ -34,7 +34,11 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
         </div>
     </header>
     <article>
-       <?php foreach($articles as $item){ ?>
+       <?php foreach($articles as $item){ 
+//        echo '<pre>';
+//        print_r($item);
+//        echo '</pre>';
+        ?>
         <div class="article">
             <div class="titleimg inner-article">
                 <img src="<?= htmlspecialchars($item['usericon']['usericon']); ?>">
@@ -49,9 +53,11 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
                 </div>
                 <div class="articleparam">
                     <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
-                    <p class="articles"><?= htmlspecialchars($item['article']); ?></p>
-                    <p class="comment">
+                    <p class="articles">
                         <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
+                        <?= htmlspecialchars($item['article']); ?>
+                    </p>
+                    <p class="comment">
                         <?= htmlspecialchars($item['comments']['comment']).' <a href="#">모든 글 보기</a>'; #comments는 여러개가 달려야 함 ?>
                     </p>
                     <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
