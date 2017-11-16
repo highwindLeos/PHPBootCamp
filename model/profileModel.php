@@ -15,6 +15,23 @@ class profileModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function getUserIconByAuthor($author) {
+        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE author = :author');
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by email.
+    }
+    
+    public function getPictureByAuthor($author) {
+        $stmt = $this->db->prepare('SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.users 
+                                    ON pictures.articles_id = users.id WHERE author = :author');
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #array rows by Email.
+    }
+    
     public function getUserIconByEmail($email) {
         $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE email = :email');
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
@@ -31,5 +48,6 @@ class profileModel
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #array rows by Email.
     }
+    
 }
 ?>

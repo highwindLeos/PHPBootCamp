@@ -118,6 +118,14 @@ hr{
     margin: 0 2px;
 }
 
+.author{
+    position: relative;
+    top:-15px; 
+    left: 10px;
+    color: #000;
+    font-size: 15px;
+}
+
 .inner-article{
     margin: 0px 15px;
 }

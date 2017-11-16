@@ -37,9 +37,9 @@ class articleModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function getComments($id) {
+    public function getComments($user_id) {
         $stmt = $this->db->prepare('SELECT * FROM comments WHERE id = :user_id');
-        $stmt->bindParam(':user_id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $stmt->execute(); 
         
         return $stmt->fetch(PDO::FETCH_ASSOC);
