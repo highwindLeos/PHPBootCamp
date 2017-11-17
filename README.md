@@ -1,4 +1,4 @@
-<img src="Screenshot 2017-10-19 at 00.21.09.png" align="center">
+<img src="Screenshot 2017-10-19 at 00.21.09.png">
 
 # PHPcamp
 ### PHPcamp in Study
