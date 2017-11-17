@@ -19,7 +19,6 @@ http://modernpug.github.io/php-the-right-way/
 
 # TEST ID : 
 
-| :---: | :---: |
 | stonker@gmail.com | Leenara |
 | highwind26@gmail.com | Leodays |
 | highwind26@nate.com | Leedays |
