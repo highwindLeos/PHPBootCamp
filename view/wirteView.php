@@ -17,7 +17,7 @@
                     <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php">
                         <img src="img/writebtn.png" alt="보내기">
                     </button>
-                    <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php">
+                    <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php?name=cancle">
                         <img src="img/canclebtn.png" alt="보내기">
                     </button>
                 </form>

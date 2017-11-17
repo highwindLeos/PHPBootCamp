@@ -47,10 +47,10 @@ textarea{
 
 .fileupload{
     margin: 15px 0px;
-    padding: 5px 0;
+    padding: 5px 10px;
     border: 1.5px solid #DBDBDB;
     border-radius: 5px;
-    width:100%;
+    width:90%;
 }
 
 button{
@@ -145,9 +145,10 @@ a:active {
     margin-bottom: 10px;
 }
 
-.form{
+.form{    
+    position: relative;
     width: 90%;
-    margin: 15px 0;
+    margin: 50px 30px;
 }
 
 .login{

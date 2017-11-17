@@ -8,7 +8,7 @@ class articleModel
     }
 
     public function getArticles() {
-        $stmt = $this->db->prepare('SELECT * FROM articles');
+        $stmt = $this->db->prepare('SELECT * FROM articles ORDER BY id DESC'); # 내림차순 정렬 (id 기준)
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

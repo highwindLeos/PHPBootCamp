@@ -12,8 +12,11 @@ require 'config/config.php';
     }
 
     $insertmodle = new InsertModel($db);
-    $insertmodle->UploadImageAndArticleId(); #사진을 업로드.
-    $insertmodle->UploadArticles(); #내용을 업로드.
+
+    if(!$_GET['name']){ # Cancle 버튼이 아니라면 True.
+        $insertmodle->UploadImageAndArticleId(); #사진을 업로드.
+        $insertmodle->WriteArticles(); #내용을 업로드.
+    }
     
     header("Location: main.php"); #리다이렉션 페이지 이동
 
