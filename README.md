@@ -19,10 +19,11 @@ http://modernpug.github.io/php-the-right-way/
 
 # TEST ID : 
 
-
-|| stonker@gmail.com | Leenara 
- highwind26@gmail.com | Leodays 
- highwind26@nate.com | Leedays 
- highwind26@naver.com | mangaLee 
- leosdays@gmail.com | leosdays26 
- leechar@gmail.com | Leechar ||
+| ID | Author |
+|:---:|:---:|
+| stonker@gmail.com | Leenara |
+| highwind26@gmail.com | Leodays |
+| highwind26@nate.com | Leedays |
+| highwind26@naver.com | mangaLee |
+| leosdays@gmail.com | leosdays26 |
+| leechar@gmail.com | Leechar |
