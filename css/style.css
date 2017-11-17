@@ -152,6 +152,10 @@ a:active {
 
 .article-input{    
     position: relative;
+    font-family: 'Jeju Gothic', serif;
+    padding: 15px;
+    font-size: 1.5rem;
+    color : #000;
     border-radius: 10px;
     border: 2px dotted #DBDBDB;
     width: 93%;
