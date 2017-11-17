@@ -1,4 +1,4 @@
-![image](PHPbootcamp.png)
+![image](PHPbootcamp.png){: margin: 0 auto    display: block }
 
 # PHP Bootcamp
 ### PHP Bootcamp in Study
