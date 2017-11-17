@@ -18,11 +18,11 @@ The Right Way : 모던 PHP의 정석.
 http://modernpug.github.io/php-the-right-way/
 
 # TEST ID : 
-| 1 | 2 |
-| ---
-| stonker@gmail.com | Leenara |
-| highwind26@gmail.com | Leodays |
-| highwind26@nate.com | Leedays |
-| highwind26@naver.com | mangaLee |
-| leosdays@gmail.com | leosdays26 |
-| leechar@gmail.com | Leechar |
+
+
+|| stonker@gmail.com | Leenara ||
+|| highwind26@gmail.com | Leodays ||
+|| highwind26@nate.com | Leedays ||
+|| highwind26@naver.com | mangaLee ||
+|| leosdays@gmail.com | leosdays26 ||
+|| leechar@gmail.com | Leechar ||
