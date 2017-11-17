@@ -1,7 +1,7 @@
 <img src="Screenshot 2017-10-19 at 00.21.09.png">
 
-# PHPcamp
-### PHPcamp in Study
+# PHP Bootcamp
+### PHP Bootcamp in Study
 
 PHP Camp에서 독학 + 코치를 통해 배우고 있는 
 프로젝트입니다. Instargram 컨텐츠를 기본으로
