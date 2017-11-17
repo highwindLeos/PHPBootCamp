@@ -10,14 +10,14 @@
             </div>
             <hr>
             <div class="form">
-                <form class="article-write">
+                <form class="article-write" enctype="multipart/form-data">
                     <label for="image_uploads"> 업로드 할 이미지 파일을 선택해주세요.(PNG, JPG)</label>
                     <input type="file" class="fileupload" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
                     <textarea class="article-input" name="article" placeholder="내용을 입력하세요." ></textarea>
                     <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php">
                         <img src="img/writebtn.png" alt="보내기">
                     </button>
-                    <button class="submit-btn" type="submit" formmethod="POST" formaction="main.php">
+                    <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php">
                         <img src="img/canclebtn.png" alt="보내기">
                     </button>
                 </form>

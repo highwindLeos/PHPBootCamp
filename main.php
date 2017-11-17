@@ -15,9 +15,8 @@ $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
 $articles = $articlemodel->getArticles(); 
 $users = $articlemodel->getUsers(); 
 
+
 $email = $_SESSION['email'];
-
-
 
 for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
     
@@ -25,11 +24,9 @@ for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.
     $usericons = $articlemodel->getUserIcons($articles[$i]['users_id']);
     $articles[$i]['usericon'] = $usericons;
     
-    #메인 사진 : 데이터 베이스에 articles내용을 Id를 참고로 pictures table에 src 컬럼을 가지고온다.
+    #메인 사진 : 데이터 베이스에 articles내용을 Id를 참고로 pictures table에 모든 컬럼을 가지고온다.
     $pictures = $articlemodel->getPictures($articles[$i]['id']);
     $articles[$i]['src'] = $pictures;
-    
-
     
     #좋아요 갯수 : 데이터 베이스에 articles 내용의 Id를 참고로 likes table에 like 컬럼을 가지고온다.
     $likes = $articlemodel->getLikeCnt($articles[$i]['id']);
@@ -40,8 +37,6 @@ for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.
     $articles[$i]['comments'] = $comments;
     
 }
-
-   
 
 include 'view/mainView.php'; # 뷰를 가져온다.
 

@@ -1,19 +1,20 @@
 <?php
 session_start();
-require 'model/loginModel.php';
+require 'model/insertModel.php'; 
 require 'config/config.php';
 
     try {
-            $db = new PDO($dsn, $dId, $dPass);
-        }
-        catch(PDOException $e) 
-        {
-            die($e->getMessage());
-        }
+        $db = new PDO($dsn, $dId, $dPass);
+    }
+    catch(PDOException $e) 
+    {
+        die($e->getMessage());
+    }
 
-    #필터링.
-
-    $article = filter_input(INPUT_POST, 'article', FILTER_DEFAULT); 
-
+    $insertmodle = new InsertModel($db);
+    $insertmodle->UploadImageAndArticleId(); #사진을 업로드.
+    $insertmodle->UploadArticles(); #내용을 업로드.
+    
+    header("Location: main.php"); #리다이렉션 페이지 이동
 
 ?>

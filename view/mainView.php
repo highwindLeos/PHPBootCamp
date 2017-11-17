@@ -1,7 +1,7 @@
 <?php include 'head.php'; ?>
    
     <article>
-       <?php foreach($articles as $item){  ?>
+       <?php foreach($articles as $item){ ?>
         <div class="article">
             <div class="titleimg inner-article">
                 <a href="profile.php?author=<?= $item['usericon']['author'] ?>">

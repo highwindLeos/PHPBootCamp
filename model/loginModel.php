@@ -14,5 +14,6 @@ class loginModel
         
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row return.
     }
+
 }
 ?>
