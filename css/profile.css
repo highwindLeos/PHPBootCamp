@@ -41,7 +41,8 @@ button{
 .profile-img{
     width: 150px;
     height: 150px;
-   border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #8D8D8D;
     margin-right: 20px;
 }
 

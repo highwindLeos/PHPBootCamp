@@ -14,10 +14,13 @@ require 'config/config.php';
     $insertmodle = new InsertModel($db);
 
     if(!$_GET['name']){ # Cancle 버튼이 아니라면 True.
-        $insertmodle->UploadImageAndArticleId(); #사진을 업로드.
-        $insertmodle->WriteArticles(); #내용을 업로드.
+        if($_FILES['image_uploads']['name']){ # 업로드 사진이 없다면.
+            $insertmodle->UploadImageAndArticleId(); #사진을 업로드.
+            $insertmodle->WriteArticles(); #내용을 업로드.
+            header("Location: main.php");
+        } else {
+            header("Location: main.php");
+        }
     }
-    
-    header("Location: main.php"); #리다이렉션 페이지 이동
 
 ?>

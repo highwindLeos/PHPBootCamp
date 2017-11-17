@@ -12,13 +12,14 @@ class InsertModel
     {
         $insertSql = "INSERT INTO pictures (src, articles_id) VALUES (:src, :articles_id)";
         
-        $hostPath = realpath('./'); #현제 컴퓨터의 host 경로상의 실제 디렉토리 값을 반환.
+        $hostPath = realpath('./'); #현제 컴퓨터의 Server host 경로상의 실제 디렉토리 값을 반환.
             
         ini_set("display_errors", "1");
         $uploaddir = $hostPath.'\img\image\\';
-        $uploadfile = $uploaddir.basename($_FILES['image_uploads']['name']); #basename() form 에 name 속성 대한 값으로 넘겨준 
+        $uploadfile = $uploaddir.basename($_FILES['image_uploads']['name']); #basename(); form 에 name 속성 대한 값으로 넘겨준다.
         
-        if (move_uploaded_file($_FILES['image_uploads']['tmp_name'], $uploadfile)) {
+        if (move_uploaded_file($_FILES['image_uploads']['tmp_name'], $uploadfile)) { 
+            #move_uploaded_file(); 최초 업로드시 temp 디렉토리에 임시 저장. 두번째 인자값으로 들어오는 경로로 이동시킴.
             echo "파일이 유효하고, 성공적으로 업로드 되었습니다.\n";
         } else {
             echo "FileUpload Faild!!\n";

@@ -3,7 +3,7 @@
     <article id="article">
         <div class="top-article">
            <div class="top">
-               <a href="#open2"><img class="profile-img" src="<?= $list['usericon']; ?>"></a>
+               <a href="#open2"><img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"></a>
                 <h2><?= $list['author']; ?></h2>
                 <button><img src="img/profile/profile2.png"></button>
                 <a href="#open1"><img class="setting" src="img/profile/profile3.png"></a>
