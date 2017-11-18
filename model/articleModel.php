@@ -11,7 +11,7 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM articles ORDER BY id DESC'); # 내림차순 정렬 (id 기준)
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
     }
     
     public function getUsers() {

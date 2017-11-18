@@ -26,17 +26,13 @@ if(isset($_SESSION['is_login'])){ #변수가 설정되어 있다면 True
                 <a href="index.php"><img id="logo" src="img/logo.png"></a>
                 <form class="form">
                     <p>
-                        <input type="text" id="email" name="email" placeholder="이메일" />
-                        <p class="validate"><?php if(isset($_SESSION['login1'])) echo $_SESSION['login1'];
-                        unset($_SESSION['login1']) ?></p>
-                        <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2'];
-                        unset($_SESSION['login2']) ?></p>
+                        <input type="text" id="email" name="email" placeholder="E-Mail (example : instargram@gmail.com)" />
+                        <p class="validate"><?php if(isset($_SESSION['login1'])) echo $_SESSION['login1']; unset($_SESSION['login1']) ?></p>
+                        <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2']; unset($_SESSION['login2']) ?></p>
                     </p>
-                        <input type="password" id="password" name="password" placeholder="비밀번호" />
-                        <p class="validate"><?php if(isset($_SESSION['login3'])) echo $_SESSION['login3'];
-                        unset($_SESSION['login3']) ?></p>
-                        <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4'];
-                        unset($_SESSION['login4']) ?></p>
+                        <input type="password" id="password" name="password" placeholder="Password" />
+                        <p class="validate"><?php if(isset($_SESSION['login3'])) echo $_SESSION['login3']; unset($_SESSION['login3']) ?></p>
+                        <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4']; unset($_SESSION['login4']) ?></p>
                     </p>
                     <button type="submit" formmethod="POST" formaction="loginProcess.php">
                     <img src="img/login2.png"/></button>

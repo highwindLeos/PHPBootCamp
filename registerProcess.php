@@ -37,7 +37,8 @@ require 'config/config.php';
         if(filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){ # 이메일 입력값 검증 
             $emailVar = $email; #true 이메일 주소이면 $emailVal 변수에 넣음
         } else {
-            $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
+            $_SESSION['email2'] = $errors['email2'] = "* 이메일 형식이 아닙니다."; 
+            #false 이메일 주소가 아니면 오류 메세지를 세션배열에 넣음.
         }
         
         # 이름
@@ -77,8 +78,8 @@ require 'config/config.php';
     if(count($errors) == 0){ #에러값이 없다면 true
         $usermodel->Register(); #모델 함수 호출.
         $_SESSION = array(); #세션 데이터 초기화.
-        $_SESSION['is_login'] = true;   #세션에 True 값을 입력.
-        $_SESSION['email'] = $email; #세션에 이메일값을 입력.
+        $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)
+        $_SESSION['email'] = $email; #세션에 이메일 값을 입력.
         
         header("Location: main.php"); #리다이렉션 페이지 이동
     } else { 
