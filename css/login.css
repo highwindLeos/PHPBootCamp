@@ -128,7 +128,7 @@ hr{
     font-size: 15px;
 }
 
-.inner-article{
+.commentform{
     margin: 0px 15px;
 }
 
@@ -149,6 +149,7 @@ hr{
 }
 
 .userid{
+    margin-right: 10px;
     color: #003962; 
 }
 

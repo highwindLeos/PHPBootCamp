@@ -1,7 +1,7 @@
 <?php include 'head.php'; ?>
    
     <article>
-       <?php foreach($articles as $item){ ?>
+       <?php foreach($articles as $item){ #print_r($item) ?>
         <div class="article">
             <div class="titleimg inner-article">
                 <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
@@ -20,19 +20,21 @@
                 <div class="articleparam">
                     <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
                     <p class="articles">
-                        <span class="userid"><?= htmlspecialchars($item['usericon']['author']).' '; ?></span>
+                       <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
+                            <span class="userid"><?= htmlspecialchars($item['usericon']['author']); ?></span>
+                        </a>
                         <?= htmlspecialchars($item['article']); ?>
                     </p>
                     <p class="comment">
-                        <?= htmlspecialchars($item['comments']['comment']).' <a href="#">모든 글 보기</a>'; #comments는 여러개가 달려야 함 ?>
+                    
                     </p>
                     <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
                 </div>
             </div>
             <hr>
-            <form class="inner-article">
-                <input class="comment" type="text" placeholder="댓글달기" /> 
-                <button class="commentbtn" type="submit" formmethod="POST" formaction="#">
+            <form class="commentform">
+                <input class="comment" type="text" name="comment" placeholder="댓글달기" /> 
+                <button class="commentbtn" type="submit" formmethod="POST" formaction="commentProcess.php">
                 <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
             </form>
         </div>

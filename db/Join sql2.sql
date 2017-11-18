@@ -1,0 +1,1 @@
+SELECT * FROM anicoboard.articles LEFT JOIN anicoboard.pictures ON articles.id = pictures.articles_id;

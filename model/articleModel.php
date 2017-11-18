@@ -37,12 +37,18 @@ class articleModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    public function getComments($user_id) {
-        $stmt = $this->db->prepare('SELECT * FROM comments WHERE id = :user_id');
-        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-        $stmt->execute(); 
+    public function getComments($articles_id)
+    {
+        $stmt = $this->db->prepare('SELECT * FROM comments JOIN users ON comments.users_id = users.id WHERE 
+                                    articles_id = :articles_id');
+        $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
+        $stmt->execute();
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $rows = array(); #빈 배열 선언.
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row 를 반복해서 가져오며 row 배열에 담는다.
+            $rows[] = $row;
+        }
+        return $rows;
     }
     
     public function getLikeCnt($articles_id) {
@@ -52,5 +58,7 @@ class articleModel
         
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    
+
 }
 ?>

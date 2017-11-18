@@ -1,1 +1,1 @@
-SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.articles ON pictures.articles_id = articles.id ;
+SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.users ON pictures.articles_id = users.id WHERE email = 'highwind26@gmail.com' 	;

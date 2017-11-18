@@ -49,6 +49,22 @@ class InsertModel
 
         $stmt->execute(); # 쿼리 실행
     }
+    
+    public function WriteComments()
+    {
+        $insertSql = "INSERT INTO comments (comment, users_id, articles_id) VALUES (:comment, :users_id, :articles_id)"; 
+        
+        $comment = trim($_POST['comment']); 
+        $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
+        $articles_id = trim('20'); #댓글을 쓰는 글의 articles_id. 
+
+        $stmt = $this->db->prepare($insertSql);
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':users_id', $users_id);
+        $stmt->bindParam(':articles_id', $articles_id);
+
+        $stmt->execute(); # 쿼리 실행
+    }
 }
 
 ?>
