@@ -26,7 +26,7 @@ class InsertModel
         }
         
         $src = 'img/image/'.$_FILES['image_uploads']['name']; #저장되는 파일의 파일명 (DB 저장될 문자열)
-        $articles_id = trim($_SESSION['id']); 
+        $articles_id = trim($_SESSION['id']); #현제 로그인한 user 의 ID 값. 
                        
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':src', $src);

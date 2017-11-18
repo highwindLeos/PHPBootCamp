@@ -70,14 +70,15 @@ button{
     display : grid;
     justify-content :space-around;    
     width : 100%;
-    grid-template-columns : repeat(3 , 1fr);
-    grid-column-gap : 2em;
+    grid-template-columns : repeat(3 , 26%);
+    grid-column-gap : 0;
     grid-row-gap : 1em;
     padding: 25px 0px;
     background-color : #F9FAF9;
 }
 
 .bottom-article div img{
+    align-content: center;
     width: 100%;
     height: auto;
     border: 2px solid #EFEFEF;
@@ -109,8 +110,6 @@ button{
     }
 
 }
-
-
 
 /* Modal CSS */
 

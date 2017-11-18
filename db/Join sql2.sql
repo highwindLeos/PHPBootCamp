@@ -1,1 +1,1 @@
-SELECT * FROM anicoboard.articles LEFT JOIN anicoboard.pictures ON articles.id = pictures.articles_id;
+SELECT articles.id AS Aid, article, date, users_id, pictures.id AS Pid, src, articles_id FROM anicoboard.articles LEFT JOIN anicoboard.pictures ON articles.id = pictures.articles_id;
