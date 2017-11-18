@@ -30,7 +30,7 @@ CREATE TABLE `articles` (
   PRIMARY KEY (`id`),
   KEY `fk_articles_users_idx` (`users_id`),
   CONSTRAINT `fk_articles_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipisicing elit','2017-11-08',1),(2,'Aut saepe sint perferendis libero quos distinctio ','2017-11-09',2),(3,'dignissimos perspiciatis. Veniam, hic, sint! Rem odio quae delectus et','2017-11-07',4),(4,'fuga aliquid cum eaque laudantium quibusdam, iste natus, veritatis ratione','2017-11-10',3),(5,'suscipit repellat perferendis cupiditate eos.','2017-11-06',1),(6,' laudantium quibusdam, iste natus, veritatis ratione','2017-11-11',3),(7,'eritatis ratione','2017-11-16',2),(8,'내용을 입력해봅니다.','2017-11-17',4),(9,'다시 내용을 입력해봅니다.','2017-11-17',4),(10,'asdasd','2017-11-17',4),(11,'Yosino sasura !!!','2017-11-18',4),(12,'ERROR!!!','2017-11-18',1),(13,'Windows girl~','2017-11-18',5),(14,'Animation Pero Android.','2017-11-18',5),(15,'FireFox browser.','2017-11-18',4),(16,'ORDER BY column DESC 로 내림차순으로 정렬하여 id열의 내림차순으로 항상 최신 글이 먼저 오고  먼저쓴글이 나중으로 오게 하였습니다.','2017-11-18',1),(17,'ORDER BY column DESC 을 테스트 합니다. PHP Camp.','2017-11-18',1),(19,'test','2017-11-18',1),(20,'PHP camp 열심히 공부합시다.','2017-11-18',2);
+INSERT INTO `articles` VALUES (1,'Lorem ipsum dolor sit amet, consectetur adipisicing elit','2017-11-08',1),(2,'Aut saepe sint perferendis libero quos distinctio ','2017-11-09',2),(3,'dignissimos perspiciatis. Veniam, hic, sint! Rem odio quae delectus et','2017-11-07',4),(4,'fuga aliquid cum eaque laudantium quibusdam, iste natus, veritatis ratione','2017-11-10',3),(5,'suscipit repellat perferendis cupiditate eos.','2017-11-06',1),(6,' laudantium quibusdam, iste natus, veritatis ratione','2017-11-11',3),(7,'eritatis ratione','2017-11-16',2),(8,'내용을 입력해봅니다.','2017-11-17',4),(9,'다시 내용을 입력해봅니다.','2017-11-17',4),(10,'Idol Legend Eriko.','2017-11-17',4),(11,'Yosino sakura !!!','2017-11-18',4),(12,'ERROR!!!','2017-11-18',1),(13,'Windows girl~','2017-11-18',5),(14,'Animation Pero Android.','2017-11-18',5),(15,'FireFox browser.','2017-11-18',4),(16,'ORDER BY column DESC 로 내림차순으로 정렬하여 id열의 내림차순으로 항상 최신 글이 먼저 오고  먼저쓴글이 나중으로 오게 하였습니다.','2017-11-18',1),(17,'ORDER BY column DESC 을 테스트 합니다. PHP Camp.','2017-11-18',1),(19,'test','2017-11-18',1),(20,'PHP camp 열심히 공부합시다.','2017-11-18',2),(21,'Composer Logo','2017-11-18',2),(22,'No image test','2017-11-18',6),(24,'MAC MINI','2017-11-18',6),(25,'신무월의 무녀. Kannazuki no miko.','2017-11-18',6),(26,'TSUKISHIRO ALICE DACAPO Second session.','2017-11-18',1),(27,'DACAPO for SHUFFLE','2017-11-18',1),(28,'Planetarian - Hosino Yumemi','2017-11-18',1),(29,'Microsoft','2017-11-18',6),(30,'Computer Bootstrap in Layout Guide.','2017-11-18',1),(31,'2017 Miku Expo in sword fancy. Collection.','2017-11-18',3),(32,'우리의 PHP 걸이네요~~! ELEPHANT GIRL ~','2017-11-18',3);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,10 +54,12 @@ CREATE TABLE `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `comment` varchar(255) NOT NULL,
   `users_id` int(11) NOT NULL,
+  `articles_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_comments_users1_idx` (`users_id`),
+  KEY `fk_comments_articles1_idx` (`articles_id`),
   CONSTRAINT `fk_comments_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +68,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,'comment1',1),(2,'comment2',2),(3,'comment3',4),(4,'comment4',3),(5,'comment5',2),(6,'comment6',1),(7,'comment7',4),(8,'comment8',2),(9,'comment9',3);
+INSERT INTO `comments` VALUES (1,'comment1',1,1),(2,'comment2',2,2),(3,'comment3',4,1),(4,'comment4',3,2),(5,'comment5',2,0),(6,'comment6',1,10),(7,'comment7',4,1),(8,'comment8',2,3),(9,'comment9',3,4),(10,'안녕하세요 코멘트',1,5),(11,'test comments insert for article id \'30\'',3,30),(12,'comment test ~~ send',3,20),(13,'코멘트 입력을 테스트 해봅니다. 임시 아이디 값은 20 입니다.',3,20),(14,'test',3,20);
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +116,7 @@ CREATE TABLE `pictures` (
   PRIMARY KEY (`id`),
   KEY `fk_pictuers_articles1_idx` (`articles_id`),
   CONSTRAINT `fk_pictuers_articles1` FOREIGN KEY (`articles_id`) REFERENCES `articles` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +125,7 @@ CREATE TABLE `pictures` (
 
 LOCK TABLES `pictures` WRITE;
 /*!40000 ALTER TABLE `pictures` DISABLE KEYS */;
-INSERT INTO `pictures` VALUES (1,'img/image/img0.png',1),(2,'img/image/img1.png',2),(3,'img/image/img2.png',4),(4,'img/image/img3.png',3),(5,'img/image/img4.png',1),(6,'img/image/img5.png',3),(7,'img/image/img6.png',2),(8,'img/image/img005.jpg',4),(9,'img/image/img003.jpg',4),(10,'img/image/image014.jpg',4),(11,'img/image/logo.jpg',4),(12,'img/image/Vocaloid0003.jpg',1),(13,'img/image/windowsgirl06.jpg',5),(14,'img/image/image012.jpg',5),(15,'img/image/image20.jpg',4),(16,'img/image/image005.jpg',1),(17,'img/image/image001.jpg',1),(19,'img/image/image16.jpg',1),(20,'img/image/Screenshot 2017-10-19 at 00.21.09.png',2);
+INSERT INTO `pictures` VALUES (1,'img/image/img0.png',1),(2,'img/image/img1.png',2),(3,'img/image/img2.png',4),(4,'img/image/img3.png',3),(5,'img/image/img4.png',1),(6,'img/image/img5.png',3),(7,'img/image/img6.png',2),(8,'img/image/img005.jpg',4),(9,'img/image/img003.jpg',4),(10,'img/image/image014.jpg',4),(11,'img/image/logo.jpg',4),(12,'img/image/Vocaloid0003.jpg',1),(13,'img/image/windowsgirl06.jpg',5),(14,'img/image/image012.jpg',5),(15,'img/image/image20.jpg',4),(16,'img/image/image005.jpg',1),(17,'img/image/image001.jpg',1),(19,'img/image/image16.jpg',1),(20,'img/image/Screenshot 2017-10-19 at 00.21.09.png',2),(21,'img/image/Screenshot 2017-10-20 at 13.25.36.png',2),(22,'img/image/Screenshot 2017-10-20 at 13.25.14.png',6),(24,'img/image/usericon01.png',6),(25,'img/image/kannazuki no miko.png',6),(26,'img/image/dacapo14.jpg',1),(27,'img/image/dacapo12.jpg',1),(28,'img/image/img049.jpg',1),(29,'img/image/img017.jpg',6),(30,'img/image/img100.jpg',1),(31,'img/image/img097.jpg',3),(32,'img/image/php.jpg',3);
 /*!40000 ALTER TABLE `pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +153,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'stonker@gmail.com','이나라','Leenara','$2y$11$XI1y4aMw9chvpE1F5sfRK.QsVhIbJ/offrYVUlRaBO/nrxiu/1p6u','img/icon/user/usericon00.png'),(2,'highwind26@gmail.com','이승훈','Leodays','$2y$11$/9d2me1vcU3zOSyrGqPpSumAtjTFLViyX6P1DCf6fEwt4nPvnEH0K','img/icon/user/usericon01.png'),(3,'highwind26@nate.com','이데이','Leedays','$2y$11$ypgWxRCBoQDFbPCl.EPpAuiTPWewIRhy/2f5QPjdMSpNbDeUjAY5.','img/icon/user/usericon02.png'),(4,'highwind26@naver.com','이만화','mangaLee','$2y$11$aB.YaarfV.GnbpOYzMTeFuzgLWSFmcYeaOOkwZrhKNL5rV2jg7Kbq','img/icon/user/usericon03.png'),(5,'leosdays@gmail.com','이레오','leosdays26','$2y$11$a880ZshgkR0b8xYPZ6BeNeaCz1iec5.xeIXBPQjAd2RJ89dd5y6P2','img/icon/user/usericon04.png'),(6,'leechar@gmail.com','리차르','Leechar','$2y$11$kqJpAh1qUDJovX9uqsDsbuRCQFyCa9FWOfgrxdCGV2ijhbaox59Ha',NULL);
+INSERT INTO `users` VALUES (1,'stonker@gmail.com','이나라','Leenara','$2y$11$XI1y4aMw9chvpE1F5sfRK.QsVhIbJ/offrYVUlRaBO/nrxiu/1p6u','img/icon/user/usericon00.png'),(2,'highwind26@gmail.com','이승훈','Leodays','$2y$11$/9d2me1vcU3zOSyrGqPpSumAtjTFLViyX6P1DCf6fEwt4nPvnEH0K','img/icon/user/usericon01.png'),(3,'highwind26@nate.com','이데이','Leedays','$2y$11$ypgWxRCBoQDFbPCl.EPpAuiTPWewIRhy/2f5QPjdMSpNbDeUjAY5.','img/icon/user/usericon02.png'),(4,'highwind26@naver.com','이만화','mangaLee','$2y$11$aB.YaarfV.GnbpOYzMTeFuzgLWSFmcYeaOOkwZrhKNL5rV2jg7Kbq','img/icon/user/usericon03.png'),(5,'leosdays@gmail.com','이레오','leosdays26','$2y$11$a880ZshgkR0b8xYPZ6BeNeaCz1iec5.xeIXBPQjAd2RJ89dd5y6P2','img/icon/user/usericon04.png'),(6,'leechar@gmail.com','리차르','Leechar','$2y$11$kqJpAh1qUDJovX9uqsDsbuRCQFyCa9FWOfgrxdCGV2ijhbaox59Ha','img/icon/user/usericon05.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-18  2:28:15
+-- Dump completed on 2017-11-19  0:41:47
