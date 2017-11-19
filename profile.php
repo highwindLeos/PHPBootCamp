@@ -16,17 +16,17 @@
     $email = $_SESSION['email'];
     
     if($_GET['author']){
-        
-    $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
-    $list = $profilemodel->getUserIconByAuthor($author);
-    $pitures = $profilemodel->getPictureByAuthor($author);
-        
+    
+        $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
+        $list = $profilemodel->getUserIconByAuthor($author);
+        $pitures = $profilemodel->getPictureByAuthor($author);
+
     } else if($_SESSION['email']){
         
-    $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
-    $list = $profilemodel->getUserIconByEmail($email);
-    $pitures = $profilemodel->getPictureByEmail($email);
-        
+        $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
+        $list = $profilemodel->getUserIconByEmail($email);
+        $pitures = $profilemodel->getPictureByEmail($email);
+
     }
 
     include 'view/profileView.php';

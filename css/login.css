@@ -128,17 +128,31 @@ hr{
     font-size: 15px;
 }
 
+.datetime{
+    color: #999; 
+    font-size: 12px;
+}
+
+/* comment */
+.comment-author {
+    text-align: center;
+    width: 100px;
+    border: 1px solid #003962;
+    border-radius: 6px;
+    padding: 1px 5px;
+}
+
+.comment-out {
+    margin: 7px 7px;
+}
+
+
 .commentform{
     margin: 0px 15px;
 }
 
 .article-write{
     text-align: center;
-}
-
-.datetime{
-    color: #999; 
-    font-size: 12px;
 }
 
 .comment{
@@ -174,3 +188,4 @@ footer {
     padding: 0 10px;
     cursor:pointer;
 }
+

@@ -146,8 +146,8 @@ a:active {
 
 .form{    
     position: relative;
-    width: 90%;
-    margin: 0px 50px;
+    width: 100%;
+    margin: 0;
 }
 
 .article-input{    
@@ -223,3 +223,4 @@ footer {
     padding: 0 10px;
     cursor : pointer;
 }
+

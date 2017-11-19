@@ -25,10 +25,20 @@
                         </a>
                         <?= htmlspecialchars($item['article']); ?>
                     </p>
-                    <p class="comment">
-                    
-                    </p>
-                    <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
+                     <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
+                     <hr style="margin:0 0 15px 0">
+                     <p class="comment">Comment (댓글)</p>
+                     <p>
+                        <?php if($item['comments']){ # comment 존재 여부. 
+                             foreach($item['comments'] as $commentList){ ?>
+                             <p class="comment-out">
+                                 <a href='profile.php?author=<?= $commentList['author'] ?>'>
+                                 <span class="comment-author"><?= htmlspecialchars($commentList['author']); ?></span></a>
+                                 <span><?= htmlspecialchars($commentList['comment']); ?><br></span>
+                             </p>
+                         <?php }
+                         } else { echo "<p class='comment-author'>댓글이 없습니다.</p>"; } ?>
+                     </p>
                 </div>
             </div>
             <hr>
