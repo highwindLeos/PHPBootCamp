@@ -4,13 +4,11 @@ class UserModel
 {
     protected $db;
     
-    public function __construct($db)
-    {
+    public function __construct($db) {
         $this->db = $db;
     }
     
-    public function Register()
-    {
+    public function Register() {
         $insertSql = "INSERT INTO users (email, name, author, password) VALUES (:email, :name, :author, :password)";
         
         $stmt = $this->db->prepare($insertSql);
@@ -31,22 +29,20 @@ class UserModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function emailOverlapCheck($email)
-    {
+    public function emailOverlapCheck($email) {
         $stmt = $this->db->prepare("SELECT email FROM users WHERE email = :email");
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
         $stmt->execute();
         
-        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); 
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); # return one Boolean.
     }
     
-    public function authorOverlapCheck($author)
-    {
+    public function authorOverlapCheck($author) {
         $stmt = $this->db->prepare("SELECT author FROM users WHERE author = :author");
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         
-        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); 
+        return !empty($stmt->fetch(PDO::FETCH_ASSOC));  # return one Boolean.
     }
     
 }

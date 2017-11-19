@@ -49,6 +49,7 @@ require 'config/config.php';
             $_SESSION['is_login'] = true; #세션에 True 값을 입력.
             $_SESSION['email'] = $email;  #세션에 입력 이메일을 입력.
             $_SESSION['id'] = $users['id'];  #세션에 입력된 이메일의 아이디를 입력.            
+            $_SESSION['author'] = $users['author'];  #세션에 입력된 이메일의 사용자를 입력.            
             
             header("Location: main.php"); #리다이렉션 페이지 이동
         }
