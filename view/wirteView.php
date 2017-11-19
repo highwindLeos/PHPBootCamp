@@ -3,7 +3,7 @@
     <article>
         <div class="article">
             <div class="article-write">
-                <a href="#">
+                <a href="main.php">
                     <img src="img/logo.png">
                     <h3>글쓰기 Write content</h3>
                 </a>

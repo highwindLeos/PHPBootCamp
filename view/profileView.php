@@ -1,17 +1,15 @@
 <?php include 'head.php'; ?>
    
     <article id="article">
-        <div class="top-article">
-           <div class="top">
-               <a href="#open2"><img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"></a>
-                <h2><?= $list['author']; ?></h2>
-                <button><img src="img/profile/profile2.png"></button>
-                <a href="#open1"><img class="setting" src="img/profile/profile3.png"></a>
-                <p><span>게시물 <?= count($pitures); ?></span><span>팔로워 3</span><span>팔로우 6</span></p>
-           </div>
-        </div>
+       <div class="top-article">
+           <a href="#open2"><img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"></a>
+            <h2><?= $list['author']; ?></h2>
+            <a href="#"><img class="button" src="img/profile/profile2.png"></a>
+            <a href="#open1"><img class="setting" src="img/profile/profile3.png"></a>
+            <p class="count"><span>게시물 <?= count($pitures); ?></span><span>팔로워 3</span><span>팔로우 6</span></p>
+       </div>
         <div class="mid-article">
-           <p><span>게시물</span><span>저장됨</span></p>
+           <p><span><?= $list['author']; ?> 님의 게시물</span></p>
         </div>
         <div class="bottom-article">
             <?php foreach($pitures as $items){ ?>

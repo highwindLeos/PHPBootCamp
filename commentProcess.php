@@ -43,5 +43,4 @@ require 'config/config.php';
         header("Location: main.php");
     }
 
-    
 ?>
