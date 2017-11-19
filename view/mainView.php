@@ -5,7 +5,9 @@
         <div class="article">
             <div class="titleimg inner-article">
                 <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
-                    <img src="<?= htmlspecialchars($item['usericon']['usericon']); ?>">
+                    <img src="<?php if(!empty($item['usericon']['usericon'])){
+                                   echo htmlspecialchars($item['usericon']['usericon']);
+                            } else { echo 'img/noimage.jpg'; }  ?>">
                     <sapn class="author"><?= htmlspecialchars($item['usericon']['author']); ?></sapn>
                 </a>
             </div>

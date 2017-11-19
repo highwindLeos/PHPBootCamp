@@ -56,7 +56,7 @@ class InsertModel
         
         $comment = trim($_POST['comment']); 
         $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
-        $articles_id = trim(34); #댓글을 쓰는 글의 articles_id. 
+        $articles_id = trim(35); #댓글을 쓰는 글의 articles_id. 
 
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':comment', $comment);

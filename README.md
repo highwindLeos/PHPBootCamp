@@ -10,12 +10,11 @@ PHP + Database 설계등 웹의 핵심기술을 학습하고 있습니다.
 http://phpbootcamp.bookcafe100.com/course/self-study
 
 # 기획 참고 자료 
-
 ### 과제 목록 :
 
 https://docs.google.com/document/d/112pxsLec9MvixoBsAq5RY46zF-a6bFROWWWqkMbNDQ0/edit
 
-The Right Way : 모던 PHP의 정석.
+### The Right Way : 모던 PHP의 정석.
 
 http://modernpug.github.io/php-the-right-way/
 
@@ -29,3 +28,4 @@ http://modernpug.github.io/php-the-right-way/
 | 4 | highwind26@naver.com | mangaLee |
 | 5 | leosdays@gmail.com | leosdays26 |
 | 6 | leechar@gmail.com | Leechar |
+| 7 | yosemite@gmail.com | Yosemite |
