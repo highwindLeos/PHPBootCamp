@@ -28,7 +28,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
                 <div class="navbaricon">
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">
-                    <a href="profile.php?email=<?= $email ?>"><img src="img/icon/iconheader03.png"></a>
+                    <a href="profile.php?author=<?= $_SESSION['author']; ?>"><img src="img/icon/iconheader03.png"></a>
                     <a href="write.php"><img src="img/icon/iconheader04.png"></a>
                 </div>
             </nav>

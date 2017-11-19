@@ -38,7 +38,7 @@ hr{
 }
 
 
-/* login Document Css */
+/* Main Document Css */
 
 .container {
     position: fixed;
@@ -83,7 +83,8 @@ hr{
 .navbar img{
     width: 25px;
     height: 25px;
-    margin: 0px 8px;
+    margin: 0px 5px;
+
 }
 
 .copy{
@@ -100,9 +101,11 @@ hr{
 
 
 .titleimg img{
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
+    border : 3px solid #DBDBDB;
     border-radius: 50%;
+    margin-left: 10px;
 }
 
 .mainimg{

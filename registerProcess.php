@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'model/UserModel.php';
+require 'model/loginModel.php';
 require 'config/config.php';
 
     try {
@@ -12,6 +13,7 @@ require 'config/config.php';
         }
 
     $usermodel = new UserModel($db);
+    $loginmodel = new LoginModel($db);
         
     #입력 데이터 필터링
     $email = filter_input(INPUT_POST, 'email', FILTER_DEFAULT);  
@@ -77,9 +79,11 @@ require 'config/config.php';
 
     if(count($errors) == 0){ #에러값이 없다면 true
         $usermodel->Register(); #모델 함수 호출.
+        $users = $loginmodel->getUsersByEmail($email); #이메일 입력값으로 Users table 의 행을 가져와서 변수에 담음.
         $_SESSION = array(); #세션 데이터 초기화.
         $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)
         $_SESSION['email'] = $email; #세션에 이메일 값을 입력.
+        $_SESSION['author'] = $users['author']; #세션에 가입하는 사용자를 입력.
         
         header("Location: main.php"); #리다이렉션 페이지 이동
     } else { 

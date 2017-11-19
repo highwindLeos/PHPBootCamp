@@ -12,7 +12,7 @@
     <div class="modal_content" id="open2">
         <div class="modal">
             <p class="modalcontent">현제 사진 삭제</p>
-            <p class="modalcontent">사진 업로드</p>
+            <a href="#" ><p class="modalcontent">사진 업로드</p></a>
             <a href="#close"><p class="modalcontent">취소</p></a>
         </div>
     </div>

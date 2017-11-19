@@ -1,5 +1,5 @@
 <?php
-class loginModel
+class LoginModel
 {
     protected $db;
 
