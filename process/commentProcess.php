@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'model/articleModel.php'; 
-require 'model/insertModel.php'; 
-require 'config/config.php';
+require '../model/articleModel.php'; 
+require '../model/insertModel.php'; 
+require '../config/config.php';
 
     try {
         $db = new PDO($dsn, $dId, $dPass);
@@ -29,9 +29,9 @@ require 'config/config.php';
     
     if(count($errors) == 0){ # 검증 error이 없다면 True. 
         $insertmodel->WriteComments(); #함수 호출.
-        header("Location: main.php");
+        header("Location: ../main.php");
     } else {
-        header("Location: main.php");
+        header("Location: ../main.php");
     }
     
 ?>

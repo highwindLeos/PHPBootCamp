@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'model/UserModel.php';
-require 'config/config.php';
+require '../model/UserModel.php';
+require '../config/config.php';
 
     try {
             $db = new PDO($dsn, $dId, $dPass);
@@ -81,9 +81,9 @@ require 'config/config.php';
         $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)
         $_SESSION['email'] = $email; #세션에 이메일 값을 입력.
         
-        header("Location: main.php"); #리다이렉션 페이지 이동
+        header("Location: ../main.php"); #리다이렉션 페이지 이동
     } else { 
-        header("Location: index.php"); #false 리다이렉션 페이지 이동
+        header("Location: ../index.php"); #false 리다이렉션 페이지 이동
     }
 
 ?>

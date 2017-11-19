@@ -34,7 +34,15 @@ class articleModel
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by id.
+    }
+    
+     public function getArticlesById($id) {
+        $stmt = $this->db->prepare('SELECT * FROM articles WHERE id = :id'); 
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by id.
     }
     
     public function getCommentsByArticleId($articles_id) {
@@ -44,7 +52,7 @@ class articleModel
         $stmt->execute();
         
         $rows = array(); #빈 배열 선언.
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row 를 반복해서 가져오며 row 배열에 담는다.
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row 를 반복해서 가져오며 rows 배열에 담는다.
             $rows[] = $row;
         }
         return $rows; #array 1row by articles_id.
@@ -55,9 +63,8 @@ class articleModel
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute(); 
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);  #array 1row by articles_id.
     }
-    
 
 }
 ?>
