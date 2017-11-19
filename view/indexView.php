@@ -57,7 +57,7 @@ if(isset($_SESSION['is_login'])){ #변수가 설정되어 있다면 True
                         unset($_SESSION['password1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2'];
                         unset($_SESSION['password2']) ?></p>
-                    <button type="submit" formmethod="POST" formaction="process/registerProcess.php">
+                    <button type="submit" formmethod="POST" formaction="registerProcess.php">
                     <img src="img/join.png"/></button>
                 </form>
                 <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>

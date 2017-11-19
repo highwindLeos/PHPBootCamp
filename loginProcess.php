@@ -1,7 +1,7 @@
 <?php
 session_start();
-require '../model/loginModel.php';
-require '../config/config.php';
+require 'model/loginModel.php';
+require 'config/config.php';
 
     try {
             $db = new PDO($dsn, $dId, $dPass);
@@ -50,10 +50,10 @@ require '../config/config.php';
             $_SESSION['email'] = $email;  #세션에 입력 이메일을 입력.
             $_SESSION['id'] = $users['id'];  #세션에 입력된 이메일의 아이디를 입력.            
             
-            header("Location: ../main.php"); #리다이렉션 페이지 이동
+            header("Location: main.php"); #리다이렉션 페이지 이동
         }
     }else{
-        header("Location: ../login.php"); #false 리다이렉션 페이지 이동
+        header("Location: login.php"); #false 리다이렉션 페이지 이동
     }
 
 ?>

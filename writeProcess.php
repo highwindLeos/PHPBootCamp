@@ -1,7 +1,7 @@
 <?php
 session_start();
-require '../model/insertModel.php'; 
-require '../config/config.php';
+require 'model/insertModel.php'; 
+require 'config/config.php';
 
     try {
         $db = new PDO($dsn, $dId, $dPass);
@@ -44,7 +44,7 @@ require '../config/config.php';
     
     if($_GET['name']){ # Cancle 버튼이 눌려서 쿼리 스트링 값이 있다면 True.
         $_SESSION['article'] = $_SESSION['picture'] = ''; #세션에 검증 메세지만 삭제 후 페이지 이동.
-        header("Location: ../main.php");
+        header("Location: main.php");
     }
     
 ?>

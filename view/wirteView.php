@@ -18,10 +18,10 @@
                     <textarea class="article-input" name="article" placeholder="내용을 입력하세요." ></textarea>
                     <p class="validate"><?php if(isset($_SESSION['article'])) echo $_SESSION['article'];
                         unset($_SESSION['article']) ?></p>
-                    <button class="submit-btn" type="submit" formmethod="POST" formaction="process/writeProcess.php">
+                    <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php">
                         <img src="img/writebtn.png" alt="보내기">
                     </button>
-                    <button class="submit-btn" type="submit" formmethod="POST" formaction="process/writeProcess.php?name=cancle">
+                    <button class="submit-btn" type="submit" formmethod="POST" formaction="writeProcess.php?name=cancle">
                         <img src="img/canclebtn.png" alt="보내기">
                     </button>
                 </form>

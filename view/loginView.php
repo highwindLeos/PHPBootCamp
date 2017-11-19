@@ -34,7 +34,7 @@ if(isset($_SESSION['is_login'])){ #변수가 설정되어 있다면 True
                         <p class="validate"><?php if(isset($_SESSION['login3'])) echo $_SESSION['login3']; unset($_SESSION['login3']) ?></p>
                         <p class="validate"><?php if(isset($_SESSION['login4'])) echo $_SESSION['login4']; unset($_SESSION['login4']) ?></p>
                     </p>
-                    <button type="submit" formmethod="POST" formaction="process/loginProcess.php">
+                    <button type="submit" formmethod="POST" formaction="loginProcess.php">
                     <img src="img/login2.png"/></button>
                 </form>
                 <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>

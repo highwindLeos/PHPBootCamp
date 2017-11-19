@@ -34,7 +34,7 @@
             <hr>
             <form class="commentform">
                 <input class="comment" type="text" name="comment" placeholder="댓글달기" /> 
-                <button class="commentbtn" type="submit" formmethod="POST" formaction="process/commentProcess.php">
+                <button class="commentbtn" type="submit" formmethod="POST" formaction="commentProcess.php">
                 <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
             </form>
         </div>
