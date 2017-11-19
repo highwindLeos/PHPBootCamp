@@ -7,11 +7,12 @@ class profileModel
         $this->db = $db;
     }
 
+    
     public function getUsers() {
         $stmt = $this->db->prepare('SELECT email,author,usericon FROM users');
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function getUserIconByAuthor($author) {
@@ -19,7 +20,7 @@ class profileModel
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         
-        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by Email.
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by email.
     }
     
     public function getUserIconByEmail($email) {

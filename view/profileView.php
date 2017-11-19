@@ -11,7 +11,7 @@
            </div>
         </div>
         <div class="mid-article">
-           <p><span><?= $list['author'] ?> 님이 게시한 게시물</span></p>
+           <p><span>게시물</span><span>저장됨</span></p>
         </div>
         <div class="bottom-article">
             <?php foreach($pitures as $items){ ?>

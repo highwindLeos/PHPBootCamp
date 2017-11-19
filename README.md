@@ -23,9 +23,9 @@ http://modernpug.github.io/php-the-right-way/
 
 | Index | ID | Author |
 |:---:|:---:|:---:|
-| 1 | stonker@gmail.com | NaraLee |
+| 1 | stonker@gmail.com | Leenara |
 | 2 | highwind26@gmail.com | Leodays |
-| 3 | highwind26@nate.com | Highwind |
-| 4 | highwind26@naver.com | Laravel |
-| 5 | leosdays@gmail.com | Leosdays26 |
-| 6 | leechar@gmail.com | CharLee |
+| 3 | highwind26@nate.com | Leedays |
+| 4 | highwind26@naver.com | mangaLee |
+| 5 | leosdays@gmail.com | leosdays26 |
+| 6 | leechar@gmail.com | Leechar |

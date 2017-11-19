@@ -54,9 +54,13 @@ class InsertModel
     {
         $insertSql = "INSERT INTO comments (comment, users_id, articles_id) VALUES (:comment, :users_id, :articles_id)"; 
         
-        $comment = trim($_POST['comment']); #작성한 글.
+        $comment = trim($_POST['comment']); 
         $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
+<<<<<<< HEAD
         $articles_id = trim(35); #댓글을 쓰는 글의 articles_id. 
+=======
+        $articles_id = trim('20'); #댓글을 쓰는 글의 articles_id. 
+>>>>>>> parent of b8812b6... Code 와 주석 정리
 
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':comment', $comment);

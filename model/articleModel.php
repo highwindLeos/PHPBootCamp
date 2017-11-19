@@ -18,21 +18,21 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM users');
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function getUserIconsById($id) {
-        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE id = :id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        
-        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by articles.id.
-    }
-    
-    public function getPicturesById($id) {
+    public function getPictures($id) {
         $stmt = $this->db->prepare('SELECT * FROM pictures WHERE id = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    public function getUserIcons($id) {
+        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE id = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
         
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by id.
     }
@@ -45,7 +45,8 @@ class articleModel
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by id.
     }
     
-    public function getCommentsByArticleId($articles_id) {
+    public function getComments($articles_id)
+    {
         $stmt = $this->db->prepare('SELECT * FROM comments JOIN users ON comments.users_id = users.id WHERE 
                                     articles_id = :articles_id');
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
@@ -55,7 +56,7 @@ class articleModel
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row 를 반복해서 가져오며 rows 배열에 담는다.
             $rows[] = $row;
         }
-        return $rows; #array 1row by articles_id.
+        return $rows;
     }
     
     public function getLikeCnt($articles_id) {
