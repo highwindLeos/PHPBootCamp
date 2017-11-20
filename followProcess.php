@@ -12,7 +12,7 @@
     }
     
     $author = filter_var($_GET['author'], FILTER_DEFAULT); #FILE 배열을 필터링.
-//    $follow = $_POST['follow'];  #buttuon default value.
+    $follow = $_POST['follow'];  #buttuon default value.
 
     $insertmodel = new InsertModel($db);
 
@@ -22,4 +22,5 @@
         $author = "following.php?author=".$_GET['author'];
         header("Location: $author");
     }   
+
 ?>
