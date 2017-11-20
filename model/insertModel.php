@@ -35,8 +35,7 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteArticles()
-    {
+    public function WriteArticles()  {
         $insertSql = "INSERT INTO articles (article, date, users_id) VALUES (:article, now(), :users_id)"; 
         #now() 는 Mysql 함수. 입력되는 순간의 시간을 기록함.
         
@@ -50,18 +49,30 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteComments()
-    {
+    public function WriteComments() {
         $insertSql = "INSERT INTO comments (comment, users_id, articles_id) VALUES (:comment, :users_id, :articles_id)"; 
         
         $comment = trim($_POST['comment']); 
         $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
-        $articles_id = trim(35); #댓글을 쓰는 글의 articles_id. 
+        $articles_id = trim($_POST['article-id']); #댓글을 쓰는 글의 articles_id. 
 
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':comment', $comment);
         $stmt->bindParam(':users_id', $users_id);
         $stmt->bindParam(':articles_id', $articles_id);
+
+        $stmt->execute(); # 쿼리 실행
+    }
+    
+        public function WriteFollows() {
+        $insertSql = "INSERT INTO follows (follower, users_id) VALUES (:follower, :users_id)"; 
+        
+        $follower = trim($_POST['follow']); #Button value 기본값.
+        $users_id = trim($_SESSION['id']); #팔로우 하는 사용자의 id. 
+
+        $stmt = $this->db->prepare($insertSql);
+        $stmt->bindParam(':follower', $follower);
+        $stmt->bindParam(':users_id', $users_id);
 
         $stmt->execute(); # 쿼리 실행
     }

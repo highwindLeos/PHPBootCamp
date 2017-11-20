@@ -9,14 +9,22 @@
 /* Top Layout */
 .top-article{
     position: relative;
+    width: 100%;
     display: inline-flex;
     margin: 50px 40px 50px 40px;
     padding: 0px 20px;
 }
 
+.info{
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+
 .top-article p{
     position: absolute;
     color: black;
+    width: auto;
     left: 220px;
     top:50px;
 }
@@ -41,6 +49,23 @@
 .setting{
     width: 17px;
     height: 17px;
+}
+
+.follow{
+    position: relative;
+    left: 30px;
+    top: 35px;
+}
+
+.follow-btn{
+    text-align: center;
+    border-top: 1px solid #fff;
+    padding: 0 10px;
+    border-radius: 4px;
+    color: white;
+    background : linear-gradient(20deg, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+    width: auto;
+    height: 25px;
 }
 
 .top-article h2{

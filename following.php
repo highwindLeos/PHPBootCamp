@@ -14,7 +14,7 @@
 
     $author = $_GET['author'];
     $loginer = $_SESSION['author'];
-
+    
     if($_GET['author']){
     
         $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
@@ -29,5 +29,5 @@
 
     }
 
-    include 'view/profileView.php';
+    include 'view/followingView.php';
 ?>

@@ -14,10 +14,10 @@
                 <a href="#"><span>팔로우 6</span></a>
             </p>
             <p>
-                <?php if($list['author'] != $_SESSION['author']){ #현제 로그인된 사용자라면 버튼을 출력하지 않기.  ?>
+                <?php if($list['author'] != $_SESSION['author']){ #현제 로그인된 사용자라면 버튼을 출력하지 않기. ?>
                    <form class="follow">
-                        <button class="follow-btn" formmethod="POST" name="follow" value="<?= $_SESSION['author']; ?>" formaction="followProcess.php?author=<?= $list['author'] ?>">
-                        <?= $list['author']; ?> Follow</button>
+                        <button class="follow-btn" formmethod="POST" value="1" formaction="profile.php?author=<?= $list['author'] ?>">
+                        <?= $list['author']; ?> Following</button>
                     </form>
                 <?php } ?>
             </p>
