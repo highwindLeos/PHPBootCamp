@@ -123,6 +123,11 @@ a:active {
     margin-top: 15px;
 }
 
+.welcome{
+    font-size: 0.8rem;
+    color: #DBDBDB;
+}
+
 .facebooklogin{
     display: inline-flex; /* 안쪽에서만 플럭스를 적용 */
     position: relative;

@@ -15,7 +15,23 @@
     padding: 0px 20px;
 }
 
-.info{
+.info {
+    position: relative;
+    display: -webkit-inline-box;
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+
+.info div{
+    margin: 0 5px;
+}
+
+.count {
+    position: relative;
+    right: 30%;
+    top: 50px;
+    display: -webkit-inline-box;
     width: 100%;
     height: 30px;
     float: left;
@@ -54,10 +70,10 @@
 .follow{
     position: relative;
     left: 30px;
-    top: 35px;
 }
 
 .follow-btn{
+    margin: 0;
     text-align: center;
     border-top: 1px solid #fff;
     padding: 0 10px;
@@ -97,7 +113,7 @@
     grid-template-columns : repeat(3 , 26%);
     grid-column-gap : 0;
     grid-row-gap : 1em;
-    padding: 25px 0px;
+    margin: 25px 0px;
     background-color : #F9FAF9;
 }
 
@@ -186,3 +202,5 @@
     cursor: pointer;
     background-color: beige;
 }
+
+
