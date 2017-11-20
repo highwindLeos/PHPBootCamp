@@ -64,7 +64,7 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-        public function WriteFollows() {
+    public function WriteFollows() {
         $insertSql = "INSERT INTO follows (follow, follower, users_id) VALUES (:follow,:follower, :users_id)"; 
         
         $follow = trim($_POST['followUser']); #프로파일 user의 사용자. input hidden.
