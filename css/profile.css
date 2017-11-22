@@ -67,6 +67,59 @@
     height: 17px;
 }
 
+/* Follow-Style  */
+
+.followlist{
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    margin: 0 25px;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+.followlist div{
+    border-radius: 7px;
+    border: 1px solid #DBDBDB;
+    padding: 10px;
+    margin: 5px 0;
+    width: 50%;    /*  width 를 늘임   */
+    height: 54px;
+}
+
+.followlist div:nth-child(odd){ 
+    background-color: #eeeeee;
+}/* 홀수 */
+
+.followlist div:nth-child(odd):hover{ 
+    background-color: aliceblue;
+}/* 홀수 Hover */
+
+.followlist div:nth-child(even){
+    background-color: #dddddd;
+}/* 짝수 */
+
+.followlist div:nth-child(even):hover{
+    background-color: aliceblue;
+}/* 짝수 Hover*/
+
+.follow-icon{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #DBDBDB;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.follow-author{
+    position: relative;
+    top: -22px;
+    padding: 5px;
+    border: 2px solid #DBDBDB;
+    border-radius: 5px;
+}
+
 .follow{
     position: relative;
     left: 30px;
@@ -147,6 +200,16 @@
     .bottom-article div img{
         width: 100%;
         height: auto;
+    }
+    
+/* Follow-Style */    
+    .followlist div{
+        border-radius: 7px;
+        border: 1px solid #DBDBDB;
+        padding: 10px;
+        margin: 5px 0;
+        width: 100%; /*  width 를 늘임   */
+        height: 54px;
     }
 
 }

@@ -1,5 +1,4 @@
 <?php include 'head.php'; ?>
-
     <article>
         <div class="article">
             <div class="article-write">
@@ -46,6 +45,5 @@
             <span> &#169; 2017 Instargram.</span>
         </p>
     </footer>
-    <?php include 'profileViewModal.php'; ?>
 </body>
 </html>

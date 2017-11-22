@@ -9,16 +9,16 @@ class deleteModel
     }
 
     
-    public function DeleteFollowsByUsersId($follow, $users_id){
+    public function DeleteFollowsByUsersId($followUser, $loginerid){
         
-        $deleteSql = "DELETE FROM follows WHERE users_id = :users_id AND follow = :follow";
+        $deleteSql = "DELETE FROM follows WHERE follow = :follow AND users_id = :users_id";
         
-        $follow = trim($_POST['followUser']); #팔로우 하는 사용자. 
-        $users_id = trim($_SESSION['id']); #팔로우 하는 사용자의 id. 
+        $followUser = trim($_POST['followUser']); #팔로우 하고 있는 사용자 id. 
+        $loginerid = trim($_SESSION['id']); #팔로우 하는 사용자의 id. 
 
         $stmt = $this->db->prepare($deleteSql);
-        $stmt->bindParam(':follow', $follow);
-        $stmt->bindParam(':users_id', $users_id);
+        $stmt->bindParam(':follow', $followUser);
+        $stmt->bindParam(':users_id', $loginerid);
 
         $stmt->execute(); # 쿼리 실행
     }

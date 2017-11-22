@@ -7,16 +7,24 @@ class profileModel
         $this->db = $db;
     }
 
-    
     public function getUsers() {
-        $stmt = $this->db->prepare('SELECT email,author,usericon FROM users');
+        $stmt = $this->db->prepare('SELECT * FROM users');
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function getFollowsByAuthor($author) { #최신 follow순으로 정렬. 
+        $stmt = $this->db->prepare('SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users 
+                                    ON follows.follow = users.id WHERE follower = :author ORDER BY Fid DESC;'); 
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #return array Allrows by author.
+    }
+    
     public function getUserIconByAuthor($author) {
-        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE author = :author');
+        $stmt = $this->db->prepare('SELECT id, author, usericon FROM users WHERE author = :author');
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         
@@ -24,14 +32,14 @@ class profileModel
     }
     
     public function getUserIconByEmail($email) {
-        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE email = :email');
+        $stmt = $this->db->prepare('SELECT id, author, usericon FROM users WHERE email = :email');
         $stmt->bindParam(':email', $email, PDO::PARAM_INT);
         $stmt->execute();
         
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by Email.
     }
     
-    public function getPictureByAuthor($author) { # 최신 사진 순으로 정렬 (pictures.id Auto Increments)
+    public function getPictureByAuthor($author) { #Main 최신 사진 순으로 정렬 (pictures.id Auto Increments)
         $stmt = $this->db->prepare('SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.users 
                                     ON pictures.articles_id = users.id WHERE author = :author ORDER BY pictures.id DESC');
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);

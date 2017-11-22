@@ -51,7 +51,7 @@
                 <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
             </form>
         </div>
-        <?php  } ?>
+        <?php } ?>
     </article>  
     <footer>
         <p>
