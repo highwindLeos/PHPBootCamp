@@ -14,9 +14,18 @@ class profileModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function getFollowsByAuthor($author) { #최신 follow순으로 정렬. 
+    public function getFollowsByAuthor($author) { #최신 following순으로 정렬. 
         $stmt = $this->db->prepare('SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users 
                                     ON follows.follow = users.id WHERE follower = :author ORDER BY Fid DESC;'); 
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #return array Allrows by author.
+    }
+    
+    public function getFollowersByAuthor($author) { #최신 follower 순으로 정렬. 
+        $stmt = $this->db->prepare('SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users 
+                                    ON follows.follow = users.id WHERE author = :author ORDER BY Fid DESC;'); 
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         

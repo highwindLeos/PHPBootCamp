@@ -1,1 +1,2 @@
-SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users ON follows.follow = users.id;
+SELECT *, follows.id AS Fid, users.id AS Uid FROM users JOIN follows
+ON users.id = follows.follow ORDER BY Fid DESC;

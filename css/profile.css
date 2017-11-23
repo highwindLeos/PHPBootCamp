@@ -83,7 +83,7 @@
     border: 1px solid #DBDBDB;
     padding: 10px;
     margin: 5px 0;
-    width: 50%;    /*  width 를 늘임   */
+    width: 50%;    /*  width는  article의 50%  */
     height: 54px;
 }
 
@@ -96,7 +96,7 @@
 }/* 홀수 Hover */
 
 .followlist div:nth-child(even){
-    background-color: #dddddd;
+    background-color: #e4e4e4;
 }/* 짝수 */
 
 .followlist div:nth-child(even):hover{

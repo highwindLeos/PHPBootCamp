@@ -25,6 +25,7 @@
         $pitures = $profilemodel->getPictureByAuthor($author);
         $followrs = $profilemodel->getFollowsByAuthor($author);
         $follow = $profilemodel->getFollowsByAuthor($loginer);
+        $follow = $profilemodel->getFollowersByAuthor($author);
         
     } else if($_SESSION['author']) { # 로그인 한 사용자의 프로필페이지.
         

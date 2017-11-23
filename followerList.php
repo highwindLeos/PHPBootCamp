@@ -15,7 +15,11 @@ require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포�
     $author = filter_var($_GET['author'], FILTER_DEFAULT); # users_id.
 
     $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
-    $list = $profilemodel->getFollowsByAuthor($author);
+    $list = $profilemodel->getFollowersByAuthor($author);
 
-include 'view/followingListView.php';
+    echo '<pre>';
+    print_r($list);
+    echo '</pre>'; exit;
+
+include 'view/followerListView.php';
 ?>
