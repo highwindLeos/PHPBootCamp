@@ -12,7 +12,13 @@
     <div class="modal_content" id="open2">
         <div class="modal">
             <p class="modalcontent">현제 사진 삭제</p>
-            <a href="#" ><p class="modalcontent">사진 업로드</p></a>
+            <p class="modalcontent btn">
+                <form class="modalform" action="iconUploadProcess.php" method="POST" enctype="multipart/form-data">
+                    <button class="replace">사용자 아이콘 업로드</button>   
+                    <input type="file" class="upload" name="icon_uploads" accept=".jpg, .jpeg, .png" multiple>
+                    <input type="submit" class="submit" value="아이콘전송" >
+                </form>
+            </p>
             <a href="#close"><p class="modalcontent">취소</p></a>
         </div>
     </div>

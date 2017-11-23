@@ -1,4 +1,4 @@
 <?php
     session_start();
-    include 'view/wirteView.php';
+    require 'view/wirteView.php';
 ?>

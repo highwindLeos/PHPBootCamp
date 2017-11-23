@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 #article{
     margin: auto;
     margin-top: 45px;
@@ -247,6 +248,48 @@
 	overflow: auto;	
 }
 
+/* 아이콘 파일 업로드 버튼 */
+.modalform{
+    height: 50px;
+}
+
+.replace {
+    position:absolute;
+    width:100%;
+    height:20px;
+    font-size:0.8rem;
+    color: #94A5BF;
+    background: #F9FAF9;
+    cursor:pointer;
+}
+
+.upload {
+    position:relative;
+	border: 2px solid #8D8D8D;
+    width:85%;
+    height:35px;
+    opacity:0;
+    cursor: pointer;
+
+}
+
+.upload:hover{
+    cursor: pointer;
+    background-color: beige;
+}
+
+.submit {
+    position: absolute;
+    border: 1px solid #8D8D8D;
+    padding: 3px;
+    top:65px;
+    right: 20px;
+    outline: none;
+    width: 100px;
+    text-overflow: ellipsis;
+    background-color: #F9FAF9;
+}
+
 .modal{
     height: 100%;
 }
@@ -257,13 +300,19 @@
     cursor: pointer;
     text-align: center;
     margin: 0;
-    padding: 18px;
+    padding: 18px 18px;
     border: 1px solid #8D8D8D;
+}
+
+.btn{
+    padding: 0px 18px;
 }
 
 .modalcontent:hover{
     cursor: pointer;
     background-color: beige;
 }
+
+
 
 

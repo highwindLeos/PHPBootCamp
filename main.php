@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'config/config.php';
-include 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
+require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
 
 try {
         $db = new PDO($dsn, $dId, $dPass);

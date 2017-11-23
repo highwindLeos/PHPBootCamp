@@ -57,7 +57,7 @@ require 'config/config.php';
             $_SESSION['author1'] = $errors['author1'] = "* 사용자 이름은 빈칸일 수 없습니다.";
         } else {
             
-        $authorOverlapCheck = $usermodel->authorOverlapCheck($author);
+            $authorOverlapCheck = $usermodel->authorOverlapCheck($author);
             
             if($authorOverlapCheck){ #사용자 이름 중복 체크(입력한 값과 데이터베이스에서 조회한 값이 있다면.)
                 $_SESSION['author3'] = $errors['author3'] = "*이미 존재하는 사용자 이름입니다.";
@@ -83,6 +83,7 @@ require 'config/config.php';
         $_SESSION = array(); #세션 데이터 초기화.
         $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)
         $_SESSION['email'] = $email; #세션에 이메일 값을 입력.
+        $_SESSION['id'] = $users['id']; #세션에 가입하는 사용자를 입력.
         $_SESSION['author'] = $users['author']; #세션에 가입하는 사용자를 입력.
         
         header("Location: main.php"); #리다이렉션 페이지 이동

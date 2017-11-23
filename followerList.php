@@ -18,5 +18,5 @@ require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포�
     $list = $profilemodel->getFollowersIconByAuthor($author);
 
 
-include 'view/followerListView.php';
+require 'view/followerListView.php';
 ?>
