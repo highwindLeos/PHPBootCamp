@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 require 'config/config.php';
 require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
 

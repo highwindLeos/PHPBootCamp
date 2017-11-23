@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    require 'model/insertModel.php'; 
-    require 'config/config.php';
+session_start();
+require 'model/insertModel.php'; 
+require 'config/config.php';
 
     try {
         $db = new PDO($dsn, $dId, $dPass);

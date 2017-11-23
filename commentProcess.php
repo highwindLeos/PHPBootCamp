@@ -20,7 +20,7 @@ require 'config/config.php';
 
     for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
     
-    #메인 사진 : 데이터 베이스에 articles내용을 Id를 참고로 pictures table에 모든 컬럼을 가지고온다.
+    #데이터 베이스에 articles내용을 Id를 참고로 pictures table에 모든 행을 가지고온다.
     $_SESSION[$i]['articles_id'] = $articlemodel->getPictures($articles[$i]['id']);        
 
     }

@@ -1,7 +1,7 @@
 <?php
-    session_start();
-    include 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
-    require 'config/config.php';
+session_start();
+require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
+require 'config/config.php';
 
     try {
             $db = new PDO($dsn, $dId, $dPass);
@@ -27,5 +27,5 @@
         
     }
 
-    include 'view/profileView.php';
+include 'view/profileView.php';
 ?>

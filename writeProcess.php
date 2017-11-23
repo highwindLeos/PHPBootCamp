@@ -17,11 +17,11 @@ require 'config/config.php';
     $insertmodel = new InsertModel($db);
     
     if($_POST){ #POST에 값이 있다면 검증을 실행.
-        # 변수설정
-        $errors = array(); #에러 메세지를 담을 배열을 생성
+        # Variable Setting
+        $errors = array(); #Error message in array creating.
 
-        # 검증 코드
-        if(empty($article)) #변수에 값이 없다면 true.
+        # Validation Code
+        if(empty($article)) #Variable Empty 값이 없다면 true.
         {
             $_SESSION['article'] = $errors['article'] = "* 내용은 빈칸일 수 없습니다.";
         }
@@ -33,7 +33,8 @@ require 'config/config.php';
     }
 
     if(!$_GET['name']){ # Cancle 버튼이 아니라면 True.
-        if(count($errors) == 0 && $_FILES['image_uploads']['name']){ # 업로드 사진이 없다면.
+        if(count($errors) == 0 && !empty($_FILES['image_uploads']['name'])){ 
+            # 에러가 없고 업로드 $_FILES 변수에 값이 있다면 True.
             $insertmodel->UploadImageAndArticleId(); #사진을 업로드.
             $insertmodel->WriteArticles(); #내용을 업로드.
             header("Location: main.php");
@@ -42,7 +43,7 @@ require 'config/config.php';
         }
     }
     
-    if($_GET['name']){ # Cancle 버튼이 눌려서 쿼리 스트링 값이 있다면 True.
+    if($_GET['name']){ # Cancle 버튼이 눌려서 Query String 값이 있다면 True.
         $_SESSION['article'] = $_SESSION['picture'] = ''; #세션에 검증 메세지만 삭제 후 페이지 이동.
         header("Location: main.php");
     }
