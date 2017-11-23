@@ -12,7 +12,7 @@
             <div class="followlist">
                 <?php if(!empty($list)){ foreach($list as $item){ #가져오는 데이터가 있다면 True.  ?>
                     <div>
-                        <a href="profile.php?author=<?= $item['author']; ?>">
+                        <a href="profile.php?author=<?= $item['follower']; ?>">
                             <img class="follow-icon" src="<?= htmlspecialchars($item['usericon']); ?>" >
                             <span class="follow-author"><?= htmlspecialchars($item['follower']); ?></span>
                         </a>

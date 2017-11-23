@@ -10,15 +10,15 @@
             <div class="count">
                 <div><span>게시물 <?= count($pitures); ?></span></div>
                 <div>
-                    <a href="followerList.php?author=<?= $list['author'] ?>"><span>팔로워 <?= count($follow); ?></span></a>
+                    <a href="followerList.php?author=<?= $list['author'] ?>"><span>팔로워 <?= count($followers); ?></span></a>
                 </div>
                 <div>
-                    <a href="followingList.php?author=<?= $list['author'] ?>"><span>팔로우 <?= count($followrs); ?></span></a>
+                    <a href="followingList.php?author=<?= $list['author'] ?>"><span>팔로우 <?= count($followings); ?></span></a>
                 </div>
                 <div>
                     <?php if($list['author'] != $_SESSION['author']){  #현제 로그인된 사용자라면 버튼을 출력하지 않기. ?>
                         <?php $isFollowing =  true; 
-                            foreach($follow as $item){ 
+                            foreach($followers as $item){ 
                                 if(array_search($_SESSION['author'], $item)){ #배열안에 사용자명이 있는지. 있다면 true.
                                     $isFollowing = false;
                                     break; #사용자 명이 있으면 false 를 대입하고 빠져나옴.

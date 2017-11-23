@@ -14,7 +14,7 @@ class profileModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function getFollowsByAuthor($author) { #최신 following순으로 정렬. 
+    public function getFollowingsByAuthor($author) { #최신 following순으로 정렬. 
         $stmt = $this->db->prepare('SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users 
                                     ON follows.follow = users.id WHERE follower = :author ORDER BY Fid DESC;'); 
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
@@ -26,6 +26,18 @@ class profileModel
     public function getFollowersByAuthor($author) { #최신 follower 순으로 정렬. 
         $stmt = $this->db->prepare('SELECT *, follows.id AS Fid, users.id AS Uid FROM follows JOIN users 
                                     ON follows.follow = users.id WHERE author = :author ORDER BY Fid DESC;'); 
+        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #return array Allrows by author.
+    }
+    
+    public function getFollowersIconByAuthor($author) { #최신 follower ICON 순으로 정렬. 
+        $stmt = $this->db->prepare('SELECT follows.id AS Fid, follow, follower, users_id, users.id AS Uid, 
+                                    users.name, users.author, us.usericon  FROM follows JOIN users 
+                                    ON follows.follow = users.id JOIN users as us 
+                                    ON follows.follower = us.author WHERE users.author = :author
+                                    ORDER BY Fid DESC;'); #아이콘 출력. 
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         

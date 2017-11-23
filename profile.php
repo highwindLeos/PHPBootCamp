@@ -15,25 +15,17 @@
     $loginer = filter_var($_SESSION['author'], FILTER_DEFAULT);
 
     $profilemodel = new profileModel($db);
-    $followProfile = $profilemodel->getFollowsByAuthor($author);
+    $followProfile = $profilemodel->getFollowingsByAuthor($author);
 
-
-    if($_GET['author']) { # 타인의 프로필페이지.
+    if($_GET['author']) { # 프로필페이지.
     
         $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
         $list = $profilemodel->getUserIconByAuthor($author);
         $pitures = $profilemodel->getPictureByAuthor($author);
-        $followrs = $profilemodel->getFollowsByAuthor($author);
-        $follow = $profilemodel->getFollowsByAuthor($loginer);
-        $follow = $profilemodel->getFollowersByAuthor($author);
+        $followings = $profilemodel->getFollowingsByAuthor($author);
+        $followers = $profilemodel->getFollowersByAuthor($author);
         
-    } else if($_SESSION['author']) { # 로그인 한 사용자의 프로필페이지.
-        
-        $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
-        $list = $profilemodel->getUserIconByEmail($loginer);
-        $pitures = $profilemodel->getPictureByEmail($loginer);
-        $followrs = $profilemodel->getFollowsByAuthor($loginer);
-    } 
+    }
 
     include 'view/profileView.php';
 ?>
