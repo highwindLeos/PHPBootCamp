@@ -11,7 +11,8 @@
         <div class="modal">
         <!--<p class="modalcontent">현제 사진 삭제</p>-->
             <p class="modalcontent btn">
-                <form class="modalform" action="iconUploadProcess.php" method="POST" enctype="multipart/form-data">
+                <form class="modalform" action="iconUploadProcess.php?author=<?= $_GET['author'] ?>" 
+                      method="POST" enctype="multipart/form-data">
                     <button class="replace">사용자 아이콘 업로드(여기를 눌러서 먼저 아이콘을 선택해주세요.)</button>   
                     <input type="file" class="upload" name="icon_uploads" accept=".jpg, .jpeg, .png" multiple>
                     <input type="submit" class="submit" value="아이콘전송" >

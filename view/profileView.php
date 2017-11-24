@@ -36,14 +36,14 @@
                                 value="<?= $_SESSION['author'] ?>" formaction="followProcess.php?author=<?= $list['author'] ?>">
                                 <?= $list['author'] ?> 팔로우</button>
                             </form>
-                            <?php } else { ?>
+                        <?php } else { ?>
                             <form class="follow">
                                 <input type="hidden" name="followUser" value="<?= $list['id']; ?>" />
                                 <button class="follow-btn" formmethod="POST" name="unfollow" 
                                 value="<?= $_SESSION['author'] ?>" formaction="unfollowProcess.php?author=<?= $list['author'] ?>">
                                 <?= $list['author'] ?> 팔로우 중</button>
                             </form>
-                            <?php } ?>
+                        <?php } ?>
                     <?php } ?>
                 </div>
             </div>
