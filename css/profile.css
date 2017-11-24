@@ -159,7 +159,7 @@
     margin: 0 25px 25px 0; 
 }
 
-/* Photo aria */
+/* Photo Section */
 .bottom-article{
     display : grid;
     justify-content :space-around;    
@@ -225,9 +225,9 @@
     left: 0;
     background: rgba(0, 0, 0, 0.4);
     opacity:0;
-    -webkit-transition: opacity 50ms ease-in;
-    -moz-transition: opacity 50ms ease-in;
-    transition: opacity 50ms ease-in;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
     pointer-events: none;
 }
 
@@ -251,12 +251,14 @@
 /* 아이콘 파일 업로드 버튼 */
 .modalform{
     height: 50px;
+    cursor: pointer;
 }
 
 .replace {
     position:absolute;
     width:100%;
     height:20px;
+    font-family: 'Jeju Gothic', serif;
     font-size:0.8rem;
     color: #94A5BF;
     background: #F9FAF9;
@@ -270,7 +272,6 @@
     height:35px;
     opacity:0;
     cursor: pointer;
-
 }
 
 .upload:hover{
@@ -282,7 +283,7 @@
     position: absolute;
     border: 1px solid #8D8D8D;
     padding: 3px;
-    top:65px;
+    top:15px;
     right: 20px;
     outline: none;
     width: 100px;
@@ -312,7 +313,3 @@
     cursor: pointer;
     background-color: beige;
 }
-
-
-
-

@@ -12,8 +12,8 @@ require 'config/config.php';
         }
 
     #필터링
-    $email = filter_input(INPUT_POST, 'email', FILTER_DEFAULT); 
-    $hashpass = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING); 
+    $hashpass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
     $loginmodel = new LoginModel($db);
     $users = $loginmodel->getUsersByEmail($email);  

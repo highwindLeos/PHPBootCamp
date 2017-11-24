@@ -1,0 +1,10 @@
+{
+    "name": "phpbootcamp/anicoboard",
+    "authors": [
+        {
+            "name": "Leos",
+            "email": "highwind26@gmail.com"
+        }
+    ],
+    "require": {}
+}

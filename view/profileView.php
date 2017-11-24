@@ -8,7 +8,9 @@
                 <div><a href="#open1"><img class="setting" src="img/profile/profile3.png"></a></div>
             </div>
             <div class="count">
-                <div><span>게시물 <?= count($pitures); ?></span></div>
+                <div>
+                    <a href="main.php"><span>게시물 <?= count($pitures); ?></span></a>
+                </div>
                 <div>
                     <a href="followerList.php?author=<?= $list['author'] ?>"><span>팔로워 <?= count($followers); ?></span></a>
                 </div>

@@ -16,10 +16,10 @@ require 'config/config.php';
     $loginmodel = new LoginModel($db);
         
     #입력 데이터 필터링
-    $email = filter_input(INPUT_POST, 'email', FILTER_DEFAULT);  
-    $name =  filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
-    $author = filter_input(INPUT_POST, 'author', FILTER_DEFAULT);
-    $hashpass = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);  
+    $name =  filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $author = filter_input(INPUT_POST, 'author', FILTER_SANITIZE_STRING);
+    $hashpass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
@@ -30,6 +30,7 @@ require 'config/config.php';
         if(empty($email)){
             $_SESSION['email1'] = $errors['email1'] = "* 이메일은 빈칸일 수 없습니다.";
         } else {
+            
              $emailOverlapCheck = $usermodel->emailOverlapCheck($email);
             
             if ($emailOverlapCheck) { #이메일 중복 체크(입력한 값과 데이터베이스에서 조회한 값이 있다면.)

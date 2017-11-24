@@ -11,7 +11,7 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
-    $iconImage = filter_var($_FILES['icon_uploads']['name'], FILTER_DEFAULT); #FILE 배열을 필터링.
+    $iconImage = filter_var($_FILES['icon_uploads']['name'], FILTER_SANITIZE_STRING); #FILE 배열을 필터링.
     $author = trim($_SESSION['author']);
 
     $location = 'profile.php?author='.$author; #리다이렉션 변수

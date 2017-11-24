@@ -11,10 +11,10 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
-    $followUser = filter_input(INPUT_POST, 'followUser', FILTER_DEFAULT); #hidden value.
-    $loginerid =  filter_var($_SESSION['id'], FILTER_DEFAULT);
-    $author = filter_var($_GET['author'], FILTER_DEFAULT); #페이지 사용자.
-    $unfollow = filter_input(INPUT_POST, 'unfollow', FILTER_DEFAULT); #buttuon default value.
+    $followUser = filter_input(INPUT_POST, 'followUser', FILTER_SANITIZE_STRING); #hidden value.
+    $loginerid =  filter_var($_SESSION['id'], FILTER_SANITIZE_STRING);
+    $author = filter_var($_GET['author'], FILTER_SANITIZE_STRING); #페이지 사용자.
+    $unfollow = filter_input(INPUT_POST, 'unfollow', FILTER_SANITIZE_STRING); #buttuon default value.
 
     $deletemodel = new deleteModel($db);
 

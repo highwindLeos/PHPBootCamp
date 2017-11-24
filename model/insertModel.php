@@ -49,12 +49,11 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteComments() {
+    public function WriteComments($comment) {
         $insertSql = "INSERT INTO comments (comment, users_id, articles_id) VALUES (:comment, :users_id, :articles_id)"; 
         
-        $comment = trim($_POST['comment']); 
         $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
-        $articles_id = trim($_POST['article-id']); #댓글을 쓰는 글의 articles_id. 
+        $articles_id = trim($_POST['article-id']); #댓글을 쓰는 글의 articles_id hidden tag input. 
 
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':comment', $comment);

@@ -12,7 +12,7 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
-    $comment = filter_input(INPUT_POST, 'comment', FILTER_DEFAULT); # comment 입력을 필터링.
+    $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING); # comment 입력을 필터링.
 
     $insertmodel = new InsertModel($db);
     $articlemodel = new articleModel($db);
@@ -37,7 +37,7 @@ require 'config/config.php';
     }
     
     if(count($errors) == 0){ # 검증 error이 없다면 True. 
-        $insertmodel->WriteComments(); #내용을 업로드.
+        $insertmodel->WriteComments($comment); #내용을 업로드.
         header("Location: main.php");
     } else {
         header("Location: main.php");
