@@ -6,5 +6,7 @@
             "email": "highwind26@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    }
 }

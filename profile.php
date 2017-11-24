@@ -26,7 +26,7 @@ require 'config/config.php';
         $followers = $profilemodel->getFollowersByAuthor($author);
         
     } else {
-           
+        header("Location: main.php"); #리다이렉션 페이지 이동   
     }#방어적 프로그래밍(Defensive Programming)
 
 include 'view/profileView.php';
