@@ -33,5 +33,3 @@ http://modernpug.github.io/php-the-right-way/
 | 10 | gmail@gmail.com | Gmail |
 | 11 | daysmays@naver.com | maydays |
 | 12 | stonker26@gmail.com | mailLee |
-
-

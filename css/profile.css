@@ -70,6 +70,14 @@
 
 /* Follow-Style  */
 
+.profile-icon{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid #DBDBDB;
+    margin: 15px 0;
+}
+
 .followlist{
     display: flex;
     flex-direction: column;

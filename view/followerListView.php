@@ -4,9 +4,10 @@
             <div class="article-write">
                 <a href="main.php">
                     <img src="img/logo.png">
-                    <h3>팔로워 리스트 (Follower List)</h3></br>
-                    <h4><?= htmlspecialchars($_GET['author']); ?> Follower</h4>
                 </a>
+                    <h3>팔로워 리스트 (Follower List)</h3></br>
+                    <img class="profile-icon" src="<?= $usericon['usericon'] ?>">
+                    <h4><?= htmlspecialchars($_GET['author']); ?> Follower</h4>
             </div>
             <hr>
             <div class="followlist">

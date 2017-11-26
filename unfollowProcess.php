@@ -21,8 +21,8 @@ require 'config/config.php';
     if(!empty($author)){ # $author 가 빈값이 아니라면 True.
         $deletemodel->DeleteFollowsByUsersId($followUser,$loginerid); #follower 삭제한다.
 
-        $author = "profile.php?author=".$_GET['author']; #$_GET 쿼리스트링 경로.
-        header("Location: $author");
+        $redirection = "profile.php?author=".$_GET['author']; #$_GET 쿼리스트링 경로.
+        header("Location: $redirection");
     }   
 
 ?>
