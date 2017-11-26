@@ -19,7 +19,7 @@ require 'config/config.php';
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);  
     $name =  filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $author = filter_input(INPUT_POST, 'author', FILTER_SANITIZE_STRING);
-    $hashpass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
@@ -69,17 +69,17 @@ require 'config/config.php';
         }
         
         # 암호
-        if(empty($hashpass)){
+        if(empty($password)){
             $_SESSION['password1'] = $errors['password1'] = "* 암호는 빈칸일 수 없습니다.";
         }
-        if(strlen($hashpass) < 6 || strlen($hashpass) > 18 )
+        if(strlen($password) < 6 || strlen($password) > 18 )
         {
             $_SESSION['password2'] = $errors['password2'] = "* 암호는 6~18자 사이이어야합니다.";
         }
     }  
 
     if(count($errors) == 0){ #에러값이 없다면 true
-        $usermodel->Register($email,$name,$author); #모델 함수 호출.
+        $usermodel->Register($email,$name,$author,$password); #모델 함수 호출.
         $users = $loginmodel->getUsersByEmail($email); #이메일 입력값으로 Users table 의 행을 가져와서 변수에 담음.
         $_SESSION = array(); #세션 데이터 초기화.
         $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)

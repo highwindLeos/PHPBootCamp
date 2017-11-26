@@ -33,11 +33,11 @@ require 'config/config.php';
         }
        
         # 암호
-        if(empty($hashpass))
+        if(empty($password))
         {
             $_SESSION['login3'] = $errors['login3'] = "* 암호는 빈칸일 수 없습니다.";
         }
-        if(!password_verify($hashpass, $users['password'])){ #패스워드 입력값의 값이 데이터베이스의 패스워드 해쉬값과 같지 않다면 True
+        if(!password_verify($password, $users['password'])){ #패스워드 입력값의 값이 데이터베이스의 패스워드 해쉬값과 같지 않다면 True
             $_SESSION['login4'] = $errors['login4'] = "* 암호를 확인해주세요.";
         }
         

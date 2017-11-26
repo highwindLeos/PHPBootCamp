@@ -9,7 +9,7 @@ class UserModel
         $this->db = $db;
     }
     
-    public function Register($email,$name,$author)
+    public function Register($email, $name, $author, $password)
     {
         $insertSql = "INSERT INTO users (email, name, author, password) VALUES (:email, :name, :author, :password)";
         
@@ -17,7 +17,7 @@ class UserModel
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ]; #솔트 (추가문자열 암호화 옵션, 3번째 인자값)
-        $hashpass = password_hash(trim($_POST['password']), PASSWORD_BCRYPT, $options); #암호화 코드
+        $hashpass = password_hash(trim($password), PASSWORD_BCRYPT, $options); #암호화 코드
         
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':email', $email);
