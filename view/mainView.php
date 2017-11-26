@@ -55,7 +55,7 @@
     </article>  
     <footer>
         <p>
-            <span class="footerlink"><a href="#">INSTARGRAM정보</a></span>
+            <span class="footerlink"><a href="#">AnInstargram정보</a></span>
             <span class="footerlink"><a href="#">지원</a></span>
             <span class="footerlink"><a href="#">블로그</a></span>
             <span class="footerlink"><a href="#">홍보</a> </span>
@@ -68,7 +68,7 @@
             <span class="footerlink"><a href="#">언어</a></span>
         </p>
         <p class="copy">
-            <span> &#169; 2017 Instargram.</span>
+            <span> &#169; 2017 AnInstargram.</span>
         </p>
     </footer>
 </body>

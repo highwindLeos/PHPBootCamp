@@ -18,7 +18,7 @@ class articleModel
         $stmt = $this->db->prepare('SELECT * FROM users');
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
     }
     
     public function getPictures($id) {
@@ -26,7 +26,7 @@ class articleModel
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by Id.
     }
     
     public function getUserIcons($id) {
@@ -53,10 +53,10 @@ class articleModel
         $stmt->execute();
         
         $rows = array(); #빈 배열 선언.
-        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row 를 반복해서 가져오며 rows 배열에 담는다.
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row(행) 를 반복해서 가져오며 rows 배열에 담는다.
             $rows[] = $row;
         }
-        return $rows;
+        return $rows; # $rows array return.
     }
     
     public function getLikeCnt($articles_id) {

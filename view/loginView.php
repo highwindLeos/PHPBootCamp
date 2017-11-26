@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP Camp instargram</title>
+    <title>PHP Camp AnInstargram</title>
 
     <link rel="icon" href="img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
@@ -51,7 +51,7 @@
     </section>        
     <footer>
         <p>
-            <span class="footerlink"><a href="#">INSTARGRAM정보</a></span>
+            <span class="footerlink"><a href="#">AnInstargram정보</a></span>
             <span class="footerlink"><a href="#">지원</a></span>
             <span class="footerlink"><a href="#">블로그</a></span>
             <span class="footerlink"><a href="#">홍보</a> </span>
@@ -63,7 +63,7 @@
             <span class="footerlink"><a href="#">디렉터리</a></span>
             <span class="footerlink"><a href="#">언어</a></span>
             <!-- INSTARGRAM 정보, 지원, 블로그, 홍보 센터, API, 채용, 개인정보처리방침, 약관, 디렉터리, 언어 -->
-            <span> &#169; 2017 instargram</span>
+            <span> &#169; 2017 AnInstargram</span>
         </p>
     </footer>
 </body>

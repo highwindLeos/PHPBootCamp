@@ -13,7 +13,7 @@ require 'config/config.php';
 
     #필터링
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING); 
-    $hashpass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
     $loginmodel = new LoginModel($db);
     $users = $loginmodel->getUsersByEmail($email);  
@@ -43,7 +43,7 @@ require 'config/config.php';
         
     }
 
-    if(password_verify($hashpass, $users['password'])){ #입력 평문과 hash 값이 동일한 값인지 check 하는 함수.
+    if(password_verify($password, $users['password'])){ #입력 평문과 hash 값이 동일한 값인지 check 하는 함수.
         if(count($errors) == 0){ #에러값이 없다면 true
             $_SESSION = array(); #세션 데이터 초기화.
             $_SESSION['is_login'] = true; #세션에 True 값을 입력.

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP Camp instargram</title>
+    <title>PHP Camp AnInstargram</title>
 
     <link rel="icon" href="img/favicon.ico"/>
     <link rel="stylesheet" href="css/style.css">
@@ -24,9 +24,12 @@
                     <p>
                         <input type="text" id="email" name="email" placeholder="이메일">
                     </p>
-                    <p class="validate"><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; unset($_SESSION['email1']) ?></p>
-                    <p class="validate"><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; unset($_SESSION['email2']) ?></p>
-                    <p class="validate"><?php if(isset($_SESSION['email3'])) echo $_SESSION['email3']; unset($_SESSION['email3']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; 
+                        unset($_SESSION['email1']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email2'])) echo $_SESSION['email2']; 
+                        unset($_SESSION['email2']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['email3'])) echo $_SESSION['email3']; 
+                        unset($_SESSION['email3']) ?></p>
                     <p>
                         <input type="text" id="name" name="name" placeholder="성명">
                     </p>
@@ -69,7 +72,7 @@
     </section>        
     <footer>
         <p>
-            <span class="footerlink"><a href="#">INSTARGRAM정보</a></span>
+            <span class="footerlink"><a href="#">AnInstargram정보</a></span>
             <span class="footerlink"><a href="#">지원</a></span>
             <span class="footerlink"><a href="#">블로그</a></span>
             <span class="footerlink"><a href="#">홍보</a> </span>
@@ -80,7 +83,7 @@
             <span class="footerlink"><a href="#">약관</a></span>
             <span class="footerlink"><a href="#">디렉터리</a></span>
             <span class="footerlink"><a href="#">언어</a></span>
-            <span> &#169; 2017 instargram</span>
+            <span> &#169; 2017 AnInstargram</span>
         </p>
     </footer>
 </body>
