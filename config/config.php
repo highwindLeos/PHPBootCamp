@@ -1,11 +1,21 @@
 <?php
-apache_setenv("dsn" , "mysql:host=localhost;dbname=anicoboard; charset=utf8");
-apache_setenv("dId" , "root");
-apache_setenv("dPass" , "stonker26");
+#데이터베이스 접속 설정 (.env 적용)
 
-$dsn = apache_getenv("dsn");
-$dId = apache_getenv("dId");
-$dPass = apache_getenv("dPass");
+require 'vendor\autoload.php';
 
-//데이터베이스 접속 설정 (.env 적용)
+$dotenv = new Dotenv\Dotenv(__DIR__); # Dotenv 를 이용한 인스턴스 생성.
+$dotenv->load(); # load function call.
+
+#.env 설정에 기술한 값들을 가져와서 변수에 넣는다.
+$db_con = getenv('DB_CONNECTION');
+$db_host = getenv('DB_HOST');
+$db_port = getenv('DB_PORT');
+$db_database = getenv('DB_DATABASE');
+$db_username = getenv('DB_USERNAME');
+$db_password = getenv('DB_PASSWORD');
+
+#setting 값으로 설정한 DB 접속 정보. PDO 에 이용됨.
+$dsn = $db_con.':host='.$db_host.';dbname='.$db_database.'; charset=utf8';
+$dId = $db_username;
+$dPass = $db_password;
 ?>

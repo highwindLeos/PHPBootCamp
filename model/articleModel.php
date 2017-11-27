@@ -47,8 +47,8 @@ class articleModel
     
     public function getComments($articles_id)
     {
-        $stmt = $this->db->prepare('SELECT * FROM comments JOIN users ON comments.users_id = users.id WHERE 
-                                    articles_id = :articles_id');
+        $stmt = $this->db->prepare('SELECT * FROM comments JOIN users ON comments.users_id = users.id 
+                                    WHERE articles_id = :articles_id');
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute();
         
