@@ -9,7 +9,7 @@ class LoginModel
 
     public function getUsersByEmail($email) {
         $stmt = $this->db->prepare('SELECT * FROM users WHERE email = :email');
-        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute(); 
         
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row return.

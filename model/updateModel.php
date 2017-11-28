@@ -8,15 +8,15 @@ class UpdateModel
         $this->db = $db;
     }
     
-    public function UsersIconUpload()
-    {
+    public function UsersIconUpload(){
         $updateSql = "UPDATE users SET usericon = :usericon WHERE author = :author;";
         
         $hostPath = realpath('./'); #현제 컴퓨터의 Server host 경로상의 실제 디렉토리 값을 반환.
             
         ini_set("display_errors", "1"); #PHP ini setting.
         $uploaddir = $hostPath.'\img\icon\user\\'; # Host path + Articles image files Path.
-        $uploadfile = $uploaddir.basename($_FILES['icon_uploads']['name']); #basename(); form 에 name 속성 대한 값으로 넘겨준다.
+        $uploadfile = $uploaddir.basename($_FILES['icon_uploads']['name']); 
+        #basename(); form 에 name 속성 대한 값으로 넘겨준다.
         
         if (move_uploaded_file($_FILES['icon_uploads']['tmp_name'], $uploadfile)) { 
             #move_uploaded_file(); 최초 업로드시 temp 디렉토리에 임시 저장. 두번째 인자값으로 들어오는 경로로 이동시킴.

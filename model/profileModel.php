@@ -35,7 +35,7 @@ class profileModel
     public function getFollowersIconByAuthor($author) { #최신 follower ICON 순으로 정렬. 
         $stmt = $this->db->prepare('SELECT follows.id AS Fid, follow, follower, users_id, users.id AS Uid, 
                                     users.name, users.author, us.usericon  FROM follows JOIN users 
-                                    ON follows.follow = users.id JOIN users as us 
+                                    ON follows.follow = users.id JOIN users AS us 
                                     ON follows.follower = us.author WHERE users.author = :author
                                     ORDER BY Fid DESC;'); # follower 아이콘 출력. 
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);

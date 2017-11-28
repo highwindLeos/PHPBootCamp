@@ -13,9 +13,10 @@ $db_port = getenv('DB_PORT');
 $db_database = getenv('DB_DATABASE');
 $db_username = getenv('DB_USERNAME');
 $db_password = getenv('DB_PASSWORD');
+$db_charset = getenv('DB_CHARSET');
 
 #setting 값으로 설정한 DB 접속 정보. PDO 에 이용됨.
-$dsn = $db_con.':host='.$db_host.';dbname='.$db_database.'; charset=utf8';
+$dsn = $db_con.':host='.$db_host.';dbname='.$db_database.';'.$db_charset;
 $dId = $db_username;
 $dPass = $db_password;
 ?>

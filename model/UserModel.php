@@ -31,7 +31,7 @@ class UserModel
     public function emailOverlapCheck($email)
     {
         $stmt = $this->db->prepare("SELECT email FROM users WHERE email = :email");
-        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         
         return !empty($stmt->fetch(PDO::FETCH_ASSOC)); # return Boolean value
@@ -40,7 +40,7 @@ class UserModel
     public function authorOverlapCheck($author)
     {
         $stmt = $this->db->prepare("SELECT author FROM users WHERE author = :author");
-        $stmt->bindParam(':author', $author, PDO::PARAM_INT);
+        $stmt->bindParam(':author', $author, PDO::PARAM_STR);
         $stmt->execute();
         
         return !empty($stmt->fetch(PDO::FETCH_ASSOC)); # return Boolean value
