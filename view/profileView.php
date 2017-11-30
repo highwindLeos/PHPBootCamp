@@ -18,7 +18,7 @@
                     <a href="followingList.php?author=<?= $list['author'] ?>"><span>팔로우 <?= count($followings); ?></span></a>
                 </div>
                 <div>
-                    <?php if($list['author'] != $_SESSION['author']){  #현제 로그인된 사용자라면 버튼을 출력하지 않기. ?>
+                    <?php if($list['author'] != $_SESSION['author']){ #현제 로그인된 사용자라면 버튼을 출력하지 않기. ?>
                         <?php $isFollowing =  true; 
                             foreach($followers as $item){ 
                                 if(array_search($_SESSION['author'], $item)){ #배열안에 사용자명이 있는지. 있다면 true.

@@ -3,12 +3,24 @@
        <?php foreach($articles as $item){ ?>
         <div class="article">
             <div class="titleimg inner-article">
-                <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
-                    <img src="<?php if(!empty($item['usericon']['usericon'])){
-                                   echo htmlspecialchars($item['usericon']['usericon']);
-                            } else { echo 'img/noimage.jpg'; }  ?>">
-                    <sapn class="author"><?= htmlspecialchars($item['usericon']['author']); ?></sapn>
-                </a>
+                <div>
+                    <div class="deleteform">
+                    <?php if($item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 삭제버튼이 출력 ?>
+                    <form>
+                        <input class="delete" type="hidden" name="article-id" value="<?= $item['id']; ?>" />  
+                        <button class="deletebtn" type="submit" formmethod="POST" 
+                                formaction="deleteArticleProcess.php?author=<?= $_SESSION['author']; ?>">
+                        <img class="delete" src="img/icon/delete.png" /></button>
+                    </form>
+                    <?php } ?>
+                    </div>
+                    <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
+                        <img src="<?php if(!empty($item['usericon']['usericon'])){
+                                    echo htmlspecialchars($item['usericon']['usericon']);
+                                        } else { echo 'img/noimage.jpg'; }  ?>">
+                        <sapn class="author"><?= htmlspecialchars($item['usericon']['author']); ?></sapn>
+                    </a>
+                </div>
             </div>
             <div class="mainimg">
                 <img src="<?= htmlspecialchars($item['src']['src']); ?>">

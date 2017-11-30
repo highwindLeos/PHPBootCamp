@@ -1,6 +1,7 @@
 <?php
 session_start();
-require 'model/insertModel.php'; 
+require 'model/insertModel.php';
+require 'model/articleModel.php'; 
 require 'config/config.php';
 
     try {
@@ -16,6 +17,7 @@ require 'config/config.php';
     $article = filter_input(INPUT_POST, 'article', FILTER_SANITIZE_STRING); # article 입력을 필터링.
 
     $insertmodel = new InsertModel($db);
+    $articlemodel = new articleModel($db);
     
     if(isset($_POST)){ #POST에 값이 있다면 검증을 실행.
         # Variable Setting
@@ -35,8 +37,11 @@ require 'config/config.php';
 
     if(count($errors) == 0){ 
         # 에러가 없다면 True.
-        $insertmodel->UploadImageAndArticleId(); #사진을 업로드.
-        $insertmodel->WriteArticles(); #내용을 업로드.
+        $insertmodel->WriteArticles($article); #내용을 업로드.
+        $article = array();
+        $article = $articlemodel->getArticles(); #articles 를 가져옴.
+        $articles_id = $article[0]['id']; #최신으로 써지는 글의 아이디를 변수에 담음    
+        $insertmodel->UploadImageAndArticleId($articles_id); #사진을 업로드.
         header("Location: main.php");
     } else {
         header("Location: write.php");

@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
 #article{
     margin: auto;
     margin-top: 45px;
     margin-bottom: 50px; 
-    width: 60%;
+    width: 55%;
     padding: 20px 5px;
 }
 

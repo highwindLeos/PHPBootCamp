@@ -8,7 +8,7 @@ class InsertModel
         $this->db = $db;
     }
     
-    public function UploadImageAndArticleId()
+    public function UploadImageAndArticleId($articles_id)
     {
         $insertSql = "INSERT INTO pictures (src, articles_id) VALUES (:src, :articles_id)";
         
@@ -26,7 +26,6 @@ class InsertModel
         }
         
         $src = 'img/image/'.$_FILES['image_uploads']['name']; #저장되는 파일의 파일명 (DB 저장될 문자열)
-        $articles_id = trim($_SESSION['id']); #현제 로그인한 user 의 ID 값. 
                        
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':src', $src);
@@ -35,11 +34,11 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteArticles()  {
+    public function WriteArticles($article)  {
+
         $insertSql = "INSERT INTO articles (article, date, users_id) VALUES (:article, now(), :users_id)"; 
         #now() 는 Mysql 함수. 입력되는 순간의 시간을 기록함.
         
-        $article = trim($_POST['article']); 
         $users_id = trim($_SESSION['id']); 
 
         $stmt = $this->db->prepare($insertSql);

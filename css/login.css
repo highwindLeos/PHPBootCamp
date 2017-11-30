@@ -108,6 +108,20 @@ hr{
     margin-left: 10px;
 }
 
+.deleteform{
+    position: relative;
+    right: -900px;
+    top: 0px;
+    width: auto;
+    height: 0px;
+}
+
+.titleimg .delete{
+    border: 0;
+    width: 20px;
+    height: 20px;
+}
+
 .mainimg{
     margin: 15px 0px;
     width: 100%;
