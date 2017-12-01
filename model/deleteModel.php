@@ -29,6 +29,17 @@ class deleteModel
 
         $stmt->execute(); # 쿼리 실행
     }
+
+    public function DeleteLikesByUsersId($loginerid, $articleId){
+        
+        $deleteSql = "DELETE FROM likes WHERE users_id = :users_id AND articles_id = :articles_id";
+        
+        $stmt = $this->db->prepare($deleteSql);
+        $stmt->bindParam(':users_id', $loginerid);
+        $stmt->bindParam(':articles_id', $articleId);
+
+        $stmt->execute(); # 쿼리 실행
+    }
 }
 
 ?>

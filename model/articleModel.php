@@ -7,8 +7,17 @@ class articleModel
         $this->db = $db;
     }
 
-    public function getArticlesCount() {
+    public function getArticlesCount() { # 행의 갯수를 세는 함수. count(*)
         $selectSql = 'SELECT count(*) FROM articles';
+
+        $stmt = $this->db->prepare($selectSql);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_NUM); #All rows Fetch. return.
+    }
+
+    public function getArticlesMaxId() { # 해당 열의 최고 값을 가져온다. MAX() 
+        $selectSql = "SELECT MAX(articles.id) FROM anicoboard.articles";
 
         $stmt = $this->db->prepare($selectSql);
         $stmt->execute();
@@ -71,11 +80,17 @@ class articleModel
     }
     
     public function getLikeCnt($articles_id) {
-        $stmt = $this->db->prepare('SELECT * FROM likes WHERE articles_id = :articles_id');
+        $selectSql = "SELECT * FROM likes WHERE articles_id = :articles_id";
+
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute(); 
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);  #array 1row by articles_id.
+        $rows = array(); #빈 배열 선언.
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){ #모든 데이터 베이스 row(행) 를 반복해서 가져오며 rows 배열에 담는다.
+            $rows[] = $row;
+        }
+        return $rows; # $rows array return.
     }
 
 }

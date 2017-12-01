@@ -38,10 +38,8 @@ require 'config/config.php';
     if(count($errors) == 0){ 
         # 에러가 없다면 True.
         $insertmodel->WriteArticles($article); #내용을 업로드.
-        $article = array();
-        $article = $articlemodel->getArticles(); #articles 를 가져옴.
-        $articles_id = $article[0]['id']; #최신으로 써지는 글의 아이디를 변수에 담음    
-        $insertmodel->UploadImageAndArticleId($articles_id); #사진을 업로드.
+        $maxid = $articlemodel->getArticlesMaxId(); # 현제 업로드된 articles의 Id 값을 배열로 가져옴
+        $insertmodel->UploadImageAndArticleId($maxid[0][0]); #사진을 업로드.
         header("Location: main.php");
     } else {
         header("Location: write.php");

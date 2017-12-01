@@ -8,7 +8,7 @@ class InsertModel
         $this->db = $db;
     }
     
-    public function UploadImageAndArticleId($articles_id)
+    public function UploadImageAndArticleId($maxid)
     {
         $insertSql = "INSERT INTO pictures (src, articles_id) VALUES (:src, :articles_id)";
         
@@ -29,7 +29,7 @@ class InsertModel
                        
         $stmt = $this->db->prepare($insertSql);
         $stmt->bindParam(':src', $src);
-        $stmt->bindParam(':articles_id', $articles_id);
+        $stmt->bindParam(':articles_id', $maxid);
 
         $stmt->execute(); # 쿼리 실행
     }
@@ -73,6 +73,21 @@ class InsertModel
         $stmt->bindParam(':follow', $follow);
         $stmt->bindParam(':follower', $follower);
         $stmt->bindParam(':users_id', $users_id);
+
+        $stmt->execute(); # 쿼리 실행
+    }
+
+    public function WriteLikes() {
+        $insertSql = "INSERT INTO likes (likes.like, users_id, articles_id) VALUES (:like, :users_id, :articles_id)"; 
+        
+        $like = 1; #like count
+        $users_id = trim($_SESSION['id']); #Button value 기본값. (로그인한 사용자)
+        $articles_id = trim($_POST['likeid']); #좋아요 하는 해당글의 id. 
+
+        $stmt = $this->db->prepare($insertSql);
+        $stmt->bindParam(':like', $like);
+        $stmt->bindParam(':users_id', $users_id);
+        $stmt->bindParam(':articles_id', $articles_id);
 
         $stmt->execute(); # 쿼리 실행
     }

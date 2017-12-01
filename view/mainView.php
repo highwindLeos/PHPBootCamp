@@ -27,10 +27,34 @@
             </div>
             <div class="inner-article">
                 <div class="imgbtn">
-                    <a class="" href="#"><img src="img/icon/iconarticle01.png"></a>
+                <?php $isLike =  true;
+                foreach($item['like'] as $likeList){ 
+                    if($_SESSION['id'] == $likeList['users_id']){ #배열안에 사용자명이 있는지. 있다면 true.
+                        $isLike = false;
+                    } else {
+                        $isLike = true;
+                    }
+                }
+                if($isLike){  ?>
+                    <form class="like">
+                        <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                        <button class="like-btn" formmethod="POST" name="like" 
+                        value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?author=<?= $_SESSION['author'] ?>">
+                        <img src="img/icon/iconarticle01.png"></button>
+                    </form>
+                <?php } else { ?>
+                    <form class="like">
+                        <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                        <button class="like-btn" formmethod="POST" name="unlike" 
+                        value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?author=<?= $_SESSION['author'] ?>">
+                        <img src="img/icon/iconarticle04.png"></button>
+                    </form>
+                <?php } ?>
                 </div>
                 <div class="articleparam">
-                    <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
+                    <p class="like">
+                        <?= htmlspecialchars('좋아요 '.count($item['like']).'개'); ?>
+                    </p>
                     <p class="articles">
                        <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
                             <span class="userid"><?= htmlspecialchars($item['usericon']['author']); ?></span>
