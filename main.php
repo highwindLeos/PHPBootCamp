@@ -16,7 +16,7 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
     #Pageing Variable.
     $article = $articlemodel->getArticlesCount(); #행의 갯수를 구하는 함수.
 
-    $pageGet = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); # Query String. FILTER_SANITIZE_STRING.
+    $pageGet = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); 
     $page = ($pageGet) ? $pageGet : 1; #삼항 연산자를 통한 if 문. (페이지 값이 없을경우 기본 값은 1 false).
 
     $articlecount = $article[0][0]; #Article 의 행 의 수를 구한다.

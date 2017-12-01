@@ -39,14 +39,14 @@
                     <form class="like">
                         <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
                         <button class="like-btn" formmethod="POST" name="like" 
-                        value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?author=<?= $_SESSION['author'] ?>">
+                        value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?page=<?= $page ?>">
                         <img src="img/icon/iconarticle01.png"></button>
                     </form>
                 <?php } else { ?>
                     <form class="like">
                         <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
                         <button class="like-btn" formmethod="POST" name="unlike" 
-                        value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?author=<?= $_SESSION['author'] ?>">
+                        value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?page=<?= $page ?>">
                         <img src="img/icon/iconarticle04.png"></button>
                     </form>
                 <?php } ?>
