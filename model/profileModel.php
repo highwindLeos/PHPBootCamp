@@ -61,8 +61,8 @@ class profileModel
     }
     
     public function getPictureByAuthor($author) { #Main 최신 사진 순으로 정렬 (pictures.id Auto Increments)
-        $stmt = $this->db->prepare('SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.users 
-                                    ON pictures.articles_id = users.id WHERE author = :author ORDER BY pictures.id DESC');
+        $stmt = $this->db->prepare('SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.articles ON pictures.articles_id = articles.id 
+                                    LEFT JOIN users AS Us ON articles.users_id = Us.id WHERE author = :author  ORDER BY pictures.id DESC');
         $stmt->bindParam(':author', $author, PDO::PARAM_INT);
         $stmt->execute();
         

@@ -7,8 +7,19 @@ class articleModel
         $this->db = $db;
     }
 
-    public function getArticles() {
-        $stmt = $this->db->prepare('SELECT * FROM articles ORDER BY id DESC'); # 내림차순 정렬 (id 기준)
+    public function getArticlesCount() {
+        $selectSql = 'SELECT count(*) FROM articles';
+
+        $stmt = $this->db->prepare($selectSql);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_NUM); #All rows Fetch. return.
+    }
+
+    public function getArticles($Selectpoint, $pageList) {
+        $selectSql = 'SELECT * FROM articles ORDER BY id DESC LIMIT '.$Selectpoint.','.$pageList;
+
+        $stmt = $this->db->prepare($selectSql); # 내림차순 정렬 (id 기준)
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.

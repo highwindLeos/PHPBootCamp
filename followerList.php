@@ -11,11 +11,11 @@ require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포�
             echo $e->getMessage();
         }
 
-    $author = filter_var($_GET['author'], FILTER_DEFAULT); # Author.
+    $author = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING); # Author.
 
     $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
     $list = $profilemodel->getFollowersIconByAuthor($author);
     $usericon = $profilemodel->getUserIconByAuthor($author);
 
-require 'view/followerListView.php';
+include 'view/followerListView.php';
 ?>

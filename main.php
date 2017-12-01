@@ -10,9 +10,37 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
         {
             echo $e->getMessage();
         }
-
+    
     $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
-    $articles = $articlemodel->getArticles(); 
+        
+    #Pageing Variable.
+    $article = $articlemodel->getArticlesCount(); #행의 갯수를 구하는 함수.
+
+    $pageGet = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); # Query String. FILTER_SANITIZE_STRING.
+    $page = ($pageGet) ? $pageGet : 1; #삼항 연산자를 통한 if 문. (페이지 값이 없을경우 기본 값은 1 false).
+
+    $articlecount = $article[0][0]; #Article 의 행 의 수를 구한다.
+
+    $pageList = 10; #한 페이지에 표시할 게시물 수 (LIMIT 의 입력값으로 들어감)
+    $pageBlock = 3; #블록의 수 (각 페이지의 링크가 됨)
+
+    $pageNum = ceil($articlecount / $pageList); # 총 페이지 수 (반올림 함수 이용 소수점을 올림한다.)
+    $blockNum = ceil($pageNum / $pageBlock); # 총 블록
+    $nowBlock = ceil($page / $pageBlock); # 현제 블록
+
+    $Startpage = ($nowBlock * $pageBlock) - ($pageBlock - 1); #시작 페이지.
+    if ($Startpage <= 1) { # 시작 페이지가 1보다 작아지면 안되기 때문에 Startpage는 항상 1 이하일경우 1로 고정.
+        $Startpage = 1; 
+    }
+
+    $Endpage = $nowBlock * $pageBlock; #종료 페이지. 현제 블록 * 페이지 블럭
+    if ($pageNum <= $Endpage) { # 종료 페이지의 수가 페이지 수보다 커지면 종료페이지는 페이지수로 고정.
+        $Endpage = $pageNum;
+    }
+    
+    $Selectpoint = ($page - 1) * $pageList;
+
+    $articles = $articlemodel->getArticles($Selectpoint, $pageList);  #페이징 LIMIT 를 적용한 함수.
     $users = $articlemodel->getUsers(); 
 
     $email = $_SESSION['email'];
@@ -32,7 +60,7 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
         $articles[$i]['like'] = $articlemodel->getLikeCnt($articles[$i]['id']);
 
     }
-    
+
 include 'view/mainView.php'; # 뷰를 가져온다.
 
 ?>

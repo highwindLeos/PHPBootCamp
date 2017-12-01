@@ -27,8 +27,7 @@
             </div>
             <div class="inner-article">
                 <div class="imgbtn">
-                    <a href="#"><img src="img/icon/iconarticle01.png"></a>
-                    <a href="#"><img src="img/icon/iconarticle02.png"></a>
+                    <a class="" href="#"><img src="img/icon/iconarticle01.png"></a>
                 </div>
                 <div class="articleparam">
                     <p class="like"><?= htmlspecialchars($item['like']['like'].'개'); ?></p>
@@ -63,6 +62,21 @@
             </form>
         </div>
         <?php } ?>
+
+        <div class="page">
+            <nav>
+                <ul>
+                    <li class="page-item"><a class="page-link" href="main.php?page=1">처음으로</a></li>
+                    <li class="page-item"><a class="page-link" href="main.php?page=<?= $Startpage - 1 ?>">이전</a></li>
+                    <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
+                        <li class="page-item"><a class="page-link" href="main.php?page=<?=$p?>"><?=$p?></a></li>
+                    <?php } ?>
+                    <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
+                </ul>
+            </nav>
+            <p>-<?= $page ?> 페이지-</p>                                             
+        </div>
     </article>  
     <footer>
         <p>

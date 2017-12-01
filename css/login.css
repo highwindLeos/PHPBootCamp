@@ -110,9 +110,9 @@ hr{
 
 .deleteform{
     position: relative;
-    right: -900px;
+    right: -94%;
     top: 0px;
-    width: auto;
+    width: 20px;
     height: 0px;
 }
 
@@ -191,6 +191,36 @@ hr{
     width: 25px;
     height: 25px;
     cursor: pointer;
+}
+
+/* page navigation */
+
+.page{
+    display: flex;
+    margin: 25px auto;
+    padding: 10px;
+    justify-content: center;
+    width:49.5%;
+    border: 1px solid #DBDBDB;
+}
+
+.page ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.page li {
+    margin: 0 15px;
+    padding: 3px;
+    border : 1px solid #003962;
+    border-radius: 5px;
+    float: left;
+}
+
+.page li:hover{
+    border : 1px solid gray;
+    background-color: gray;
 }
 
 footer {
