@@ -86,7 +86,6 @@
             </form>
         </div>
         <?php } ?>
-
         <div class="page">
             <nav>
                 <ul>

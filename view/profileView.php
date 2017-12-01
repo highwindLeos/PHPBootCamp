@@ -9,7 +9,7 @@
             </div>
             <div class="count">
                 <div>
-                    <a href="main.php"><span>게시물 <?= count($pitures); ?></span></a>
+                    <a href="main.php"><span>게시물 <?= $pictureCnt ?></span></a>
                 </div>
                 <div>
                     <a href="followerList.php?author=<?= $list['author'] ?>"><span>팔로워 <?= count($followers); ?></span></a>
@@ -47,7 +47,6 @@
                     <?php } ?>
                 </div>
             </div>
-            
        </div>
         <div class="mid-article">
            <p><span><?= $list['author']; ?> 님의 게시물</span></p>
@@ -56,6 +55,20 @@
             <?php foreach($pitures as $items){ ?>
                 <div><img src="<?= $items['src'] ?>"></div>
             <?php } ?>
+        </div>
+        <div class="page">
+            <nav>
+                <ul>
+                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $_SESSION['author'] ?>&page=1">처음으로</a></li>
+                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $_SESSION['author'] ?>&page=<?= $Startpage - 1 ?>">이전</a></li>
+                    <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
+                        <li class="page-item"><a class="page-link" href="profile.php?author=<?= $_SESSION['author'] ?>&page=<?=$p?>"><?=$p?></a></li>
+                    <?php } ?>
+                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $_SESSION['author'] ?>&page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $_SESSION['author'] ?>&page=<?= $pageNum ?>">끝으로</a></li>
+                </ul>
+            </nav>
+            <p>-<?= $page ?> 페이지-</p>                                             
         </div>
     </article>  
     <footer>
