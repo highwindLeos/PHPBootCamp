@@ -8,8 +8,8 @@ class InsertModel
         $this->db = $db;
     }
     
-    public function UploadImageAndArticleId($maxid)
-    {
+    public function UploadImageAndArticleId($maxid) {
+
         $insertSql = "INSERT INTO pictures (src, articles_id) VALUES (:src, :articles_id)";
         
         $hostPath = realpath('./'); #현제 컴퓨터의 Server host 경로상의 실제 디렉토리 값을 반환.
@@ -34,7 +34,7 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteArticles($article)  {
+    public function WriteArticles($article) {
 
         $insertSql = "INSERT INTO articles (article, date, users_id) VALUES (:article, now(), :users_id)"; 
         #now() 는 Mysql 함수. 입력되는 순간의 시간을 기록함.
@@ -49,6 +49,7 @@ class InsertModel
     }
     
     public function WriteComments($comment) {
+
         $insertSql = "INSERT INTO comments (comment, users_id, articles_id) VALUES (:comment, :users_id, :articles_id)"; 
         
         $users_id = trim($_SESSION['id']); #로그인한 사용자의 id. 
@@ -63,6 +64,7 @@ class InsertModel
     }
     
     public function WriteFollows() {
+
         $insertSql = "INSERT INTO follows (follow, follower, users_id) VALUES (:follow, :follower, :users_id)"; 
         
         $follow = trim($_POST['followUser']); #프로파일 user의 사용자. input hidden.
@@ -78,6 +80,7 @@ class InsertModel
     }
 
     public function WriteLikes() {
+        
         $insertSql = "INSERT INTO likes (likes.like, users_id, articles_id) VALUES (:like, :users_id, :articles_id)"; 
         
         $like = 1; #like count

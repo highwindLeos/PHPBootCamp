@@ -8,6 +8,7 @@ class articleModel
     }
 
     public function getArticlesCount() { # 행의 갯수를 세는 함수. count(*)
+
         $selectSql = 'SELECT count(*) FROM articles';
 
         $stmt = $this->db->prepare($selectSql);
@@ -17,6 +18,7 @@ class articleModel
     }
 
     public function getArticlesMaxId() { # 해당 열의 최고 값을 가져온다. MAX() 
+
         $selectSql = "SELECT MAX(articles.id) FROM anicoboard.articles";
 
         $stmt = $this->db->prepare($selectSql);
@@ -26,6 +28,7 @@ class articleModel
     }
 
     public function getArticles($Selectpoint, $pageList) {
+
         $selectSql = 'SELECT * FROM articles ORDER BY id DESC LIMIT '.$Selectpoint.','.$pageList;
 
         $stmt = $this->db->prepare($selectSql); # 내림차순 정렬 (id 기준)
@@ -35,14 +38,20 @@ class articleModel
     }
     
     public function getUsers() {
-        $stmt = $this->db->prepare('SELECT * FROM users');
+
+        $selectSql = 'SELECT * FROM users';
+
+        $stmt = $this->db->prepare($selectSql);
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
     }
     
     public function getPictures($id) {
-        $stmt = $this->db->prepare('SELECT * FROM pictures WHERE id = :id');
+
+        $selectSql = 'SELECT * FROM pictures WHERE id = :id';
+
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute(); 
         
@@ -50,7 +59,10 @@ class articleModel
     }
     
     public function getUserIcons($id) {
-        $stmt = $this->db->prepare('SELECT author,usericon FROM users WHERE id = :id');
+
+        $selectSql = 'SELECT author,usericon FROM users WHERE id = :id';
+        
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         
@@ -58,17 +70,22 @@ class articleModel
     }
     
      public function getArticlesById($id) {
-        $stmt = $this->db->prepare('SELECT * FROM articles WHERE id = :id'); 
+
+        $selectSql = 'SELECT * FROM articles WHERE id = :id';
+        
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         
         return $stmt->fetch(PDO::FETCH_ASSOC); #array 1row by id.
     }
     
-    public function getComments($articles_id)
-    {
-        $stmt = $this->db->prepare('SELECT * FROM comments JOIN users ON comments.users_id = users.id 
-                                    WHERE articles_id = :articles_id');
+    public function getComments($articles_id) {
+
+        $selectSql = 'SELECT * FROM comments JOIN users ON comments.users_id = users.id 
+                      WHERE articles_id = :articles_id';
+        
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':articles_id', $articles_id, PDO::PARAM_INT);
         $stmt->execute();
         
@@ -80,6 +97,7 @@ class articleModel
     }
     
     public function getLikeCnt($articles_id) {
+        
         $selectSql = "SELECT * FROM likes WHERE articles_id = :articles_id";
 
         $stmt = $this->db->prepare($selectSql);

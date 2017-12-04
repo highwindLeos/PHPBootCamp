@@ -8,7 +8,8 @@ class UpdateModel
         $this->db = $db;
     }
     
-    public function UsersIconUpload(){
+    public function UsersIconUpload() {
+
         $updateSql = "UPDATE users SET usericon = :usericon WHERE author = :author;";
         
         $hostPath = realpath('./'); #현제 컴퓨터의 Server host 경로상의 실제 디렉토리 값을 반환.
@@ -34,6 +35,7 @@ class UpdateModel
 
         $stmt->execute(); # 쿼리 실행
     }
+    
 }
 
 ?>

@@ -6,7 +6,7 @@ require 'config/config.php';
     try {
             $db = new PDO($dsn, $dId, $dPass);
         }
-        catch(PDOException $e) 
+    catch(PDOException $e) 
         {
             die($e->getMessage());
         }

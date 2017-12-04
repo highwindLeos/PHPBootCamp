@@ -11,7 +11,7 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
-    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);
+    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); # 현제 페이지의 값.
     $like = filter_input(INPUT_POST, 'like', FILTER_SANITIZE_STRING); #buttuon default value.
 
     $insertmodel = new InsertModel($db);

@@ -8,7 +8,10 @@ class LoginModel
     }
 
     public function getUsersByEmail($email) {
-        $stmt = $this->db->prepare('SELECT * FROM users WHERE email = :email');
+
+        $selectSql = 'SELECT * FROM users WHERE email = :email';
+
+        $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute(); 
         
