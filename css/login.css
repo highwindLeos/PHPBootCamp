@@ -208,10 +208,10 @@ hr{
 
 .page-main {
     display: flex;
-    margin: 15px auto;
+    margin: 0px auto 30px auto;
     padding: 10px;
     justify-content: center;
-    width:50%;
+    width:49.5%;
     border: 1px solid #DBDBDB;
 }
 

@@ -24,12 +24,12 @@ http://modernpug.github.io/php-the-right-way/
 |:---:|:---:|:---:|
 | 1 | stonker@gmail.com | Leenara |
 | 2 | highwind26@gmail.com | Leodays |
-| 3 | highwind26@nate.com | Leedays |
-| 4 | highwind26@naver.com | mangaLee |
+| 3 | highwind26@nate.com | Highwind |
+| 4 | highwind26@naver.com | Laravel |
 | 5 | leosdays@gmail.com | leosdays26 |
-| 6 | leechar@gmail.com | Leechar |
+| 6 | leechar@gmail.com | CharLee |
 | 8 | yosemite@gmail.com | Yosemite |
 | 9 | datetime@gmail.com | datetime |
 | 10 | gmail@gmail.com | Gmail |
 | 11 | daysmays@naver.com | maydays |
-| 12 | stonker26@gmail.com | mailLee |
+| 12 | stonker26@gmail.com | MailLee |

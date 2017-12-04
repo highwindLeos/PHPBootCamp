@@ -47,7 +47,6 @@ require 'config/config.php';
 
     if(!empty($author)) { # 쿼리스트링으로 사용자가 접근했다면. 
     
-        $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
         $list = $profilemodel->getUserIconByAuthor($author);
         $pitures = $profilemodel->getPictureByAuthor($author, $Selectpoint, $pageList);
         $followings = $profilemodel->getFollowingsByAuthor($author);

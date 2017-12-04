@@ -7,6 +7,16 @@ class articleModel
         $this->db = $db;
     }
 
+    public function getUsers() {
+        
+        $selectSql = 'SELECT * FROM users';
+
+        $stmt = $this->db->prepare($selectSql);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
+    }
+
     public function getArticlesCount() { # 행의 갯수를 세는 함수. count(*)
 
         $selectSql = 'SELECT count(*) FROM articles';
@@ -32,16 +42,6 @@ class articleModel
         $selectSql = 'SELECT * FROM articles ORDER BY id DESC LIMIT '.$Selectpoint.','.$pageList;
 
         $stmt = $this->db->prepare($selectSql); # 내림차순 정렬 (id 기준)
-        $stmt->execute();
-        
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
-    }
-    
-    public function getUsers() {
-
-        $selectSql = 'SELECT * FROM users';
-
-        $stmt = $this->db->prepare($selectSql);
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.

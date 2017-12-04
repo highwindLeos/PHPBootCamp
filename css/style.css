@@ -201,18 +201,19 @@ a:active {
 /* responsive layout */
 @media ( max-width: 1240px ) {
     .content {
-      width: auto;
-      display: flex;
-      justify-content: center; 
-      flex-direction: column; /* flex 요소 세로 */
+        width: auto;
+        display: flex;
+        justify-content: center; 
+        flex-direction: column; /* flex 요소 세로 */
     }
     .item {
-      float: none;
-      width: auto;
-      margin: 25px 18%;
+        float: none;
+        width: auto;
+        margin: 25px 18%;
     }
 }
 
+/* footer Css */
 footer {
     bottom: 0;
     left: 0;

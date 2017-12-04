@@ -27,15 +27,15 @@
             </div>
             <div class="inner-article">
                 <div class="imgbtn">
-                <?php $isLike =  true;
-                foreach($item['like'] as $likeList){ 
-                    if($_SESSION['id'] == $likeList['users_id']){ #배열안에 사용자명이 있는지. 있다면 true.
-                        $isLike = false;
-                    } else {
-                        $isLike = true;
+                <?php $isLike =  true; # 버튼 출력 조건문을 주기 위한 boolean 변수.
+                    foreach($item['like'] as $likeList){ 
+                        if($_SESSION['id'] == $likeList['users_id']){ #배열안에 사용자명이 있는지. 있다면 true.
+                            $isLike = false;
+                        } else {
+                            $isLike = true;
+                        }
                     }
-                }
-                if($isLike){  ?>
+                    if($isLike){  ?>
                     <form class="like">
                         <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
                         <button class="like-btn" formmethod="POST" name="like" 
@@ -94,7 +94,7 @@
                     <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
                         <li class="page-item"><a class="page-link" href="main.php?page=<?=$p?>"><?=$p?></a></li>
                     <?php } ?>
-                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 다음버튼을 출력. ?>
+                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 '다음'버튼을 출력. ?>
                         <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
                     <?php } else { ?> 
                         <li class="endpage-item">마지막 페이지 블럭</li>
@@ -102,7 +102,7 @@
                     <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
                 </ul>
             </nav>
-            <p class="is-page">-현제 <?= $page ?> 페이지-</p>                                             
+            <p class="is-page">-현제 <?= $page ?> 페이지-</p>
         </div>
     </article>  
     <footer>

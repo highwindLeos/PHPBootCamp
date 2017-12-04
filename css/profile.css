@@ -65,12 +65,11 @@
 }
 
 .setting{
-    width: 17px;
-    height: 17px;
+    width: 25px;
+    height:25px;
 }
 
-/* Follow-Style  */
-
+/* Follow List - Style  */
 .profile-icon{
     width: 120px;
     height: 120px;
@@ -224,7 +223,7 @@
 
 }
 
-/* profile page Css */
+/* profile pageing Css */
 .page{
     display: flex;
     margin: 15px auto;
@@ -262,7 +261,6 @@
 
 
 /* Modal CSS */
-
 .modal_content {
     position: fixed;
     top: 0;

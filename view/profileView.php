@@ -1,11 +1,17 @@
 <?php include 'head.php'; ?>
     <article id="article">
        <div class="top-article">
-            <a href="#open2"><img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"> </a><!-- 삼항 연산자 : 조건 ? true : false -->
+            <?php if($list['author'] == $_SESSION['author']) { # 현제 로그인 사용자 페이지에만 버튼으로 나타남 ?>
+            <a href="#open2">
+            <?php } ?>
+                <img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"> 
+            </a><!-- 삼항 연산자 : 조건 ? true : false -->
             <div class="info">
                 <div><h2><?= $list['author'] ?></h2></div>
-                <div><a href="#"><img class="button" src="img/profile/profile2.png"></a></div>
-                <div><a href="#open1"><img class="setting" src="img/profile/profile3.png"></a></div>
+                <!-- <div><a href="#"><img class="button" src="img/profile/profile2.png"></a></div> -->
+                <?php if($list['author'] == $_SESSION['author']) { # 현제 로그인 사용자 페이지에만 버튼으로 나타남 ?>
+                    <div><a href="#open1"><img class="setting" src="img/profile/profile3.png"></a></div>
+                <?php } ?>
             </div>
             <div class="count">
                 <div>
@@ -52,9 +58,13 @@
            <p><span><?= $list['author']; ?> 님의 게시물</span></p>
         </div>
         <div class="bottom-article">
-            <?php foreach($pitures as $items){ ?>
-                <div><img src="<?= $items['src'] ?>"></div>
-            <?php } ?>  
+            <?php if (!empty($pitures)) { ?>
+                <?php foreach($pitures as $items){ ?>
+                    <div><img src="<?= $items['src'] ?>"></div>
+                <?php } ?> 
+            <?php } else { ?>
+                <?= "<p>업로드한 사진이 없습니다.</p>"; ?>
+            <?php } ?> 
         </div>
         <div class="page">
             <nav>
@@ -64,7 +74,7 @@
                     <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
                         <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?=$p?>"><?=$p?></a></li>
                     <?php } ?>
-                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 다음버튼을 출력. ?>
+                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 '다음'버튼을 출력. ?>
                         <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $Endpage + 1 ?>">다음</a></li>
                     <?php } else { ?> 
                         <li class="endpage-item">마지막 페이지 블럭</li>
@@ -72,7 +82,7 @@
                     <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $pageNum ?>">끝으로</a></li>
                 </ul>
             </nav>
-            <p>-<?= $page ?> 페이지-</p>                                             
+            <p class="is-page">-<?= $page ?> 페이지-</p>
         </div>
     </article>  
     <footer>
