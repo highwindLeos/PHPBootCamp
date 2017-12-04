@@ -81,7 +81,7 @@
             <form class="commentform">
                 <input class="comment" type="text" name="comment" placeholder="댓글달기" />
                 <input class="comment" type="hidden" name="article-id" value="<?= $item['id']; ?>" />  
-                <button class="commentbtn" type="submit" formmethod="POST" formaction="commentProcess.php">
+                <button class="commentbtn" type="submit" formmethod="POST" formaction="commentProcess.php?page=<?= $page ?>">
                 <img class="commentbtn" src="img/icon/iconarticle03.png" /></button>
             </form>
         </div>
