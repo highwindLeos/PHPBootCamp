@@ -38,7 +38,7 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
         $Endpage = $pageNum;
     }
     
-    $Selectpoint = ($page - 1) * $pageList;
+    $Selectpoint = ($page - 1) * $pageList; #가져오는 데이터 
 
     $articles = $articlemodel->getArticles($Selectpoint, $pageList);  #페이징 LIMIT 를 적용한 함수.
     $users = $articlemodel->getUsers(); 

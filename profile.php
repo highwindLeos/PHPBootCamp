@@ -24,8 +24,8 @@ require 'config/config.php';
     $page = ($pageGet) ? $pageGet : 1; #삼항 연산자를 통한 if 문. (페이지 값이 없을경우 기본 값은 1 false).
     $pictureCnt = $picture[0][0];  #Pictures 의 행 의 수를 구한다.
 
-    $pageList = 6; #한 페이지에 표시할 게시물 수 (LIMIT 의 입력값으로 들어감)
-    $pageBlock = 2; #블록의 수 (각 페이지의 링크가 됨)
+    $pageList = 9; #한 페이지에 표시할 게시물 수 (LIMIT 의 입력값으로 들어감)
+    $pageBlock = 3; #블록의 수 (각 페이지의 링크가 됨)
 
     $pageNum = ceil($pictureCnt / $pageList); # 총 페이지 수 (반올림 함수 이용 소수점을 올림한다.)
     $blockNum = ceil($pageNum / $pageBlock); # 총 블록

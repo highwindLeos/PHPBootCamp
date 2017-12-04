@@ -54,7 +54,7 @@
         <div class="bottom-article">
             <?php foreach($pitures as $items){ ?>
                 <div><img src="<?= $items['src'] ?>"></div>
-            <?php } ?>
+            <?php } ?>  
         </div>
         <div class="page">
             <nav>
@@ -64,7 +64,11 @@
                     <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
                         <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?=$p?>"><?=$p?></a></li>
                     <?php } ?>
-                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 다음버튼을 출력. ?>
+                        <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <?php } else { ?> 
+                        <li class="endpage-item">마지막 페이지 블럭</li>
+                    <?php } ?>
                     <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $pageNum ?>">끝으로</a></li>
                 </ul>
             </nav>

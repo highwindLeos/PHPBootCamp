@@ -86,7 +86,7 @@
             </form>
         </div>
         <?php } ?>
-        <div class="page">
+        <div class="page-main">
             <nav>
                 <ul>
                     <li class="page-item"><a class="page-link" href="main.php?page=1">처음으로</a></li>
@@ -94,11 +94,15 @@
                     <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
                         <li class="page-item"><a class="page-link" href="main.php?page=<?=$p?>"><?=$p?></a></li>
                     <?php } ?>
-                    <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 다음버튼을 출력. ?>
+                        <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
+                    <?php } else { ?> 
+                        <li class="endpage-item">마지막 페이지 블럭</li>
+                    <?php } ?>
                     <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
                 </ul>
             </nav>
-            <p>-<?= $page ?> 페이지-</p>                                             
+            <p class="is-page">-현제 <?= $page ?> 페이지-</p>                                             
         </div>
     </article>  
     <footer>

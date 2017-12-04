@@ -206,22 +206,22 @@ hr{
 
 /* page navigation */
 
-.page{
+.page-main {
     display: flex;
     margin: 15px auto;
     padding: 10px;
     justify-content: center;
-    width:49.5%;
+    width:50%;
     border: 1px solid #DBDBDB;
 }
 
-.page ul {
+.page-main ul {
     list-style:none;
     margin:0;
     padding:0;
 }
 
-.page li {
+.page-main li {
     margin: 0 15px;
     padding: 3px;
     border : 1px solid #003962;
@@ -229,11 +229,26 @@ hr{
     float: left;
 }
 
-.page li:hover{
+.page-main li:hover{
     border : 1px solid gray;
     background-color: gray;
 }
 
+.page-main li .endpage-item {
+    margin: 0 15px;
+    padding: 3px;
+    border : 1px solid #003962;
+    border-radius: 5px;
+}
+
+.is-page{
+    margin: 0 15px;
+    padding: 5px 10px;
+    border : 1px solid #003962;
+    border-radius: 5px;
+}
+
+/* footer Css */
 footer {
     bottom: 0;
     left: 0;
