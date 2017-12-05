@@ -40,10 +40,11 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
     
     $Selectpoint = ($page - 1) * $pageList; #가져오는 데이터 
 
-    $articles = $articlemodel->getArticles($Selectpoint, $pageList);  #페이징 LIMIT 를 적용한 함수.
-    $users = $articlemodel->getUsers(); 
+    # Session value variable.
+    $email = $_SESSION['email']; #로그인한 사용자의 mail.
+    $usersId = $_SESSION['id']; #로그인한 사용자의 Id.
 
-    $email = $_SESSION['email'];
+    $articles = $articlemodel->getArticles($Selectpoint, $pageList, $usersId);  #페이징. LIMIT 를 적용한 함수.
 
     for($i=0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
 

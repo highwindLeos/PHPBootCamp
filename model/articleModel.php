@@ -37,11 +37,15 @@ class articleModel
         return $stmt->fetchAll(PDO::FETCH_NUM); #All rows Fetch. return.
     }
 
-    public function getArticles($Selectpoint, $pageList) {
+    public function getArticles($Selectpoint, $pageList, $usersId) {
 
-        $selectSql = 'SELECT * FROM articles ORDER BY id DESC LIMIT '.$Selectpoint.','.$pageList;
+        $selectSql = 'SELECT *, users.id AS UID, articles.id AS AID
+                      FROM anicoboard.users  LEFT JOIN anicoboard.articles ON users.id = articles.users_id
+                      WHERE users_id IN (SELECT follow FROM anicoboard.follows WHERE users_id = :users_id) OR users_id = :users_id
+                      ORDER BY AID DESC LIMIT '.$Selectpoint.','.$pageList; #서브쿼리 (다중 검색 조건 IN keyword 를 준다.)
 
         $stmt = $this->db->prepare($selectSql); # 내림차순 정렬 (id 기준)
+        $stmt->bindParam(':users_id', $usersId, PDO::PARAM_INT);
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.

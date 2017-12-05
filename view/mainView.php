@@ -16,8 +16,8 @@
                     </div>
                     <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
                         <img src="<?php if(!empty($item['usericon']['usericon'])){
-                                    echo htmlspecialchars($item['usericon']['usericon']);
-                                        } else { echo 'img/noimage.jpg'; }  ?>">
+                                        echo htmlspecialchars($item['usericon']['usericon']);
+                                        } else { echo 'img/noimage.jpg'; } ?>">
                         <sapn class="author"><?= htmlspecialchars($item['usericon']['author']); ?></sapn>
                     </a>
                 </div>
@@ -96,10 +96,9 @@
                     <?php } ?>
                     <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 '다음'버튼을 출력. ?>
                         <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
-                    <?php } else { ?> 
-                        <li class="endpage-item">마지막 페이지 블럭</li>
+                        <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
                     <?php } ?>
-                    <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
+                    
                 </ul>
             </nav>
             <p class="is-page">-현제 <?= $page ?> 페이지-</p>

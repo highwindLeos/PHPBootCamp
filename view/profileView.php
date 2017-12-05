@@ -2,10 +2,10 @@
     <article id="article">
        <div class="top-article">
             <?php if($list['author'] == $_SESSION['author']) { # 현제 로그인 사용자 페이지에만 버튼으로 나타남 ?>
-            <a href="#open2">
+                <a href="#open2">
             <?php } ?>
-                <img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"> 
-            </a><!-- 삼항 연산자 : 조건 ? true : false -->
+                    <img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"> 
+                </a><!-- 삼항 연산자 : 조건 ? true : false -->
             <div class="info">
                 <div><h2><?= $list['author'] ?></h2></div>
                 <!-- <div><a href="#"><img class="button" src="img/profile/profile2.png"></a></div> -->
@@ -74,12 +74,10 @@
                     <?php for ($p = $Startpage; $p <= $Endpage; $p++) { ?>
                         <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?=$p?>"><?=$p?></a></li>
                     <?php } ?>
-                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 '다음'버튼을 출력. ?>
+                    <?php if( $pageNum != $Endpage) { # 총 페이지 와 블럭의 마지막 값이 같지 않을 때만 '다음'버튼을 출력.(출력내용이 남아있을때) ?>
                         <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $Endpage + 1 ?>">다음</a></li>
-                    <?php } else { ?> 
-                        <li class="endpage-item">마지막 페이지 블럭</li>
+                        <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $pageNum ?>">끝으로</a></li>
                     <?php } ?>
-                    <li class="page-item"><a class="page-link" href="profile.php?author=<?= $list['author'] ?>&page=<?= $pageNum ?>">끝으로</a></li>
                 </ul>
             </nav>
             <p class="is-page">-<?= $page ?> 페이지-</p>
