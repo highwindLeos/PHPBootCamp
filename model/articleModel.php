@@ -17,11 +17,13 @@ class articleModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC); #All rows Fetch. return.
     }
 
-    public function getArticlesCount() { # 행의 갯수를 세는 함수. count(*)
+    public function getArticlesCount($usersId) { # 행의 갯수를 세는 함수. count(*)
 
-        $selectSql = 'SELECT count(*) FROM articles';
+        $selectSql = 'SELECT count(*) FROM anicoboard.users  LEFT JOIN anicoboard.articles ON users.id = articles.users_id
+                      WHERE users_id IN (SELECT follow FROM anicoboard.follows WHERE users_id = :users_id) OR users_id = :users_id';
 
         $stmt = $this->db->prepare($selectSql);
+        $stmt->bindParam(':users_id', $usersId, PDO::PARAM_INT);        
         $stmt->execute();
         
         return $stmt->fetchAll(PDO::FETCH_NUM); #All rows Fetch. return.

@@ -98,7 +98,6 @@
                         <li class="page-item"><a class="page-link" href="main.php?page=<?= $Endpage + 1 ?>">다음</a></li>
                         <li class="page-item"><a class="page-link" href="main.php?page=<?= $pageNum ?>">끝으로</a></li>
                     <?php } ?>
-                    
                 </ul>
             </nav>
             <p class="is-page">-현제 <?= $page ?> 페이지-</p>

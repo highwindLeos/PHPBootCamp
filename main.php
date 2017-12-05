@@ -12,9 +12,13 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
         }
     
     $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
+
+    # Session value variable.
+    $email = $_SESSION['email']; #로그인한 사용자의 mail.
+    $usersId = $_SESSION['id']; #로그인한 사용자의 Id.
         
     #Pageing Variable.
-    $article = $articlemodel->getArticlesCount(); #행의 갯수를 구하는 함수.
+    $article = $articlemodel->getArticlesCount($usersId); #행의 갯수를 구하는 함수.
 
     $pageGet = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); 
     $page = ($pageGet) ? $pageGet : 1; #삼항 연산자를 통한 if 문. (페이지 값이 없을경우 기본 값은 1 false).
@@ -39,10 +43,6 @@ require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포�
     }
     
     $Selectpoint = ($page - 1) * $pageList; #가져오는 데이터 
-
-    # Session value variable.
-    $email = $_SESSION['email']; #로그인한 사용자의 mail.
-    $usersId = $_SESSION['id']; #로그인한 사용자의 Id.
 
     $articles = $articlemodel->getArticles($Selectpoint, $pageList, $usersId);  #페이징. LIMIT 를 적용한 함수.
 
