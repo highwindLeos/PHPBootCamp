@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\insertModel; #네임스페이스에  Class 를 사용한다.
-use DatabaseModel\articleModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\InsertModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\ArticleModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -15,12 +15,12 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
+    $insertmodel = new InsertModel($db);
+    $articlemodel = new ArticleModel($db);
+
     $name = filter_var($_GET['name'], FILTER_SANITIZE_STRING); #$_GET 배열을 필터링.
     $picture = $_FILES['image_uploads']['name']; #FILE 배열은 필터링을 하지 않는다.
     $article = filter_input(INPUT_POST, 'article', FILTER_SANITIZE_STRING); # article 입력을 필터링.
-
-    $insertmodel = new InsertModel($db);
-    $articlemodel = new articleModel($db);
     
     if(isset($_POST)){ #POST에 값이 있다면 검증을 실행.
         # Variable Setting

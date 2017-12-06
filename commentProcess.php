@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\articleModel; #네임스페이스에  Class 를 사용한다.
-use DatabaseModel\insertModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\ArticleModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\InsertModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -15,8 +15,9 @@ require 'config/config.php';
         die($e->getMessage());
     }
     
+    $articlemodel = new ArticleModel($db);
     $insertmodel = new InsertModel($db);
-    $articlemodel = new articleModel($db);
+
 
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING); # comment 입력을 필터링.
     $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);   

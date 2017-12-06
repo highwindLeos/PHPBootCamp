@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\profileModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\ProfileModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -16,7 +16,7 @@ require 'config/config.php';
 
     $author = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING); # Author.
 
-    $profilemodel = new profileModel($db);# 인스턴스를 만듭니다.
+    $profilemodel = new ProfileModel($db);# 인스턴스를 만듭니다.
     $list = $profilemodel->getFollowersIconByAuthor($author);
     $usericon = $profilemodel->getUserIconByAuthor($author);
 

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\profileModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\ProfileModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -14,7 +14,7 @@ require 'config/config.php';
             echo $e->getMessage();
         }
 
-    $profilemodel = new profileModel($db);
+    $profilemodel = new ProfileModel($db);
 
     # filter_var 와 filter_input 의 차이점 과 필터의 종류의 대하여 학습
     $author = filter_input(INPUT_GET, 'author', FILTER_SANITIZE_STRING); 

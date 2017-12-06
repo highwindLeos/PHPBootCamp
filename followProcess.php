@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\insertModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\InsertModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 

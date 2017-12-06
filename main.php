@@ -2,7 +2,7 @@
 session_start();
 require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\articleModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\ArticleModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -14,7 +14,7 @@ require 'config/config.php';
             echo $e->getMessage();
         }
         
-    $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
+    $articlemodel = new ArticleModel($db);# 인스턴스를 만듭니다.
 
     # Session value variable.
     $email = $_SESSION['email']; #로그인한 사용자의 mail.

@@ -1,9 +1,9 @@
 <?php
 namespace DatabaseModel; #네임스페이스를 정의.
 
-class articleModel
+class ArticleModel
 {
-    // protected $db;
+    protected $db;
     
     public function __construct(\PDO $db) { #생성자 메소드 (클래스를 인스턴스화 할때 반드시 호출)
         $this->db = $db;
@@ -118,6 +118,5 @@ class articleModel
         }
         return $rows; # $rows array return.
     }
-
 }
 ?>

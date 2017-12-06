@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use DatabaseModel\deleteModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\DeleteModel; #네임스페이스에  Class 를 사용한다.
 
 require 'config/config.php';
 
@@ -13,13 +13,13 @@ require 'config/config.php';
     {
         die($e->getMessage());
     }
+
+    $deletemodel = new DeleteModel($db);    
     
     $followUser = filter_input(INPUT_POST, 'followUser', FILTER_SANITIZE_STRING); #hidden value.
     $loginerid =  filter_var($_SESSION['id'], FILTER_SANITIZE_STRING);
     $author = filter_var($_GET['author'], FILTER_SANITIZE_STRING); #페이지 사용자.
     $unfollow = filter_input(INPUT_POST, 'unfollow', FILTER_SANITIZE_STRING); #buttuon default value.
-
-    $deletemodel = new deleteModel($db);
 
     if(!empty($author)){ # $author 가 빈값이 아니라면 True.
         $deletemodel->DeleteFollowsByUsersId($followUser,$loginerid); #follower 삭제한다.
