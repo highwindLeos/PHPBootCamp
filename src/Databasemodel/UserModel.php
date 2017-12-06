@@ -1,4 +1,5 @@
 <?php
+namespace DatabaseModel; #네임스페이스를 정의.
 
 class UserModel
 {
@@ -33,7 +34,7 @@ class UserModel
         $selectSql = "SELECT email FROM users WHERE email = :email";
 
         $stmt = $this->db->prepare($selectSql);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
         $stmt->execute();
         
         return !empty($stmt->fetch(PDO::FETCH_ASSOC)); # return Boolean value
@@ -47,7 +48,7 @@ class UserModel
         $stmt->bindParam(':author', $author, PDO::PARAM_STR);
         $stmt->execute();
         
-        return !empty($stmt->fetch(PDO::FETCH_ASSOC)); # return Boolean value
+        return !empty($stmt->fetch(\PDO::FETCH_ASSOC)); # return Boolean value
     }
     
 }

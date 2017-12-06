@@ -1,6 +1,9 @@
 <?php
 session_start();
-require 'model/deleteModel.php'; 
+require 'vendor\autoload.php';
+
+use DatabaseModel\deleteModel; #네임스페이스에  Class 를 사용한다.
+
 require 'config/config.php';
 
     try {

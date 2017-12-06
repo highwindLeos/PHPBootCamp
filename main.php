@@ -1,16 +1,19 @@
 <?php
 session_start();
+require __DIR__.'/vendor/autoload.php';
+
+use DatabaseModel\articleModel; #네임스페이스에  Class 를 사용한다.
+
 require 'config/config.php';
-require 'model/articleModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
 
     try {
             $db = new PDO($dsn, $dId, $dPass);
         }
         catch(PDOException $e) 
         {
-            echo $e->getMessage();
+            // echo $e->getMessage();
         }
-    
+    // var_dump($db); exit;
     $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
 
     # Session value variable.

@@ -1,4 +1,6 @@
 <?php
+namespace DatabaseModel; #네임스페이스를 정의.
+
 class UpdateModel
 {
     protected $db;

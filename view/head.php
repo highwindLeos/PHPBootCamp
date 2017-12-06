@@ -16,7 +16,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
     <link rel="icon" href="img/favicon.ico"/>
     <!--  Css stylesheet  -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>

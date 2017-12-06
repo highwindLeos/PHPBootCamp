@@ -1,6 +1,9 @@
 <?php
 session_start();
-require 'model/profileModel.php'; #모델 클래스를 사용할 수 있게 포함시킨다.
+require 'vendor\autoload.php';
+
+use DatabaseModel\profileModel; #네임스페이스에  Class 를 사용한다.
+
 require 'config/config.php';
 
     try {

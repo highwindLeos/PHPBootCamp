@@ -204,6 +204,24 @@ hr{
     cursor: pointer;
 }
 
+.article-empty{
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    margin-bottom: 50px; 
+    width: 50%;
+    border: 1px solid #DBDBDB;
+    padding: 20px 5px;
+}
+
+.article-empty img{
+    text-align: center;
+}
+
+.empty{
+    font-size: 1.5rem;
+    margin: 100px 50px;
+}
 /* page navigation */
 
 .page-main {

@@ -10,5 +10,10 @@
         "vlucas/phpdotenv": "^2.4",
         "filp/whoops": "^2.1",
         "monolog/monolog": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "DatabaseModel\\": "src/Databasemodel"
+        }
     }
 }

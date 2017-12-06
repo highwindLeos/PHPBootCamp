@@ -1,6 +1,9 @@
 <?php
 session_start();
-require 'model/loginModel.php';
+require 'vendor\autoload.php';
+
+use DatabaseModel\loginModel; #네임스페이스에  Class 를 사용한다.
+
 require 'config/config.php';
 
     try {

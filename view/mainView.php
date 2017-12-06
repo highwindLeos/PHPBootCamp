@@ -1,5 +1,6 @@
 <?php include 'head.php'; ?>
     <article>
+    <?php if(!empty($articles)) { ?>
        <?php foreach($articles as $item){ ?>
         <div class="article">
             <div class="titleimg inner-article">
@@ -102,6 +103,11 @@
             </nav>
             <p class="is-page">-현제 <?= $page ?> 페이지-</p>
         </div>
+    <?php } else { ?>
+        <div class="article-empty">
+            <div><p class="empty">게시물과 팔로우 하고 있는 사람이 없습니다.</p></div>
+        </div>
+    <?php }?>
     </article>  
     <footer>
         <p>

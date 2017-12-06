@@ -24,7 +24,7 @@
                 <?php } #end if ?>   
             </div>
         </div>   
-    </article>  
+    </article>
     <footer>
         <p>
             <span class="footerlink"><a href="#">AnInstargram정보</a></span>
