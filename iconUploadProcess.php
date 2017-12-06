@@ -30,5 +30,4 @@ require 'config/config.php';
     } else {
         header("Location: $redirection");
     } 
-    
 ?>

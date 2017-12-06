@@ -56,7 +56,9 @@ require 'config/config.php';
         $followers = $profilemodel->getFollowersByAuthor($author);
         
     } else {
-        header("Location: profile.php?author=$loginer"); #리다이렉션 페이지 이동   
+        $redirection = 'profile.php?author='.$loginer;
+        
+        header("Location: $redirection"); #리다이렉션 페이지 이동   
     } #방어적 프로그래밍(Defensive Programming) 이라는 주제를 학습.
 
 include 'view/profileView.php';

@@ -7,7 +7,7 @@ class ArticleModel
     
     public function __construct(\PDO $db) { #생성자 메소드 (클래스를 인스턴스화 할때 반드시 호출)
         $this->db = $db;
-    } # \ : 의 의미 전역에 있는 PDO 객체를 사용해서 PDO 객체를 입력한다. (상수에도 적용)
+    } # \ : 의 의미 전역에 있는 PDO 객체를 사용해서 PDO 객체를 입력한다. (PDO상수에도 적용)
 
     public function getUsers() {
         

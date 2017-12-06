@@ -16,11 +16,10 @@ require 'config/config.php';
 
     $deletemodel = new DeleteModel($db);    
     
-    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);
+    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); #$_GET filtering.
     $articleid = filter_input(INPUT_POST, 'likeid', FILTER_SANITIZE_STRING); #hidden value.
     $loginerid =  filter_var($_SESSION['id'], FILTER_SANITIZE_STRING);
     $unlike = filter_input(INPUT_POST, 'unlike', FILTER_SANITIZE_STRING); #buttuon default value.
-
 
     if(!empty($unlike)){ # $unlike 가 빈값이 아니라면 True.
         $deletemodel->DeleteLikesByUsersId($loginerid, $articleid); #Likes 삭제한다.

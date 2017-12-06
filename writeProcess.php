@@ -18,7 +18,7 @@ require 'config/config.php';
     $insertmodel = new InsertModel($db);
     $articlemodel = new ArticleModel($db);
 
-    $name = filter_var($_GET['name'], FILTER_SANITIZE_STRING); #$_GET 배열을 필터링.
+    $name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING); #$_GET 배열을 필터링.
     $picture = $_FILES['image_uploads']['name']; #FILE 배열은 필터링을 하지 않는다.
     $article = filter_input(INPUT_POST, 'article', FILTER_SANITIZE_STRING); # article 입력을 필터링.
     
