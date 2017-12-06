@@ -7,7 +7,7 @@ class articleModel
     
     public function __construct(\PDO $db) { #생성자 메소드 (클래스를 인스턴스화 할때 반드시 호출)
         $this->db = $db;
-    }
+    } # \ : 의 의미 전역에 있는 PDO 객체를 사용해서 PDO 객체를 입력한다. (상수에도 적용)
 
     public function getUsers() {
         
@@ -25,7 +25,7 @@ class articleModel
                       WHERE users_id IN (SELECT follow FROM anicoboard.follows WHERE users_id = :users_id) OR users_id = :users_id';
 
         $stmt = $this->db->prepare($selectSql);
-        $stmt->bindParam(':users_id', $usersId, \PDO::PARAM_INT); # \ : 의 의미 전역에 있는 PDO 객체를 사용해서 PDO상수를 입력한다.       
+        $stmt->bindParam(':users_id', $usersId, \PDO::PARAM_INT);        
         $stmt->execute();
         
         return $stmt->fetchAll(\PDO::FETCH_NUM); #All rows Fetch. return.

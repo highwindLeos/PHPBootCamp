@@ -11,9 +11,9 @@ require 'config/config.php';
         }
         catch(PDOException $e) 
         {
-            // echo $e->getMessage();
+            echo $e->getMessage();
         }
-    // var_dump($db); exit;
+        
     $articlemodel = new articleModel($db);# 인스턴스를 만듭니다.
 
     # Session value variable.
