@@ -33,3 +33,11 @@ http://modernpug.github.io/php-the-right-way/
 | 10 | gmail@gmail.com | Gmail |
 | 11 | daysmays@naver.com | maydays |
 | 12 | stonker26@gmail.com | MailLee |
+
+
+### 학습 서적.
+
+| Index | 도서명 | 저자 | 출판사 |
+|:---:|:---:|:---:|:---:|
+| 1 | SQL 첫걸음 | 아사이 아츠시 | 한빛 미디어 |
+| 2 | Modean PHP | Josh Rockheart | 한빛 미디어 |
