@@ -65,6 +65,8 @@ require 'config/config.php';
 
     }
 
+    $pageTitle = 'PHP BootCamp AnInstargram - Main';
+    
 include 'view/mainView.php'; # 뷰를 가져온다.
 
 ?>

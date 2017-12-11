@@ -45,7 +45,7 @@
                     <p class="validate"><?php if(isset($_SESSION['author2'])) echo $_SESSION['author2'];
                         unset($_SESSION['author2']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['author3'])) echo $_SESSION['author3'];
-                        unset($_SESSION['author2']) ?></p>
+                        unset($_SESSION['author3']) ?></p>
                     <p>
                         <input type="password" id="password" name="password" placeholder="비밀번호">
                     </p>
@@ -53,7 +53,7 @@
                         unset($_SESSION['password1']) ?></p>
                     <p class="validate"><?php if(isset($_SESSION['password2'])) echo $_SESSION['password2'];
                         unset($_SESSION['password2']) ?></p>
-                    <button type="submit" formmethod="POST" formaction="registerProcess.php">
+                    <button type="submit" formmethod="POST" formaction="registerProcess.php" value="join">
                     <img src="img/join.png"/></button>
                 </form>
                 <p>가입하면 Instargram의 <a href="#">약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하게 됩니다.</p>

@@ -1,0 +1,24 @@
+# Codeception Test Suite Configuration
+# 데이터 베이스 설정을 여기서 진행.
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+    enabled:
+        - Webdriver
+        - \Helper\Acceptance
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=anicoboardtest'
+            user: 'root'
+            password: 'stonker26'
+            dump: 'tests/_data/dump.sql'
+            populate: true # run populator before all tests
+            cleanup: false # run populator before each test
+    config:
+        Webdriver:
+            url: 'http://localhost'
+            browser: chrome
+            capabilities:
+                unexceptedAlertBehaviour: 'accept'

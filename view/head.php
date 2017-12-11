@@ -10,7 +10,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP BootCamp AnInstargram</title>
+    <title><?= $pageTitle ?></title>
     
     <!--  favicon insert  -->
     <link rel="icon" href="img/favicon.ico"/>
