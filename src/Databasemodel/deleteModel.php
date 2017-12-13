@@ -23,7 +23,7 @@ class DeleteModel
 
     public function DeleteArticlesById($articleId){
         
-        $deleteSql = "DELETE anicoboard.articles, anicoboard.pictures FROM anicoboard.articles, anicoboard.pictures
+        $deleteSql = "DELETE articles, pictures FROM articles, pictures
                       WHERE articles.id= :article_id AND pictures.id = :article_id";
         
         $stmt = $this->db->prepare($deleteSql);

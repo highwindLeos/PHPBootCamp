@@ -4,6 +4,7 @@ session_start();
         header('Location: main.php');
         exit;
     }
+
 $pageTitle = 'PHP BootCamp AnInstargram - Login';
 include 'view/loginView.php';
 ?>

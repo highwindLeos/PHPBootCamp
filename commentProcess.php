@@ -21,8 +21,9 @@ require 'config/config.php';
 
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING); # comment 입력을 필터링.
     $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);   
+    $loginerId = $_SESSION['id'];
 
-    $article = $articlemodel->getArticlesCount(); #행의 갯수를 구하는 함수.
+    $article = $articlemodel->getArticlesCount($loginerId); #행의 갯수를 구하는 함수.
     
         $pageGet = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING); 
         $page = ($pageGet) ? $pageGet : 1; #삼항 연산자를 통한 if 문. (페이지 값이 없을경우 기본 값은 1 false).

@@ -21,8 +21,8 @@ class ArticleModel
 
     public function getArticlesCount($usersId) { # 행의 갯수를 세는 함수. count(*)
 
-        $selectSql = 'SELECT count(*) FROM anicoboard.users  LEFT JOIN anicoboard.articles ON users.id = articles.users_id
-                      WHERE users_id IN (SELECT follow FROM anicoboard.follows WHERE users_id = :users_id) OR users_id = :users_id';
+        $selectSql = 'SELECT count(*) FROM users  LEFT JOIN articles ON users.id = articles.users_id
+                      WHERE users_id IN (SELECT follow FROM follows WHERE users_id = :users_id) OR users_id = :users_id';
 
         $stmt = $this->db->prepare($selectSql);
         $stmt->bindParam(':users_id', $usersId, \PDO::PARAM_INT);        
@@ -33,7 +33,7 @@ class ArticleModel
 
     public function getArticlesMaxId() { # 해당 열의 최고 값을 가져온다. MAX() 
 
-        $selectSql = "SELECT MAX(articles.id) FROM anicoboard.articles";
+        $selectSql = "SELECT MAX(articles.id) FROM articles";
 
         $stmt = $this->db->prepare($selectSql);
         $stmt->execute();
@@ -44,8 +44,8 @@ class ArticleModel
     public function getArticles($Selectpoint, $pageList, $usersId) {
 
         $selectSql = 'SELECT *, users.id AS UID, articles.id AS AID
-                      FROM anicoboard.users  LEFT JOIN anicoboard.articles ON users.id = articles.users_id
-                      WHERE users_id IN (SELECT follow FROM anicoboard.follows WHERE users_id = :users_id) OR users_id = :users_id
+                      FROM users  LEFT JOIN articles ON users.id = articles.users_id
+                      WHERE users_id IN (SELECT follow FROM follows WHERE users_id = :users_id) OR users_id = :users_id
                       ORDER BY AID DESC LIMIT '.$Selectpoint.','.$pageList; #서브쿼리 (다중 조건 : IN keyword 를 준다.)
 
         $stmt = $this->db->prepare($selectSql); # 내림차순 정렬 (id 기준)

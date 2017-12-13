@@ -87,8 +87,8 @@ require 'config/config.php';
         $_SESSION = array(); #세션 데이터 초기화.
         $_SESSION['is_login'] = true;  #세션에 True 값을 입력.(Login 유지 세션 배열. 로그인 된 페이지에서 조건으로 사용됨)
         $_SESSION['email'] = $email; #세션에 이메일 값을 입력.
-        $_SESSION['id'] = $users['id']; #세션에 가입하는 사용자를 입력.
-        $_SESSION['author'] = $users['author']; #세션에 가입하는 사용자를 입력.
+        $_SESSION['id'] = $users['id']; #세션에 가입하는 사용자 정보를 입력.
+        $_SESSION['author'] = $users['author']; #세션에 가입하는 사용자 정보를 입력.
         
         header("Location: main.php"); #리다이렉션 페이지 이동
     } else { 

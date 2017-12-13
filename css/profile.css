@@ -183,7 +183,17 @@
     align-content: center;
     width: 100%;
     height: auto;
+    border-radius: 10px;
     border: 2px solid #EFEFEF;
+    padding: 10px;
+}
+
+.bottom-article div img:hover{
+    align-content: center;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #8D8D8D;
     padding: 10px;
 }
 
@@ -202,7 +212,17 @@
     .bottom-article img{
         float: none;
         width: auto;
+        border-radius: 10px;
         border: 2px solid #EFEFEF;
+        padding: 10px;
+    }
+    
+    .bottom-article div img:hover{
+        align-content: center;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid #8D8D8D;
         padding: 10px;
     }
     

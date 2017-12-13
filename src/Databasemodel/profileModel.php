@@ -80,7 +80,7 @@ class ProfileModel
 
     public function getPictureCountByAuthor($author) { # 행의 갯수를 세는 함수. count(*)
 
-        $selectSql = 'SELECT count(*) FROM anicoboard.pictures LEFT JOIN anicoboard.articles ON pictures.articles_id = articles.id 
+        $selectSql = 'SELECT count(*) FROM pictures LEFT JOIN articles ON pictures.articles_id = articles.id 
                       LEFT JOIN users AS Us ON articles.users_id = Us.id WHERE author = :author';
 
         $stmt = $this->db->prepare($selectSql);
@@ -92,7 +92,7 @@ class ProfileModel
     
     public function getPictureByAuthor($author, $Selectpoint, $pageList) { #Main 최신 사진 순으로 정렬 (pictures.id Auto Increments)
 
-        $selectSql = 'SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.articles ON pictures.articles_id = articles.id 
+        $selectSql = 'SELECT * FROM pictures LEFT JOIN articles ON pictures.articles_id = articles.id 
                       LEFT JOIN users AS Us ON articles.users_id = Us.id WHERE author = :author 
                       ORDER BY pictures.id DESC LIMIT '.$Selectpoint.','.$pageList;
 
@@ -105,7 +105,7 @@ class ProfileModel
     
     public function getPictureByEmail($email) { #Profile 최신 사진 순으로 정렬 (pictures.id Auto Increments)
 
-        $selectSql = 'SELECT * FROM anicoboard.pictures LEFT JOIN anicoboard.users ON pictures.articles_id = users.id 
+        $selectSql = 'SELECT * FROM pictures LEFT JOIN users ON pictures.articles_id = users.id 
                       WHERE email = :email ORDER BY pictures.id DESC';
 
         $stmt = $this->db->prepare($selectSql);

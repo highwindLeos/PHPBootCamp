@@ -1,6 +1,6 @@
 <?php
 #데이터베이스 접속 설정 (.env 적용)
-require 'vendor\autoload.php';
+require __DIR__ .'/../vendor/autoload.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__); # Dotenv 를 이용한 인스턴스 생성.
 $dotenv->load(); # load function call.

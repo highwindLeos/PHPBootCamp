@@ -14,8 +14,8 @@ modules:
             user: 'root'
             password: 'stonker26'
             dump: 'tests/_data/dump.sql'
-            populate: true # run populator before all tests
-            cleanup: false # run populator before each test
+            populate: true  # run populator before all tests
+            cleanup: true # run populator before each test
     config:
         Webdriver:
             url: 'http://localhost'
