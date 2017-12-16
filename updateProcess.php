@@ -18,8 +18,6 @@ require 'config/config.php';
     $updatemodel = new UpdateModel($db);
     $articlemodel = new ArticleModel($db);
 
-    
-
     $name = filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING); #$_GET 배열을 필터링.
     $articleId = filter_input(INPUT_GET, 'articleid', FILTER_SANITIZE_STRING); 
     $picture = $_FILES['image_uploads']['name']; #FILE 배열은 필터링을 하지 않는다.
@@ -47,6 +45,9 @@ require 'config/config.php';
         $updatemodel->UpdateImageAndArticleId($articleId); #사진을 업로드.
         header("Location: main.php");
     } else {
+        $_SESSION['modifyarticle'] = $articlemodel->getArticlesById($articleId);
+        $_SESSION['modifypicture'] = $articlemodel->getPictures($articleId);
+
         header("Location: update.php");
     }
 

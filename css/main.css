@@ -204,10 +204,6 @@ hr{
     margin: 0px 15px;
 }
 
-.article-write{
-    text-align: center;
-}
-
 .comment{
     width: 93%;
     height: 25px;
@@ -247,6 +243,37 @@ hr{
     font-size: 1.5rem;
     margin: 100px 50px;
 }
+
+/* wirte and modify */
+.article-write{
+    text-align: center;
+}
+
+
+/* modify page view */
+
+.modify-picture {
+    display: inline-block;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.modify-picture img{
+    width: 100%;
+}
+
+.modify-article {
+    display: inline-block;
+    width: 80%;
+    margin: 0;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    padding: 15px;
+}
+
 /* page navigation */
 
 .page-main {

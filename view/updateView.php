@@ -7,6 +7,9 @@
                     <img src="img/logo.png">
                 </a>
                 <h3>글 수정 (Modify content)</h3>
+                <hr>
+                <h3>현제 수정 할 내용</h3>
+                <div class="modify-picture"><img src="<?= $_SESSION['modifypicture']['src'] ?>"></div>
             </div>
             <hr>
             <div class="form">
@@ -15,7 +18,7 @@
                     <input type="file" class="fileupload" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
                     <p class="validate"><?php if(isset($_SESSION['picture'])) echo $_SESSION['picture'];
                         unset($_SESSION['picture']) ?></p>
-                    <textarea class="article-input" name="article" placeholder="수정할 내용을 입력하세요." ></textarea>
+                    <textarea class="article-input" name="article" placeholder="현제 글 내용 : <?= $_SESSION['modifyarticle']['article'] ?>" ></textarea>
                     <p class="validate"><?php if(isset($_SESSION['article'])) echo $_SESSION['article'];
                         unset($_SESSION['article']) ?></p>
                     <input type="hidden" class="articleid" name="articleid" value="<?= $articleid ?>">

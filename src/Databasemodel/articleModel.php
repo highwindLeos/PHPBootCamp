@@ -77,7 +77,7 @@ class ArticleModel
         return $stmt->fetch(\PDO::FETCH_ASSOC); #array 1row by id.
     }
     
-     public function getArticlesById($id) {
+    public function getArticlesById($id) {
 
         $selectSql = 'SELECT * FROM articles WHERE id = :id';
         
