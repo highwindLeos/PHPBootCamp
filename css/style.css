@@ -54,7 +54,7 @@ textarea{
 
 button{
     background: #F9FAF9;
-    margin: 15px 0;
+    margin: 5px 0;
     border: 0;
     padding: 0;
 }
@@ -66,6 +66,7 @@ button img{
 /*button effect style*/
 .submit-btn {
     margin: 10px 0 0 0;
+    cursor: pointer;
 }
 
 /* a tag link style */

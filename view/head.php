@@ -24,7 +24,7 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
         <div class="container">
             <nav class="navbar">
                 <a href="main.php"><img class="loginlogo" src="img/icon/logo.png"></a> 
-                <input class="search" type="text" placeholder="검색" />
+
                 <div class="navbaricon">
                     <img src="img/icon/iconheader01.png">
                     <img src="img/icon/iconheader02.png">

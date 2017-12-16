@@ -20,8 +20,8 @@ require 'config/config.php';
 
 
     $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING); # comment 입력을 필터링.
-    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);   
-    $loginerId = $_SESSION['id'];
+    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);   #page Query string.
+    $loginerId = $_SESSION['id']; 
 
     $article = $articlemodel->getArticlesCount($loginerId); #행의 갯수를 구하는 함수.
     
@@ -52,6 +52,7 @@ require 'config/config.php';
     $usersId = $_SESSION['id']; #로그인한 사용자의 Id.
 
     $articles = $articlemodel->getArticles($Selectpoint, $pageList, $usersId);  # articles 의 내용을 LIMIT 해서 가져온다.
+
     for($i = 0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
     
         #데이터 베이스에 articles내용을 Id를 참고로 pictures table에 모든 행을 가지고온다.

@@ -1,4 +1,5 @@
 <?php include 'head.php'; ?>
+
     <article>
     <?php if(!empty($articles)) { ?>
        <?php foreach($articles as $item){ ?>
@@ -27,54 +28,65 @@
                 <img src="<?= htmlspecialchars($item['src']['src']); ?>">
             </div>
             <div class="inner-article">
-                <div class="imgbtn">
-                <?php $isLike =  true; # 버튼 출력 조건문을 주기 위한 boolean 변수.
-                    foreach($item['like'] as $likeList){ 
-                        if($_SESSION['id'] == $likeList['users_id']){ #배열안에 사용자명이 있는지. 있다면 true.
-                            $isLike = false;
-                        } else {
-                            $isLike = true;
+                <div class="imgbtn clearfix">
+                    <div class="imgbtn-item">    
+                    <?php $isLike =  true; # 버튼 출력 조건문을 주기 위한 boolean 변수.
+                        foreach($item['like'] as $likeList){ 
+                            if($_SESSION['id'] == $likeList['users_id']){ #배열안에 사용자명이 있는지. 있다면 true.
+                                $isLike = false;
+                            } else {
+                                $isLike = true;
+                            }
                         }
-                    }
-                    if($isLike){  ?>
-                    <form class="like">
-                        <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
-                        <button class="like-btn" formmethod="POST" name="like" 
-                        value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?page=<?= $page ?>">
-                        <img src="img/icon/iconarticle01.png"></button>
-                    </form>
-                <?php } else { ?>
-                    <form class="like">
-                        <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
-                        <button class="like-btn" formmethod="POST" name="unlike" 
-                        value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?page=<?= $page ?>">
-                        <img src="img/icon/iconarticle04.png"></button>
-                    </form>
-                <?php } ?>
+                        if($isLike){  ?>
+                        <form class="like">
+                            <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                            <button class="like-btn" formmethod="POST" name="like" 
+                            value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?page=<?= $page ?>">
+                            <img src="img/icon/iconarticle01.png"></button>
+                        </form>
+                    <?php } else { ?>
+                        <form class="like">
+                            <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                            <button class="like-btn" formmethod="POST" name="unlike" 
+                            value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?page=<?= $page ?>">
+                            <img src="img/icon/iconarticle04.png"></button>
+                        </form>
+                    <?php } ?>
+                    </div>
+                    <div class="imgbtn-item">
+                        <?php if($item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 수정 버튼이 출력 ?>
+                            <form>
+                                <input class="update" type="hidden" name="article-id" value="<?= $item['id']; ?>" />  
+                                <button class="updatebtn" type="submit" formmethod="POST" 
+                                        formaction="update.php">수정</button>
+                            </form>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="articleparam">
                     <p class="like">
                         <?= htmlspecialchars('좋아요 '.count($item['like']).'개'); ?>
                     </p>
                     <p class="articles">
-                       <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
+                        <a href="profile.php?author=<?= $item['usericon']['author'] ?>">
                             <span class="userid"><?= htmlspecialchars($item['usericon']['author']); ?></span>
                         </a>
                         <?= htmlspecialchars($item['article']); ?>
                     </p>
-                     <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
-                     <hr style="margin:0 0 15px 0">
-                     <p class="comment">Comment (댓글)</p>
-                     <p>
+                    <p class="datetime"><?= htmlspecialchars($item['date']); ?></p> 
+                    <hr style="margin : 0 0 15px 0">
+                    <p class="comment">Comment (댓글)</p>
+                    <p>
                         <?php if($item['comments']){ # comment 존재 여부. 
-                             foreach($item['comments'] as $commentList){ ?>
-                             <p class="comment-out">
-                                 <a href='profile.php?author=<?= $commentList['author'] ?>'>
-                                 <span class="comment-author"><?= htmlspecialchars($commentList['author']); ?></span></a>
-                                 <span><?= htmlspecialchars($commentList['comment']); ?><br></span>
-                             </p>
-                         <?php }
-                         } else { echo "<p class='comment-author'>댓글이 없습니다.</p>"; } ?>
+                            foreach($item['comments'] as $commentList){ ?>
+                            <p class="comment-out">
+                                <a href='profile.php?author=<?= $commentList['author'] ?>'>
+                                <span class="comment-author"><?= htmlspecialchars($commentList['author']); ?></span></a>
+                                <span><?= htmlspecialchars($commentList['comment']); ?><br></span>
+                            </p>
+                        <?php }
+                        } else { echo "<p class='comment-author'>댓글이 없습니다.</p>"; } ?>
                      </p>
                 </div>
             </div>
@@ -108,24 +120,6 @@
             <div><p class="empty">게시물과 팔로우 하고 있는 사람이 없습니다.</p></div>
         </div>
     <?php }?>
-    </article>  
-    <footer>
-        <p>
-            <span class="footerlink"><a href="#">AnInstargram정보</a></span>
-            <span class="footerlink"><a href="#">지원</a></span>
-            <span class="footerlink"><a href="#">블로그</a></span>
-            <span class="footerlink"><a href="#">홍보</a> </span>
-            <span class="footerlink"><a href="#">센터</a></span>
-            <span class="footerlink"><a href="#">API</a></span>
-            <span class="footerlink"><a href="#">채용</a></span>
-            <span class="footerlink"><a href="#">개인정보처리방침</a></span>
-            <span class="footerlink"><a href="#">약관</a></span>
-            <span class="footerlink"><a href="#">디렉터리</a></span>
-            <span class="footerlink"><a href="#">언어</a></span>
-        </p>
-        <p class="copy">
-            <span> &#169; 2017 AnInstargram.</span>
-        </p>
-    </footer>
-</body>
-</html>
+    </article>
+
+<?php include 'footer.php'; ?>

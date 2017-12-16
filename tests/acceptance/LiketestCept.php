@@ -1,5 +1,6 @@
 <?php 
-// 내용 입력 및 코멘트 달기 절차
+// 좋아요 절차.
+
 // 1. 회원데이터를 하나 추가한다. 
 // 2. 홈페이지 루트로 접근.
 // 3. 로그인 링크를 클릭
@@ -7,11 +8,11 @@
 // 5. 패스워드 입력 폼에 비밀번호를 입력.
 // 6. 로그인 버튼을 클릭.
 // 7. 메인페이지가 보이며  사용자 가 쓴 글이 표시됨.
-// 8.  Articles Table 내용을 하나 추가. 
+// 8. Articles Table 내용을 하나 추가. 
 // 9. 내용이 데이터 베이스에 들어 왔는지 확인 (articles table)
-//10. 내용이 main.php 에 뿌려졌는지 확인.
-//11. 코멘트 입력폼에 내용을 입력하고 입력 버튼을 클릭
-//12. 코멘트 DB 에 값이 있는지를 확인.
+// 10.내용이 main.php 에 뿌려졌는지 확인.
+// 11.좋아요 버튼을 클릭
+// 12.Like database확인.
 
 $I = new AcceptanceTester($scenario);
 
@@ -67,10 +68,8 @@ $I->amOnPage('/main.php'); #데이터를 입력하고 main 으로 접근 (내용
 //10. 내용이 main.php 에 뿌려졌는지 확인.
 $I->see($article);
 
-//11. 코멘트 입력폼에 내용을 입력하고 입력 버튼을 클릭
-$I->fillField('comment', 'comment test'); 
-$I->click('img', '.commentbtn'); 
+// 11.좋아요 버튼을 클릭
+$I->click('like'); 
 
-
-//12. 코멘트 DB 에 값이 있는지를 확인.
-$I->seeInDatabase('comments', ['comment' => 'comment test']);
+//12. likes DB 에 값이 있는지를 확인.
+$I->seeInDatabase('likes', ['like' => '1']);

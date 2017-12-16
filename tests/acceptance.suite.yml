@@ -4,10 +4,14 @@
 # Perform tests in browser using the WebDriver or PhpBrowser.
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
+# - PhpBrowser: PHPbrowser 드라이버를 이용해서 테스트 환경을 구축.
+#     url: http://localhost
+
 actor: AcceptanceTester
 modules:
     enabled:
         - Webdriver
+
         - \Helper\Acceptance
         - Db:
             dsn: 'mysql:host=localhost;dbname=anicoboardtest'

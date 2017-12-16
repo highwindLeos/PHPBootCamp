@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>현제 시간은 <?php
-    echo date('Y-n-j H:m:s');
-    ?> 입니다.</h1>
+    <h1>현제 시간은 
+    <?= date('Y-n-j H:m:s'); ?>
+    입니다.</h1>
 </body>
 </html>
 

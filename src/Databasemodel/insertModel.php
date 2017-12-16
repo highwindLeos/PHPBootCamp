@@ -65,12 +65,11 @@ class InsertModel
         $stmt->execute(); # 쿼리 실행
     }
     
-    public function WriteFollows() {
+    public function WriteFollows($follower) {
 
         $insertSql = "INSERT INTO follows (follow, follower, users_id) VALUES (:follow, :follower, :users_id)"; 
         
         $follow = trim($_POST['followUser']); #프로파일 user의 사용자. input hidden.
-        $follower = trim($_POST['follow']); #Button value 기본값. (로그인한 사용자)
         $users_id = trim($_SESSION['id']); #팔로우 하는 사용자의 id. 
 
         $stmt = $this->db->prepare($insertSql);

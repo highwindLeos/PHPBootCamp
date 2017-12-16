@@ -28,7 +28,7 @@ require 'config/config.php';
 
     $articlecount = $article[0][0]; #Article 의 행 의 수를 구한다.
 
-    $pageList = 10; #한 페이지에 표시할 게시물 수 (LIMIT 의 입력값으로 들어감)
+    $pageList = 5; #한 페이지에 표시할 게시물 수 (LIMIT 의 입력값으로 들어감)
     $pageBlock = 3; #블록의 수 (각 페이지의 링크가 됨)
 
     $pageNum = ceil($articlecount / $pageList); # 총 페이지 수 (반올림 함수 이용 소수점을 올림한다.)

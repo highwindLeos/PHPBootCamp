@@ -69,7 +69,7 @@ hr{
 
 .navbar .loginlogo{
     height: 25px;
-    width: 145px; 
+    width: 145px;
 }
 
 .search{
@@ -79,6 +79,10 @@ hr{
     margin-right: 100px;    
 }
 
+.navbaricon{
+    margin-left: 450px;
+    
+}
 
 .navbar img{
     width: 25px;
@@ -133,13 +137,34 @@ hr{
     text-align: center;
 }
 
+.imgbtn-item{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin : 0 10px;
+}
+
 .imgbtn .like{
     height: 35px;
     margin: 10px 0;
 }
 
+.updatebtn{
+    background-color: #008CBA;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}
+
 .imgbtn .like-btn{
     margin: 0;
+    cursor: pointer;
 }
 
 .imgbtn .like-btn img{
@@ -280,3 +305,7 @@ footer {
     cursor:pointer;
 }
 
+/* clearfix */
+.clearfix {
+    overflow: auto;
+  }

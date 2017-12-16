@@ -1,4 +1,5 @@
 <?php include 'head.php'; ?>
+
     <article id="article">
        <div class="top-article">
             <?php if($list['author'] == $_SESSION['author']) { # 현제 로그인 사용자 페이지에만 버튼으로 나타남 ?>
@@ -82,25 +83,7 @@
             </nav>
             <p class="is-page">-<?= $page ?> 페이지-</p>
         </div>
-    </article>  
-    <footer>
-        <p>
-            <span class="footerlink"><a href="#">AnInstargram정보</a></span>
-            <span class="footerlink"><a href="#">지원</a></span>
-            <span class="footerlink"><a href="#">블로그</a></span>
-            <span class="footerlink"><a href="#">홍보</a> </span>
-            <span class="footerlink"><a href="#">센터</a></span>
-            <span class="footerlink"><a href="#">API</a></span>
-            <span class="footerlink"><a href="#">채용</a></span>
-            <span class="footerlink"><a href="#">개인정보처리방침</a></span>
-            <span class="footerlink"><a href="#">약관</a></span>
-            <span class="footerlink"><a href="#">디렉터리</a></span>
-            <span class="footerlink"><a href="#">언어</a></span>
-        </p>
-        <p class="copy">
-            <span> &#169; 2017 AnInstargram.</span>
-        </p>
-    </footer>
-    <?php include 'profileViewModal.php'; ?>
-</body>
-</html>
+    </article>
+    
+<?php include 'profileViewModal.php'; ?>     
+<?php include 'footer.php'; ?>
