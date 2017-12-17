@@ -54,16 +54,13 @@ require 'config/config.php';
     $articles = $articlemodel->getArticles($Selectpoint, $pageList, $usersId);  # articles 의 내용을 LIMIT 해서 가져온다.
 
     for($i = 0; $i < count($articles); $i++) { # $articles 의 수만큼 반복한다.(정수형 반환)
-    
         #데이터 베이스에 articles내용을 Id를 참고로 pictures table에 모든 행을 가지고온다.
         $_SESSION[$i]['articles_id'] = $articlemodel->getPictures($articles[$i]['id']);        
-
     }
     
     if($_POST){ #POST에 값이 있다면 검증을 실행.
         # 변수설정
         $errors = array(); #에러 메세지를 담을 배열을 생성
-
         # 검증 코드
         if(empty($comment)) #변수에 값이 없다면 true.
         {

@@ -9,7 +9,7 @@
                     <div class="deleteform">
                     <?php if($item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 삭제버튼이 출력 ?>
                     <form>
-                        <input class="delete" type="hidden" name="article-id" value="<?= $item['id']; ?>" />  
+                        <input class="delete" type="hidden" name="article-id" value="<?= htmlspecialchars($item['id']); ?>" />  
                         <button class="deletebtn" type="submit" formmethod="POST" 
                                 formaction="deleteArticleProcess.php?author=<?= $_SESSION['author']; ?>">
                         <img class="delete" src="img/icon/delete.png" /></button>
@@ -40,14 +40,14 @@
                         }
                         if($isLike){  ?>
                         <form class="like">
-                            <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                            <input type="hidden" name="likeid" value="<?= htmlspecialchars($item['id']); ?>" />
                             <button class="like-btn" formmethod="POST" name="like" 
                             value="<?= $_SESSION['id'] ?>" formaction="likeProcess.php?page=<?= $page ?>">
                             <img src="img/icon/iconarticle01.png"></button>
                         </form>
                     <?php } else { ?>
                         <form class="like">
-                            <input type="hidden" name="likeid" value="<?= $item['id']; ?>" />
+                            <input type="hidden" name="likeid" value="<?= htmlspecialchars($item['id']); ?>" />
                             <button class="like-btn" formmethod="POST" name="unlike" 
                             value="<?= $_SESSION['id'] ?>" formaction="unlikeProcess.php?page=<?= $page ?>">
                             <img src="img/icon/iconarticle04.png"></button>
@@ -57,7 +57,7 @@
                     <div class="imgbtn-item">
                         <?php if($item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 수정 버튼이 출력 ?>
                             <form>
-                                <input class="update" type="hidden" name="article-id" value="<?= $item['id']; ?>" />  
+                                <input class="update" type="hidden" name="article-id" value="<?= htmlspecialchars($item['id']); ?>" />  
                                 <button class="updatebtn" type="submit" formmethod="POST" 
                                         formaction="update.php">수정</button>
                             </form>

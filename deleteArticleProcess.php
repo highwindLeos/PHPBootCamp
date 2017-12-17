@@ -13,11 +13,11 @@ require 'config/config.php';
     {
         die($e->getMessage());
     }
-    
-    $articleId = filter_input(INPUT_POST, 'article-id', FILTER_SANITIZE_STRING); #hidden value.
-    $author = filter_var($_GET['author'], FILTER_SANITIZE_STRING); #페이지 사용자.
 
     $deletemodel = new DeleteModel($db);
+
+    $articleId = filter_input(INPUT_POST, 'article-id', FILTER_SANITIZE_STRING); #hidden value.
+    $author = filter_var($_GET['author'], FILTER_SANITIZE_STRING); #페이지 사용자.
 
     if(!empty($author)){ # $author 가 빈값이 아니라면 True.
         $deletemodel->DeleteArticlesById($articleId); #article을 $articleId 를 입력받아 삭제한다.

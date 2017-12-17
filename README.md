@@ -49,12 +49,18 @@ PHP 를 이용한 개발 테크 트리
 
 0 : 기초
 	자료 구조 :  C언어로 쉽게 풀었쓴 자료구조 (이책이 초보 개발자들에게 학습 효과가 가장 좋았던  기억이있음)
+
 	알고리즘 : http://omnis.tistory.com/2
-	php 기본 연산자 비교 :  http://php.net/manual/kr/language.operators.comparison.php  // 실제 동작시 함수 나 모듈에 따라 전부 완전히 다름 		무조건 메뉴얼 보며 return 값 보며 코딩함 (이것 때문에 php의 장점 거의 다 까먹음)
+	php 기본 연산자 비교 :  http://php.net/manual/kr/language.operators.comparison.php  
+						   // 실제 동작시 함수 나 모듈에 따라 전부 완전히 다름 무조건 메뉴얼 보며 return 값 보며 코딩함 
+						   (이것 때문에 php의 장점 거의 다 까먹음)
 	php 기본 문자열 함수, MB_string 계열, 
-	php 기본 배열 함수 들 array_??? : 의외로 기본 배열 처리 함수를 잘 안씀 일일이 만들어 쓰는 경향이 있음 기본 배열 함수는 C extension이라 속도가 훨씬 빠름 
+
+	php 기본 배열 함수 들 array_??? : 의외로 기본 배열 처리 함수를 잘 안씀 일일이 만들어 쓰는 경향이 있음 기본 배열 함수는 
+									C extension이라 속도가 훨씬 빠름 
+
 	정규표현식	
-      php 에서 한글 처리(초성 추출, 한글인코딩, 한글 형태소 기반  문자열 파싱 등등)
+    php 에서 한글 처리(초성 추출, 한글인코딩, 한글 형태소 기반  문자열 파싱 등등)
 
 1. 객체지향 설계 : http://www.nextree.co.kr/p6960/
 
@@ -73,11 +79,13 @@ PHP 를 이용한 개발 테크 트리
     참고 문서 : http://code.tutsplus.com/tutorials/dependency-injection-in-php--net-28146
 
 6. 프레임워크 패턴 공부 : 프레임워크 코드 뜾어 보며 디버깅 한다면 디자인 패턴 공부 끝
-   라라벨 프레임워크:    https://www.laravel.co.kr/  //성능은 딸리지만 디자인 패턴과 설계 방식이 가장 뛰어난
-                        php 프레임워크임 data 모델은 phalcon이 가장 뛰어남
+   라라벨 프레임워크:    https://www.laravel.co.kr/  
+   					//성능은 딸리지만 디자인 패턴과 설계 방식이 가장 뛰어난
+                    php 프레임워크임 data 모델은 phalcon이 가장 뛰어남
 
 7. IDE 
-	netbeans : https://netbeans.org/kb/docs/php/quickstart.html    https://netbeans.org/features/php/
+	netbeans : https://netbeans.org/kb/docs/php/quickstart.html    
+			   https://netbeans.org/features/php/
 	eclipse : http://histlinux.egloos.com/v/1253065
 	phpstom : https://www.jetbrains.com/phpstorm/
 
@@ -106,5 +114,5 @@ PHP 를 이용한 개발 테크 트리
 
 13. php extension 개발 (zend engine ) : php 성능을 극대화 시켜보자
 	zend : http://php.net/manual/en/internals2.ze1.zendapi.php
-      참고: http://egloos.zum.com/littletrue/v/3992537
-		http://www.php-cpp.com/documentation/your-first-extension
+    참고: http://egloos.zum.com/littletrue/v/3992537
+		  http://www.php-cpp.com/documentation/your-first-extension

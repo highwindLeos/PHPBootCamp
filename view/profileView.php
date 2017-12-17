@@ -5,7 +5,7 @@
             <?php if($list['author'] == $_SESSION['author']) { # 현제 로그인 사용자 페이지에만 버튼으로 나타남 ?>
                 <a href="#open2">
             <?php } ?>
-                    <img class="profile-img" src="<?= ($list['usericon']) ? $list['usericon'] : 'img/noimage.jpg'; ?>"> 
+                    <img class="profile-img" src="<?= ($list['usericon']) ? htmlspecialchars($list['usericon']) : 'img/noimage.jpg'; ?>"> 
                 </a><!-- 삼항 연산자 : 조건 ? true : false -->
             <div class="info">
                 <div><h2><?= $list['author'] ?></h2></div>
@@ -61,7 +61,7 @@
         <div class="bottom-article">
             <?php if (!empty($pitures)) { ?>
                 <?php foreach($pitures as $items){ ?>
-                    <div><img src="<?= $items['src'] ?>"></div>
+                    <div><img src="<?= htmlspecialchars($items['src']) ?>"></div>
                 <?php } ?> 
             <?php } else { ?>
                 <?= "<p>업로드한 사진이 없습니다.</p>"; ?>
