@@ -3,4 +3,5 @@ PHPcamp/
 PHPbootcamp.png
 
 /vendor/
+/example/
 .env

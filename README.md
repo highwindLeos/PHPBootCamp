@@ -1,5 +1,3 @@
-![image](PHPbootcamp.png)
-
 # PHP Bootcamp
 ### PHP Bootcamp in Study
 
@@ -47,20 +45,19 @@ http://modernpug.github.io/php-the-right-way/
 PHP 를 이용한 개발 테크 트리
 나름대로 중요도 순  apm 및 환경관련 내용은 제외함
 
-0 : 기초
-	자료 구조 :  C언어로 쉽게 풀었쓴 자료구조 (이책이 초보 개발자들에게 학습 효과가 가장 좋았던  기억이있음)
+###기초
 
-	알고리즘 : http://omnis.tistory.com/2
-	php 기본 연산자 비교 :  http://php.net/manual/kr/language.operators.comparison.php  
-						   // 실제 동작시 함수 나 모듈에 따라 전부 완전히 다름 무조건 메뉴얼 보며 return 값 보며 코딩함 
-						   (이것 때문에 php의 장점 거의 다 까먹음)
-	php 기본 문자열 함수, MB_string 계열, 
+자료 구조 :  C언어로 쉽게 풀었쓴 자료구조 (이책이 초보 개발자들에게 학습 효과가 가장 좋았던  기억이있음)
+알고리즘 : http://omnis.tistory.com/2
+php 기본 연산자 비교 :  http://php.net/manual/kr/language.operators.comparison.php  
+						// 실제 동작시 함수 나 모듈에 따라 전부 완전히 다름 무조건 메뉴얼 보며 return 값 보며 코딩함 
+						(이것 때문에 php의 장점 거의 다 까먹음)
+php 기본 문자열 함수, MB_string 계열, 
 
-	php 기본 배열 함수 들 array_??? : 의외로 기본 배열 처리 함수를 잘 안씀 일일이 만들어 쓰는 경향이 있음 기본 배열 함수는 
-									C extension이라 속도가 훨씬 빠름 
-
-	정규표현식	
-    php 에서 한글 처리(초성 추출, 한글인코딩, 한글 형태소 기반  문자열 파싱 등등)
+php 기본 배열 함수 들 array_??? : 의외로 기본 배열 처리 함수를 잘 안씀 일일이 만들어 쓰는 경향이 있음 기본 배열 함수는 
+								C extension이라 속도가 훨씬 빠름 
+정규표현식	
+php 에서 한글 처리(초성 추출, 한글인코딩, 한글 형태소 기반  문자열 파싱 등등)
 
 1. 객체지향 설계 : http://www.nextree.co.kr/p6960/
 
