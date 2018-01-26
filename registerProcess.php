@@ -3,7 +3,7 @@ session_start();
 require __DIR__.'/vendor/autoload.php';
 
 use DatabaseModel\UserModel; #네임스페이스에  Class 를 사용한다.
-use DatabaseModel\LoginModel; #네임스페이스에  Class 를 사용한다.
+use DatabaseModel\LoginModel; 
 
 require 'config/config.php';
 

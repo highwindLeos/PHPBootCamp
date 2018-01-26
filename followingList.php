@@ -20,7 +20,7 @@ require 'config/config.php';
     $list = $profilemodel->getFollowingsByAuthor($author);
     $usericon = $profilemodel->getUserIconByAuthor($author);
 
-    $pageTitle = 'PHP BootCamp AnInstargram - Following List';
+    $pageTitle = 'PHP BootCamp AnInstargram - '.basename(__FILE__, '.php');
 
 include 'view/followingListView.php';
 ?>

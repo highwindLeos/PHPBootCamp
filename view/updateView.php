@@ -16,11 +16,9 @@
                 <form class="article-write" enctype="multipart/form-data">
                     <label for="image_uploads"> 수정 업로드 할 이미지 파일을 선택해주세요.(PNG, JPG)</label>
                     <input type="file" class="fileupload" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
-                    <p class="validate"><?php if(isset($_SESSION['picture'])) echo $_SESSION['picture'];
-                        unset($_SESSION['picture']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['picture'])) echo $_SESSION['picture']; unset($_SESSION['picture']) ?></p>
                     <textarea class="article-input" name="article" placeholder="현제 글 내용 : <?= $_SESSION['modifyarticle']['article'] ?>" ></textarea>
-                    <p class="validate"><?php if(isset($_SESSION['article'])) echo $_SESSION['article'];
-                        unset($_SESSION['article']) ?></p>
+                    <p class="validate"><?php if(isset($_SESSION['article'])) echo $_SESSION['article']; unset($_SESSION['article']) ?></p>
                     <input type="hidden" class="articleid" name="articleid" value="<?= $articleid ?>">
                     <button class="submit-btn" type="submit" formmethod="POST" 
                             formaction="updateProcess.php?author=<?= $_SESSION['author'] ?>&articleid=<?= $articleId ?>">

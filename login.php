@@ -5,6 +5,6 @@ session_start();
         exit;
     }
 
-$pageTitle = 'PHP BootCamp AnInstargram - Login';
+$pageTitle = 'PHP BootCamp AnInstargram - '.basename(__FILE__, '.php');
 include 'view/loginView.php';
 ?>

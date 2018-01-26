@@ -103,7 +103,6 @@ hr{
     padding: 20px 5px;
 }
 
-
 .titleimg img{
     width: 45px;
     height: 45px;
@@ -316,6 +315,28 @@ hr{
     padding: 5px 10px;
     border : 1px solid #003962;
     border-radius: 5px;
+}
+
+/* responsive Layout */
+
+@media (max-width: 1100px) {
+
+    .article{
+        margin: auto;
+        margin-bottom: 50px; 
+        width: 90%;
+        border: 1px solid #DBDBDB;
+        padding: 20px 5px;
+    }
+/* paging div */
+    .page-main {
+        display: flex;
+        margin: 0px auto 30px auto;
+        padding: 10px;
+        justify-content: center;
+        width:90%;
+        border: 1px solid #DBDBDB;
+    }
 }
 
 /* footer Css */

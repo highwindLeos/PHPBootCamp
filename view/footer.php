@@ -17,4 +17,5 @@
         </p>
     </footer>
 </body>
+    <script src="../js/ajaxRequest.js"></script>
 </html>

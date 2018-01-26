@@ -61,7 +61,7 @@ require 'config/config.php';
         header("Location: $redirection"); #리다이렉션 페이지 이동   
     } #방어적 프로그래밍(Defensive Programming) 이라는 주제를 학습.
 
-    $pageTitle = 'PHP BootCamp AnInstargram - Profile';
+    $pageTitle = 'PHP BootCamp AnInstargram - '.basename(__FILE__, '.php');
 
 include 'view/profileView.php';
 ?>

@@ -55,7 +55,7 @@
                     <?php } ?>
                     </div>
                     <div class="imgbtn-item">
-                        <?php if($item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 수정 버튼이 출력 ?>
+                        <?php if( $item['usericon']['author'] == $_SESSION['author'] ){ #로그인 된 사용자의 글에만 수정 버튼이 출력 ?>
                             <form>
                                 <input class="update" type="hidden" name="article-id" value="<?= htmlspecialchars($item['id']); ?>" />  
                                 <button class="updatebtn" type="submit" formmethod="POST" 

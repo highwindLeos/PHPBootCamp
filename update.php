@@ -23,7 +23,7 @@ require 'config/config.php';
         $_SESSION['modifypicture'] = $articlemodel->getPictures($articleId);
     }
 
-$pageTitle = "PHP BootCamp AnInstargram - 수정";
+$pageTitle = "PHP BootCamp AnInstargram - ".basename(__FILE__, '.php');
 
 include 'view/updateView.php';
 ?>

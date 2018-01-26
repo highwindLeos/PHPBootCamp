@@ -5,5 +5,7 @@ session_start();
         exit;
     }
 
+$pageTitle = 'PHP BootCamp AnInstargram - '.basename(__FILE__, '.php'); #현제 페이지의 경로에서 파일명만 사용.
+
 include 'view/indexView.php';
 ?>
