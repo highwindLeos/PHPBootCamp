@@ -48,6 +48,7 @@ require 'config/config.php';
 
     if(password_verify($password, $users['password'])){ #입력 평문과 hash 값이 동일한 값인지 check 하는 함수.
         if(count($errors) == 0){ #에러값이 없다면 true
+            session_regenerate_id(); # 세션 아이디 값을 재설정.
             $_SESSION = array(); #세션 데이터 초기화.
             $_SESSION['is_login'] = true; #세션에 True 값을 입력.
             $_SESSION['email'] = $email;  #세션에 입력 이메일을 입력.
