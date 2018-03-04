@@ -7,6 +7,9 @@ PHP + Database 설계등 웹의 핵심기술을 학습하고 있습니다.
 
 http://phpbootcamp.bookcafe100.com/course/self-study
 
+Mark Down Snytex 학습
+https://github.com/highwindLeos/PHPBootCamp/blob/master/MarkDownsyntex.md
+
 # 기획 참고 자료 
 ### 과제 목록 :
 
