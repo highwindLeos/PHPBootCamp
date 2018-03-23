@@ -22,7 +22,7 @@
                 <p class="linebar"><img src="img/line.png"> 또는 <img src="img/line.png"></p>
                 <form>
                     <p>
-                        <input type="text" id="email" name="email" placeholder="이메일">
+                        <input type="text" id="email" name="email" placeholder="이메일" autofocus>
                     </p>
                     <p class="validate"><?php if(isset($_SESSION['email1'])) echo $_SESSION['email1']; 
                         unset($_SESSION['email1']) ?></p>

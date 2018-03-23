@@ -66,8 +66,8 @@ class UpdateModel
     
     public function UpdateArticles($article, $articleId) {
 
-        $updateSql = "UPDATE articles SET article = :article, date = now() WHERE id = :id LIMIT 5"; 
-        #now() 는 Mysql 함수. 입력되는 순간의 시간을 기록함.
+        $updateSql = "UPDATE articles SET article = :article, date = curdate() WHERE id = :id LIMIT 5"; 
+        #curdate() 는 Mysql 함수. 입력되는 순간의 시간을 기록함.
 
         $stmt = $this->db->prepare($updateSql);
         $stmt->bindParam(':article', $article);
