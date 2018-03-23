@@ -5,7 +5,7 @@ function flash( $name = '', $message = '', $class = 'success fadeout-message' )
     if(!empty($name))
     {
         //No message, create it
-        if(!empty( $message ) &amp;& empty( $_SESSION[$name]))
+        if(!empty( $message ) && empty( $_SESSION[$name]))
         {
             if(!empty($_SESSION[$name]))
             {
@@ -20,7 +20,7 @@ function flash( $name = '', $message = '', $class = 'success fadeout-message' )
             $_SESSION[$name.'_class'] = $class;
         }
         //Message exists, display it
-        elseif( !empty( $_SESSION[$name] ) &amp;& empty( $message ) )
+        elseif( !empty( $_SESSION[$name] ) && empty( $message ) )
         {
             $class = !empty( $_SESSION[$name.'_class'] ) ? $_SESSION[$name.'_class'] : 'success';
             echo '<div class="'.$class.'" id="msg-flash">'.$_SESSION[$name].'</div>';

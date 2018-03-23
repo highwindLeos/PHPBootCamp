@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
     display: inline-flex;
-    margin: 50px 40px 50px 40px;
+    margin: 50px 40px;
     padding: 0px 20px;
 }
 
@@ -46,6 +46,7 @@
     left: 220px;
     top:50px;
 }
+
 .top-article span{
     margin: 0px 20px;
 }
@@ -241,7 +242,6 @@
         width: 100%; /*  width 를 늘임   */
         height: 54px;
     }
-
 }
 
 /* profile pageing Css */

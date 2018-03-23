@@ -19,7 +19,7 @@
                 <a href="index.php"><img id="logo" src="img/logo.png"></a>
                 <form class="form">
                     <p>
-                        <input type="text" id="email" name="email" placeholder="E-Mail (example : instargram@gmail.com)" />
+                        <input type="text" id="email" name="email" placeholder="E-Mail (example : instargram@gmail.com)" autofocus/>
                         <p class="validate"><?php if(isset($_SESSION['login1'])) echo $_SESSION['login1']; unset($_SESSION['login1']) ?></p>
                         <p class="validate"><?php if(isset($_SESSION['login2'])) echo $_SESSION['login2']; unset($_SESSION['login2']) ?></p>
                     </p>
