@@ -6,12 +6,6 @@ if(isset($_SESSION['is_login'])){ #변수가 설정되어 있다면 True
 }
 
 $pageTitle = 'PHP BootCamp AnInstargram - '.basename(__FILE__, '.php');
-<<<<<<< HEAD
-
-include 'view/loginView.php';
-?>
-=======
 ?>
 
 <?php include 'view/loginView.php';?>
->>>>>>> note

@@ -20,6 +20,15 @@ if(!isset($_SESSION['is_login'])){ #변수가 설정되어 있지 않다면 True
     <link rel="stylesheet" href="css/profile.css">
     <!-- Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function chkValidate_btn(){
+            if(!frm.iconupload.value){
+                alert("파일을 꼭 첨부해주세요.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 
 </head>
 <body>
