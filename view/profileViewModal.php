@@ -13,7 +13,7 @@
             <p class="modalcontent btn">
                 <form id="frm" class="modalform" action="iconUploadProcess.php?author=<?= $_GET['author'] ?>" 
                       method="POST" enctype="multipart/form-data">
-                    <button class="replace">사용자 아이콘 업로드(여기를 눌러서 먼저 아이콘을 선택해주세요.)</button>   
+                    <button class="replace">사용자 아이콘 업로드<br>(여기를 눌러서 먼저 아이콘을 선택해주세요.)</button>   
                     <input type="file" id="iconupload" class="upload" name="icon_uploads" accept=".jpg, .jpeg, .png" multiple />
                     <input type="submit" class="submit" value="아이콘전송" onclick="return chkValidate_btn()" />
                 </form>

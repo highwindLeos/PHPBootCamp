@@ -19,13 +19,13 @@
                     <p class="validate"><?php if(isset($_SESSION['picture'])) echo $_SESSION['picture']; unset($_SESSION['picture']) ?></p>
                     <textarea class="article-input" name="article" placeholder="현제 글 내용 : <?= $_SESSION['modifyarticle']['article'] ?>" ></textarea>
                     <p class="validate"><?php if(isset($_SESSION['article'])) echo $_SESSION['article']; unset($_SESSION['article']) ?></p>
-                    <input type="hidden" class="articleid" name="articleid" value="<?= $articleid ?>">
+                    <input type="hidden" class="articleid" name="articleid" value="<?= $articleId ?>">
                     <button class="submit-btn" type="submit" formmethod="POST" 
                             formaction="updateProcess.php?author=<?= $_SESSION['author'] ?>&articleid=<?= $articleId ?>">
-                        <img src="img/writebtn.png" alt="보내기">
+                        <img src="img/writebtn.png" alt="쓰기">
                     </button>
                     <button class="submit-btn" type="submit" formmethod="POST" formaction="updateProcess.php?name=cancle">
-                        <img src="img/canclebtn.png" alt="보내기">
+                        <img src="img/canclebtn.png" alt="취소">
                     </button>
                 </form>
             </div>

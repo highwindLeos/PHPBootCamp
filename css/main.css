@@ -1,64 +1,33 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-*{
-    margin: 0;
-    padding: 0;
-    /* box-sizing: border-box; */
-}
-
-body{
-    font-family: 'Jeju Gothic', serif;
-    background: #F9FAF9;
-}
-
-p{
-    font-size: 0.85em;
-    margin: 5px;
-}
-
-input{
-    border: 0;
-    outline: none;
-    overflow: hidden;
-    width: 255px;
-    margin: 3px 0 3px 0;
-    padding: 9px 0 7px 8px;
-    text-overflow: ellipsis;
-    background-color: #F9FAF9;
-}
-
-article{
-    margin-top: 115px; 
-}
-
-hr{
-    background-color: #ddd; 
-    height: 1px; 
-    border: 0;
-    margin: 1.5em 0 1em 0;
-}
-
-
 /* Main Document Css */
-
-.container {
+header .container {
     position: fixed;
     z-index: 9999;
     top: 0;
     width: 100%;
     height: 55px;
+    line-height: 55px;
     padding: 10px;
     border-bottom: 1px solid #999;
     text-align: center;    
     background: #FFFFFF;
 }
 
-.navbar {
+header .container .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.search{
+    border-radius: 3px;
+    border: 1px solid #DBDBDB;
+    margin-left: 100px;    
+    margin-right: 100px;    
 }
 
 .navbar .logout{
@@ -73,27 +42,22 @@ hr{
     width: 145px;
 }
 
-.search{
-    border-radius: 3px;
-    border: 1px solid #DBDBDB;
-    margin-left: 100px;    
-    margin-right: 100px;    
-}
-
 .navbaricon{
-    margin-left: 450px;
-    
+    margin-left: 350px;
 }
 
 .navbar img{
     width: 25px;
     height: 25px;
-    margin: 0px 5px;
-
+    margin: 0px 3px;
 }
 
-.copy{
-    margin-top: 10px;
+.welcome {
+    font-weight: bold;
+}
+
+.welcome > #loginer {
+    color: lightcoral;
 }
 
 .article{
@@ -134,7 +98,7 @@ hr{
 
 .mainimg img{
     width: 100%;
-    text-align: center;
+    min-width: 400px;
 }
 
 .imgbtn-item{
@@ -150,14 +114,14 @@ hr{
 }
 
 .updatebtn{
-    background-color: #008CBA;
+    display: inline-block;
     border: none;
     border-radius: 5px;
+    background-color: #008CBA;
     color: white;
     padding: 3px 5px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 12px;
     cursor: pointer;
 }
@@ -183,7 +147,7 @@ hr{
 
 .datetime{
     color: #999; 
-    font-size: 12px;
+    font-size: 10px;
 }
 
 /* comment */
@@ -198,7 +162,6 @@ hr{
 .comment-out {
     margin: 10px 7px;
 }
-
 
 .commentform{
     margin: 0px 15px;
@@ -249,9 +212,7 @@ hr{
     text-align: center;
 }
 
-
 /* modify page view */
-
 .modify-picture {
     display: inline-block;
     width: 80%;
@@ -261,7 +222,7 @@ hr{
     padding: 15px;
 }
 
-.modify-picture img{
+.modify-picture img {
     width: 100%;
 }
 
@@ -275,43 +236,37 @@ hr{
 }
 
 /* page navigation */
-
 .page-main {
     display: flex;
     margin: 0px auto 30px auto;
     padding: 10px;
     justify-content: center;
-    width:49.5%;
+    width: 49.5%;
     border: 1px solid #DBDBDB;
 }
 
 .page-main ul {
     list-style:none;
-    margin:0;
-    padding:0;
 }
 
 .page-main li {
-    margin: 0 15px;
+    float: left;
+    margin: 0 10px;
     padding: 3px;
     border : 1px solid #003962;
     border-radius: 5px;
-    float: left;
 }
+
+    .page-main li:nth-child(1) {
+        padding: 3px 10px;;
+    }
 
 .page-main li:hover{
-    border : 1px solid gray;
-    background-color: gray;
+    border : 1px solid #bbb;
+    background-color: #bbb;
 }
 
-.page-main li .endpage-item {
-    margin: 0 15px;
-    padding: 3px;
-    border : 1px solid #003962;
-    border-radius: 5px;
-}
-
-.is-page{
+.is-page {
     margin: 0 15px;
     padding: 5px 10px;
     border : 1px solid #003962;
@@ -319,9 +274,7 @@ hr{
 }
 
 /* responsive Layout */
-
 @media (max-width: 1100px) {
-
     .article{
         margin: auto;
         margin-bottom: 50px; 
@@ -329,7 +282,7 @@ hr{
         border: 1px solid #DBDBDB;
         padding: 20px 5px;
     }
-/* paging div */
+    /* paging div */
     .page-main {
         display: flex;
         margin: 0px auto 30px auto;
@@ -354,7 +307,11 @@ footer {
     cursor:pointer;
 }
 
+.copy{
+    margin-top: 10px;
+}
+
 /* clearfix */
 .clearfix {
-    overflow: auto;
-  }
+    overflow: hidden;
+}

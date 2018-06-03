@@ -16,7 +16,7 @@
             </div>
             <div class="count">
                 <div>
-                    <a href="main.php"><span>총 게시물 <?= $pictureCnt ?></span></a>
+                    <a href="main.php?author=<?= $_SESSION['author'] ?>"><span>총 게시물 <?= $pictureCnt ?></span></a>
                 </div>
                 <div>
                     <a href="followerList.php?author=<?= $list['author'] ?>"><span>팔로워 <?= count($followers); ?></span></a>
