@@ -86,7 +86,9 @@ php 에서 한글 처리(초성 추출, 한글인코딩, 한글 형태소 기반
 7. IDE 
 	netbeans : https://netbeans.org/kb/docs/php/quickstart.html    
 			   https://netbeans.org/features/php/
+
 	eclipse : http://histlinux.egloos.com/v/1253065
+	
 	phpstom : https://www.jetbrains.com/phpstorm/
 
 8. 디버깅
