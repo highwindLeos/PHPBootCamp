@@ -16,7 +16,7 @@ class UserModel
         
         $options = [
             'cost' => 11,
-            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+            'Salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)
         ]; #Salt (추가문자열 암호화 옵션, 3번째 인자값)
         $hashpass = password_hash(trim($password), PASSWORD_BCRYPT, $options); #암호화 코드
         
